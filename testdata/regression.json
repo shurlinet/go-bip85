@@ -1,0 +1,370 @@
+{
+  "generator": "go-bip85/tools/gen-vectors/gen.py",
+  "reference_impl": "bipsea 3.2.0 (Python)",
+  "spec_version": "BIP85 v2.0.0",
+  "description": "Hardcoded regression vectors covering edge cases. These are compiled into Go test code and survive even if vectors.json is corrupted.",
+  "vectors": [
+    {
+      "master_id": "spec",
+      "master_xprv": "xprv9s21ZrQH143K2LBWUUQRFXhucrQqBpKdRRxNVq2zBqsx8HVqFk2uYo8kmbaLLHRdqtQpUm98uKfu3vca1LqdGhUtyoFnCNkfmXRyPXLjbKb",
+      "app": "core",
+      "path": "m/83696968'/0'/0'",
+      "derived_key": "cca20ccb0e9a90feb0912870c3323b24874b0ca3d8018c4b96d0b97c0e82ded0",
+      "entropy_hex": "efecfbccffea313214232d29e71563d941229afb4338c21f9517c41aaa0d16f00b83d2a09ef747e7a64e8e2bd5a14869e693da66ce94ac2da570ab7ee48618f7",
+      "app_entropy_hex": "",
+      "output": "",
+      "params": {
+        "index": 0
+      },
+      "source": "bipsea",
+      "note": "",
+      "regression_id": 1
+    },
+    {
+      "master_id": "spec",
+      "master_xprv": "xprv9s21ZrQH143K2LBWUUQRFXhucrQqBpKdRRxNVq2zBqsx8HVqFk2uYo8kmbaLLHRdqtQpUm98uKfu3vca1LqdGhUtyoFnCNkfmXRyPXLjbKb",
+      "app": "core",
+      "path": "m/83696968'/0'/1'",
+      "derived_key": "503776919131758bb7de7beb6c0ae24894f4ec042c26032890c29359216e21ba",
+      "entropy_hex": "70c6e3e8ebee8dc4c0dbba66076819bb8c09672527c4277ca8729532ad711872218f826919f6b67218adde99018a6df9095ab2b58d803b5b93ec9802085a690e",
+      "app_entropy_hex": "",
+      "output": "",
+      "params": {
+        "index": 1
+      },
+      "source": "bipsea",
+      "note": "",
+      "regression_id": 2
+    },
+    {
+      "master_id": "spec",
+      "master_xprv": "xprv9s21ZrQH143K2LBWUUQRFXhucrQqBpKdRRxNVq2zBqsx8HVqFk2uYo8kmbaLLHRdqtQpUm98uKfu3vca1LqdGhUtyoFnCNkfmXRyPXLjbKb",
+      "app": "bip39",
+      "path": "m/83696968'/39'/0'/12'/0'",
+      "derived_key": "",
+      "entropy_hex": "6250b68daf746d12a24d58b4787a714bf1b58d69e4c2a466276fb16fe93dc52b6fac6b756894072241447cad56f6405ee326dbb473d2f5e943543590082927c0",
+      "app_entropy_hex": "6250b68daf746d12a24d58b4787a714b",
+      "output": "girl mad pet galaxy egg matter matrix prison refuse sense ordinary nose",
+      "params": {
+        "language": 0,
+        "words": 12,
+        "index": 0
+      },
+      "source": "bipsea",
+      "note": "",
+      "regression_id": 3
+    },
+    {
+      "master_id": "spec",
+      "master_xprv": "xprv9s21ZrQH143K2LBWUUQRFXhucrQqBpKdRRxNVq2zBqsx8HVqFk2uYo8kmbaLLHRdqtQpUm98uKfu3vca1LqdGhUtyoFnCNkfmXRyPXLjbKb",
+      "app": "bip39",
+      "path": "m/83696968'/39'/0'/18'/0'",
+      "derived_key": "",
+      "entropy_hex": "938033ed8b12698449d4bbca3c853c66b293ea1b1ce9d9dc76a62012cbca636ac192271d292df994fa21ac0184560f79d007803282f70e41e65526a0a8663d5d",
+      "app_entropy_hex": "938033ed8b12698449d4bbca3c853c66b293ea1b1ce9d9dc",
+      "output": "near account window bike charge season chef number sketch tomorrow excuse sniff circle vital hockey outdoor supply token",
+      "params": {
+        "language": 0,
+        "words": 18,
+        "index": 0
+      },
+      "source": "bipsea",
+      "note": "",
+      "regression_id": 4
+    },
+    {
+      "master_id": "spec",
+      "master_xprv": "xprv9s21ZrQH143K2LBWUUQRFXhucrQqBpKdRRxNVq2zBqsx8HVqFk2uYo8kmbaLLHRdqtQpUm98uKfu3vca1LqdGhUtyoFnCNkfmXRyPXLjbKb",
+      "app": "bip39",
+      "path": "m/83696968'/39'/0'/24'/0'",
+      "derived_key": "",
+      "entropy_hex": "ae131e2312cdc61331542efe0d1077bac5ea803adf24b313a4f0e48e9c51f37f6f6bba7cc92a2d1f5954b4ba442510e1e2179ec5f2ca003169803cfcbcc8e9e8",
+      "app_entropy_hex": "ae131e2312cdc61331542efe0d1077bac5ea803adf24b313a4f0e48e9c51f37f",
+      "output": "puppy ocean match cereal symbol another shed magic wrap hammer bulb intact gadget divorce twin tonight reason outdoor destroy simple truth cigar social volcano",
+      "params": {
+        "language": 0,
+        "words": 24,
+        "index": 0
+      },
+      "source": "bipsea",
+      "note": "",
+      "regression_id": 5
+    },
+    {
+      "master_id": "spec",
+      "master_xprv": "xprv9s21ZrQH143K2LBWUUQRFXhucrQqBpKdRRxNVq2zBqsx8HVqFk2uYo8kmbaLLHRdqtQpUm98uKfu3vca1LqdGhUtyoFnCNkfmXRyPXLjbKb",
+      "app": "wif",
+      "path": "m/83696968'/2'/0'",
+      "derived_key": "",
+      "entropy_hex": "7040bb53104f27367f317558e78a994ada7296c6fde36a364e5baf206e502bb1f988080b7dd814e7ae7d6d83edbb6689886a560e165f4a740877cdf3beecacf8",
+      "app_entropy_hex": "7040bb53104f27367f317558e78a994ada7296c6fde36a364e5baf206e502bb1",
+      "output": "Kzyv4uF39d4Jrw2W7UryTHwZr1zQVNk4dAFyqE6BuMrMh1Za7uhp",
+      "params": {
+        "index": 0
+      },
+      "source": "bipsea",
+      "note": "",
+      "regression_id": 6
+    },
+    {
+      "master_id": "spec",
+      "master_xprv": "xprv9s21ZrQH143K2LBWUUQRFXhucrQqBpKdRRxNVq2zBqsx8HVqFk2uYo8kmbaLLHRdqtQpUm98uKfu3vca1LqdGhUtyoFnCNkfmXRyPXLjbKb",
+      "app": "xprv",
+      "path": "m/83696968'/32'/0'",
+      "derived_key": "",
+      "entropy_hex": "52405cd0dd21c5be78314a7c1a3c65ffd8d896536cc7dee3157db5824f0c92e2ead0b33988a616cf6a497f1c169d9e92562604e38305ccd3fc96f2252c177682",
+      "app_entropy_hex": "ead0b33988a616cf6a497f1c169d9e92562604e38305ccd3fc96f2252c177682",
+      "output": "xprv9s21ZrQH143K2srSbCSg4m4kLvPMzcWydgmKEnMmoZUurYuBuYG46c6P71UGXMzmriLzCCBvKQWBUv3vPB3m1SATMhp3uEjXHJ42jFg7myX",
+      "params": {
+        "index": 0
+      },
+      "source": "bipsea",
+      "note": "",
+      "regression_id": 7
+    },
+    {
+      "master_id": "spec",
+      "master_xprv": "xprv9s21ZrQH143K2LBWUUQRFXhucrQqBpKdRRxNVq2zBqsx8HVqFk2uYo8kmbaLLHRdqtQpUm98uKfu3vca1LqdGhUtyoFnCNkfmXRyPXLjbKb",
+      "app": "hex",
+      "path": "m/83696968'/128169'/64'/0'",
+      "derived_key": "",
+      "entropy_hex": "492db4698cf3b73a5a24998aa3e9d7fa96275d85724a91e71aa2d645442f878555d078fd1f1f67e368976f04137b1f7a0d19232136ca50c44614af72b5582a5c",
+      "app_entropy_hex": "492db4698cf3b73a5a24998aa3e9d7fa96275d85724a91e71aa2d645442f878555d078fd1f1f67e368976f04137b1f7a0d19232136ca50c44614af72b5582a5c",
+      "output": "492db4698cf3b73a5a24998aa3e9d7fa96275d85724a91e71aa2d645442f878555d078fd1f1f67e368976f04137b1f7a0d19232136ca50c44614af72b5582a5c",
+      "params": {
+        "num_bytes": 64,
+        "index": 0
+      },
+      "source": "bipsea",
+      "note": "",
+      "regression_id": 8
+    },
+    {
+      "master_id": "spec",
+      "master_xprv": "xprv9s21ZrQH143K2LBWUUQRFXhucrQqBpKdRRxNVq2zBqsx8HVqFk2uYo8kmbaLLHRdqtQpUm98uKfu3vca1LqdGhUtyoFnCNkfmXRyPXLjbKb",
+      "app": "base64",
+      "path": "m/83696968'/707764'/21'/0'",
+      "derived_key": "",
+      "entropy_hex": "74a2e87a9ba0cdd549bdd2f9ea880d554c6c355b08ed25088cfa88f3f1c4f74632b652fd4a8f5fda43074c6f6964a3753b08bb5210c8f5e75c07a4c2a20bf6e9",
+      "app_entropy_hex": "74a2e87a9ba0cdd549bdd2f9ea880d554c6c355b08ed25088cfa88f3f1c4f74632b652fd4a8f5fda43074c6f6964a3753b08bb5210c8f5e75c07a4c2a20bf6e9",
+      "output": "dKLoepugzdVJvdL56ogNV",
+      "params": {
+        "pwd_len": 21,
+        "index": 0
+      },
+      "source": "bipsea",
+      "note": "",
+      "regression_id": 9
+    },
+    {
+      "master_id": "spec",
+      "master_xprv": "xprv9s21ZrQH143K2LBWUUQRFXhucrQqBpKdRRxNVq2zBqsx8HVqFk2uYo8kmbaLLHRdqtQpUm98uKfu3vca1LqdGhUtyoFnCNkfmXRyPXLjbKb",
+      "app": "base85",
+      "path": "m/83696968'/707785'/12'/0'",
+      "derived_key": "",
+      "entropy_hex": "f7cfe56f63dca2490f65fcbf9ee63dcd85d18f751b6b5e1c1b8733af6459c904a75e82b4a22efff9b9e69de2144b293aa8714319a054b6cb55826a8e51425209",
+      "app_entropy_hex": "f7cfe56f63dca2490f65fcbf9ee63dcd85d18f751b6b5e1c1b8733af6459c904a75e82b4a22efff9b9e69de2144b293aa8714319a054b6cb55826a8e51425209",
+      "output": "_s`{TW89)i4`",
+      "params": {
+        "pwd_len": 12,
+        "index": 0
+      },
+      "source": "bipsea",
+      "note": "",
+      "regression_id": 10
+    },
+    {
+      "master_id": "spec",
+      "master_xprv": "xprv9s21ZrQH143K2LBWUUQRFXhucrQqBpKdRRxNVq2zBqsx8HVqFk2uYo8kmbaLLHRdqtQpUm98uKfu3vca1LqdGhUtyoFnCNkfmXRyPXLjbKb",
+      "app": "dice",
+      "path": "m/83696968'/89101'/6'/10'/0'",
+      "derived_key": "",
+      "entropy_hex": "5e41f8f5d5d9ac09a20b8a5797a3172b28c806aead00d27e36609e2dd116a59176a738804236586f668da8a51b90c708a4226d7f92259c69f64c51124b6f6cd2",
+      "app_entropy_hex": "",
+      "output": "1,0,0,2,0,1,5,5,2,4",
+      "params": {
+        "sides": 6,
+        "rolls": 10,
+        "index": 0
+      },
+      "source": "bipsea",
+      "note": "",
+      "regression_id": 11
+    },
+    {
+      "master_id": "spec",
+      "master_xprv": "xprv9s21ZrQH143K2LBWUUQRFXhucrQqBpKdRRxNVq2zBqsx8HVqFk2uYo8kmbaLLHRdqtQpUm98uKfu3vca1LqdGhUtyoFnCNkfmXRyPXLjbKb",
+      "app": "drng",
+      "path": "m/83696968'/0'/0'",
+      "derived_key": "",
+      "entropy_hex": "efecfbccffea313214232d29e71563d941229afb4338c21f9517c41aaa0d16f00b83d2a09ef747e7a64e8e2bd5a14869e693da66ce94ac2da570ab7ee48618f7",
+      "app_entropy_hex": "",
+      "output": "b78b1ee6b345eae6836c2d53d33c64cdaf9a696487be81b03e822dc84b3f1cd883d7559e53d175f243e4c349e822a957bbff9224bc5dde9492ef54e8a439f6bc8c7355b87a925a37ee405a7502991111",
+      "params": {
+        "read_bytes": 80
+      },
+      "source": "bipsea",
+      "note": "",
+      "regression_id": 12
+    },
+    {
+      "master_id": "spec",
+      "master_xprv": "xprv9s21ZrQH143K2LBWUUQRFXhucrQqBpKdRRxNVq2zBqsx8HVqFk2uYo8kmbaLLHRdqtQpUm98uKfu3vca1LqdGhUtyoFnCNkfmXRyPXLjbKb",
+      "app": "bip39",
+      "path": "m/83696968'/39'/1'/12'/0'",
+      "derived_key": "",
+      "entropy_hex": "2536954d9c7b38f2b3a70e8aab99638181991ebea91594d97ff61330880b64137602c5e8105d3e1139640054f53dadc96ab5663880d9421095b2f26f5d869800",
+      "app_entropy_hex": "2536954d9c7b38f2b3a70e8aab996381",
+      "output": "おまいり にんてい こふん ぎんいろ にんい ぜんご ひめい まほう たたみ さとう ざいたく あてな",
+      "params": {
+        "language": 1,
+        "words": 12,
+        "index": 0
+      },
+      "source": "bipsea",
+      "note": "",
+      "regression_id": 13
+    },
+    {
+      "master_id": "leading_zero",
+      "master_xprv": "xprv9s21ZrQH143K33feVLZmQbPSTS3sF2gaBBVRk3oCtKjpmVVtuUhXy7Yt8UfQVUyqhmmJoEouLRMReJZw3n4rtQ4FJNsyE7NTghC5QFroQQ9",
+      "app": "core",
+      "path": "m/83696968'/0'/0'",
+      "derived_key": "004085fd27c49b5b7617721f4855b6c2a1e65733499df5cc7b53916eb4782d31",
+      "entropy_hex": "22bfc5db7e3cf685f2f1c9d475570254198b0193f7f6603a6170aabb9480e1782b56ef536747a0f7ccefbe82d13ef46591c7370f5043ff6a1fd5a85d9f129726",
+      "app_entropy_hex": "",
+      "output": "",
+      "params": {
+        "index": 0
+      },
+      "source": "bipsea",
+      "note": "",
+      "regression_id": 14
+    },
+    {
+      "master_id": "12word",
+      "master_xprv": "xprv9s21ZrQH143K3GJpoapnV8SFfukcVBSfeCficPSGfubmSFDxo1kuHnLisriDvSnRRuL2Qrg5ggqHKNVpxR86QEC8w35uxmGoggxtQTPvfUu",
+      "app": "bip39",
+      "path": "m/83696968'/39'/0'/15'/0'",
+      "derived_key": "",
+      "entropy_hex": "5dc4f27a1bbcabfbed28723f2ac282194ec617dd549ac10bc0365ee77457ffb6912561ff590a85e8917326c0f6470eee3c9958b40b205d097fd341b23685201d",
+      "app_entropy_hex": "5dc4f27a1bbcabfbed28723f2ac282194ec617dd",
+      "output": "fruit chest ozone danger skirt worth regret atom dish figure party crater unaware armor insect",
+      "params": {
+        "language": 0,
+        "words": 15,
+        "index": 0
+      },
+      "source": "bipsea",
+      "note": "",
+      "regression_id": 15
+    },
+    {
+      "master_id": "12word",
+      "master_xprv": "xprv9s21ZrQH143K3GJpoapnV8SFfukcVBSfeCficPSGfubmSFDxo1kuHnLisriDvSnRRuL2Qrg5ggqHKNVpxR86QEC8w35uxmGoggxtQTPvfUu",
+      "app": "bip39",
+      "path": "m/83696968'/39'/0'/21'/0'",
+      "derived_key": "",
+      "entropy_hex": "abacef4d18a3d9f11d93b59e99f8183176ea6dc4f7ebf14afbfd16d2312eb60a1001e223b8c71a67c1a3406307c8f1230a786e3e87ae6e53ba9f3af0fb2484e8",
+      "app_entropy_hex": "abacef4d18a3d9f11d93b59e99f8183176ea6dc4f7ebf14afbfd16d2",
+      "output": "produce guess spy course diesel weasel iron issue ozone sound alcohol glass huge dad because word vanish fit young color champion",
+      "params": {
+        "language": 0,
+        "words": 21,
+        "index": 0
+      },
+      "source": "bipsea",
+      "note": "",
+      "regression_id": 16
+    },
+    {
+      "master_id": "spec",
+      "master_xprv": "xprv9s21ZrQH143K2LBWUUQRFXhucrQqBpKdRRxNVq2zBqsx8HVqFk2uYo8kmbaLLHRdqtQpUm98uKfu3vca1LqdGhUtyoFnCNkfmXRyPXLjbKb",
+      "app": "hex",
+      "path": "m/83696968'/128169'/16'/0'",
+      "derived_key": "",
+      "entropy_hex": "3c678a761e24067fecc41c328a3d253dad172048095b20ea59e92a376982be02f35a81eff0a07b2365feabe4fb86178ff3541e568f36322d3169be8e21d4a2c5",
+      "app_entropy_hex": "3c678a761e24067fecc41c328a3d253dad172048095b20ea59e92a376982be02f35a81eff0a07b2365feabe4fb86178ff3541e568f36322d3169be8e21d4a2c5",
+      "output": "3c678a761e24067fecc41c328a3d253d",
+      "params": {
+        "num_bytes": 16,
+        "index": 0
+      },
+      "source": "bipsea",
+      "note": "",
+      "regression_id": 17
+    },
+    {
+      "master_id": "spec",
+      "master_xprv": "xprv9s21ZrQH143K2LBWUUQRFXhucrQqBpKdRRxNVq2zBqsx8HVqFk2uYo8kmbaLLHRdqtQpUm98uKfu3vca1LqdGhUtyoFnCNkfmXRyPXLjbKb",
+      "app": "hex",
+      "path": "m/83696968'/128169'/32'/2147483647'",
+      "derived_key": "",
+      "entropy_hex": "aca2b0ef8b3ca198e6deebde4737ead0ad18bc8cc08a15576fc5b376559c094288055f44dc1032dea9ca91b8fc4e7115b3970544d553ff866362607e58f199b0",
+      "app_entropy_hex": "aca2b0ef8b3ca198e6deebde4737ead0ad18bc8cc08a15576fc5b376559c094288055f44dc1032dea9ca91b8fc4e7115b3970544d553ff866362607e58f199b0",
+      "output": "aca2b0ef8b3ca198e6deebde4737ead0ad18bc8cc08a15576fc5b376559c0942",
+      "params": {
+        "num_bytes": 32,
+        "index": 2147483647
+      },
+      "source": "bipsea",
+      "note": "",
+      "regression_id": 18
+    },
+    {
+      "master_id": "spec",
+      "master_xprv": "xprv9s21ZrQH143K2LBWUUQRFXhucrQqBpKdRRxNVq2zBqsx8HVqFk2uYo8kmbaLLHRdqtQpUm98uKfu3vca1LqdGhUtyoFnCNkfmXRyPXLjbKb",
+      "app": "dice",
+      "path": "m/83696968'/89101'/2'/20'/0'",
+      "derived_key": "",
+      "entropy_hex": "47977165b2b424cc248285370715e4f2db97255787fcf0df31ae9cb7ea3eb609442e911c91744ec029e742e2729b0e79117a16162723c060d79659e4890db266",
+      "app_entropy_hex": "",
+      "output": "1,1,1,1,1,0,1,0,0,1,0,0,1,1,0,0,0,1,1,1",
+      "params": {
+        "sides": 2,
+        "rolls": 20,
+        "index": 0
+      },
+      "source": "bipsea",
+      "note": "",
+      "regression_id": 19
+    },
+    {
+      "master_id": "testnet",
+      "master_xprv": "tprv8ZgxMBicQKsPe5YMU9gHen4Ez3ApihUfykaqUorj9t6FDqy3nP6eoXiAo2ssvpAjoLroQxHqr3R5nE3a5dU3DHTjTgJDd7zrbniJr6nrCzd",
+      "app": "xprv",
+      "path": "m/83696968'/32'/0'",
+      "derived_key": "",
+      "entropy_hex": "6940a025903a538c7ceb1bd31c56ff0a0035f6b9b4d1f1d206c3adfcf9395c31c7c45a4a89aefbfb4d68e65db789a4a834572bb3873566058f5e74cd86365464",
+      "app_entropy_hex": "c7c45a4a89aefbfb4d68e65db789a4a834572bb3873566058f5e74cd86365464",
+      "output": "xprv9s21ZrQH143K378o2qoTfJeZGMSGHRkfuyoSebTPGQBH1dsMbt4tBWXVgLYbWkv7PK9C2RvYkJA3VfBjkgdS5rFSagbFicZunndqdRfmmmG",
+      "params": {
+        "index": 0
+      },
+      "source": "bipsea",
+      "note": "bipsea emits xprv for testnet input (spec says MAY support testnet). Go impl should emit tprv when input is tprv.",
+      "regression_id": 20
+    },
+    {
+      "master_id": "spec",
+      "master_xprv": "xprv9s21ZrQH143K2LBWUUQRFXhucrQqBpKdRRxNVq2zBqsx8HVqFk2uYo8kmbaLLHRdqtQpUm98uKfu3vca1LqdGhUtyoFnCNkfmXRyPXLjbKb",
+      "app": "drng_split",
+      "path": "m/83696968'/0'/0'",
+      "derived_key": "",
+      "entropy_hex": "efecfbccffea313214232d29e71563d941229afb4338c21f9517c41aaa0d16f00b83d2a09ef747e7a64e8e2bd5a14869e693da66ce94ac2da570ab7ee48618f7",
+      "app_entropy_hex": "",
+      "output": "b78b1ee6b345eae6836c2d53d33c64cdaf9a696487be81b03e822dc84b3f1cd883d7559e53d175f243e4c349e822a957bbff9224bc5dde9492ef54e8a439f6bc8c7355b87a925a37ee405a7502991111",
+      "params": {
+        "chunks": [
+          20,
+          20,
+          20,
+          20
+        ]
+      },
+      "source": "bipsea",
+      "note": "",
+      "regression_id": 21
+    }
+  ]
+}

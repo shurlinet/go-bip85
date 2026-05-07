@@ -1,0 +1,4386 @@
+{
+  "generator": "go-bip85/tools/gen-vectors/gen.py",
+  "reference_impl": "bipsea 3.2.0 (Python)",
+  "spec_version": "BIP85 v2.0.0",
+  "master_keys": [
+    {
+      "master_id": "spec",
+      "master_xprv": "xprv9s21ZrQH143K2LBWUUQRFXhucrQqBpKdRRxNVq2zBqsx8HVqFk2uYo8kmbaLLHRdqtQpUm98uKfu3vca1LqdGhUtyoFnCNkfmXRyPXLjbKb",
+      "master_source": "BIP85 spec v2.0.0",
+      "vector_count": 53,
+      "vectors": [
+        {
+          "app": "core",
+          "path": "m/83696968'/0'/0'",
+          "derived_key": "cca20ccb0e9a90feb0912870c3323b24874b0ca3d8018c4b96d0b97c0e82ded0",
+          "entropy_hex": "efecfbccffea313214232d29e71563d941229afb4338c21f9517c41aaa0d16f00b83d2a09ef747e7a64e8e2bd5a14869e693da66ce94ac2da570ab7ee48618f7",
+          "app_entropy_hex": "",
+          "output": "",
+          "params": {
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "core",
+          "path": "m/83696968'/0'/1'",
+          "derived_key": "503776919131758bb7de7beb6c0ae24894f4ec042c26032890c29359216e21ba",
+          "entropy_hex": "70c6e3e8ebee8dc4c0dbba66076819bb8c09672527c4277ca8729532ad711872218f826919f6b67218adde99018a6df9095ab2b58d803b5b93ec9802085a690e",
+          "app_entropy_hex": "",
+          "output": "",
+          "params": {
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "drng",
+          "path": "m/83696968'/0'/0'",
+          "derived_key": "",
+          "entropy_hex": "efecfbccffea313214232d29e71563d941229afb4338c21f9517c41aaa0d16f00b83d2a09ef747e7a64e8e2bd5a14869e693da66ce94ac2da570ab7ee48618f7",
+          "app_entropy_hex": "",
+          "output": "b78b1ee6b345eae6836c2d53d33c64cdaf9a696487be81b03e822dc84b3f1cd883d7559e53d175f243e4c349e822a957bbff9224bc5dde9492ef54e8a439f6bc8c7355b87a925a37ee405a7502991111",
+          "params": {
+            "read_bytes": 80
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "drng_split",
+          "path": "m/83696968'/0'/0'",
+          "derived_key": "",
+          "entropy_hex": "efecfbccffea313214232d29e71563d941229afb4338c21f9517c41aaa0d16f00b83d2a09ef747e7a64e8e2bd5a14869e693da66ce94ac2da570ab7ee48618f7",
+          "app_entropy_hex": "",
+          "output": "b78b1ee6b345eae6836c2d53d33c64cdaf9a696487be81b03e822dc84b3f1cd883d7559e53d175f243e4c349e822a957bbff9224bc5dde9492ef54e8a439f6bc8c7355b87a925a37ee405a7502991111",
+          "params": {
+            "chunks": [
+              20,
+              20,
+              20,
+              20
+            ]
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "drng_split",
+          "path": "m/83696968'/0'/0'",
+          "derived_key": "",
+          "entropy_hex": "efecfbccffea313214232d29e71563d941229afb4338c21f9517c41aaa0d16f00b83d2a09ef747e7a64e8e2bd5a14869e693da66ce94ac2da570ab7ee48618f7",
+          "app_entropy_hex": "",
+          "output": "b78b1ee6b345eae6836c2d53d33c64cdaf9a696487be81b03e822dc84b3f1cd883d7559e53d175f243e4c349e822a957bbff9224bc5dde9492ef54e8a439f6bc8c7355b87a925a37ee405a7502991111",
+          "params": {
+            "chunks": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "6250b68daf746d12a24d58b4787a714bf1b58d69e4c2a466276fb16fe93dc52b6fac6b756894072241447cad56f6405ee326dbb473d2f5e943543590082927c0",
+          "app_entropy_hex": "6250b68daf746d12a24d58b4787a714b",
+          "output": "girl mad pet galaxy egg matter matrix prison refuse sense ordinary nose",
+          "params": {
+            "language": 0,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/12'/1'",
+          "derived_key": "",
+          "entropy_hex": "92644a63628d3d3865daa14822aba21a940a1a38b3726c5ba55baf804ebf28db02e7b60ecda9dcd7d180980fd740284b5c08be42d52d2beef1d7db3125d8fad9",
+          "app_entropy_hex": "92644a63628d3d3865daa14822aba21a",
+          "output": "mystery car occur shallow stable order number feature else best trigger curious",
+          "params": {
+            "language": 0,
+            "words": 12,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/15'/0'",
+          "derived_key": "",
+          "entropy_hex": "04200996b62ec834559877e289ca38825ce360c01b29f6c1070f28cc15ba9dffe7310a3d04b11e71fac38dd62bcbf214ef52508571759247506aa1249267fb64",
+          "app_entropy_hex": "04200996b62ec834559877e289ca38825ce360c0",
+          "output": "aerobic able grant hobby uncle boss filter auction tip exact mixed again soda race absorb",
+          "params": {
+            "language": 0,
+            "words": 15,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/15'/1'",
+          "derived_key": "",
+          "entropy_hex": "b048839eec8741485d060c6436dcad5d1e185ec68b8fa5709943ec6b8c19dc70d8d2f80e6cdd668d0d92667500113a0e83ad4889374aa1b27a24e3180ba83e58",
+          "app_entropy_hex": "b048839eec8741485d060c6436dcad5d1e185ec6",
+          "output": "raccoon dune tray suit inject picnic inject screen goddess report clip riot thunder control bottom",
+          "params": {
+            "language": 0,
+            "words": 15,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/18'/0'",
+          "derived_key": "",
+          "entropy_hex": "938033ed8b12698449d4bbca3c853c66b293ea1b1ce9d9dc76a62012cbca636ac192271d292df994fa21ac0184560f79d007803282f70e41e65526a0a8663d5d",
+          "app_entropy_hex": "938033ed8b12698449d4bbca3c853c66b293ea1b1ce9d9dc",
+          "output": "near account window bike charge season chef number sketch tomorrow excuse sniff circle vital hockey outdoor supply token",
+          "params": {
+            "language": 0,
+            "words": 18,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/18'/1'",
+          "derived_key": "",
+          "entropy_hex": "f56e2815358d00deac67d1ebf731c6a39e395c65e1447392820d0a83396863438fce20cfeb7c67ab90aaa4df93aee2734f788044a7ed50a8f741dd75afd13c81",
+          "app_entropy_hex": "f56e2815358d00deac67d1ebf731c6a39e395c65e1447392",
+          "output": "voice image aim help source hungry ranch when typical ridge immune elbow toe purchase nurse chuckle inform news",
+          "params": {
+            "language": 0,
+            "words": 18,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/21'/0'",
+          "derived_key": "",
+          "entropy_hex": "54a9d904d174a83535806dd81c86be9fe5d7890cba3aec4d212b28be2c926adb036470e4d1c838f6e83929ddf4f236e41b05047c951003860516cec390618bdb",
+          "app_entropy_hex": "54a9d904d174a83535806dd81c86be9fe5d7890cba3aec4d212b28be",
+          "output": "feed excite donkey pepper enhance box stock asset submit tomorrow quick divert frost setup cream elder unable harbor enlist fabric this",
+          "params": {
+            "language": 0,
+            "words": 21,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/21'/1'",
+          "derived_key": "",
+          "entropy_hex": "c6938d9081e2d2fa74f032526bca542063dea72a27fbb5195760330d6cf090b3fd29f3021b20f0fe8566a223fd864d310c43fe31dd4f11ced532e600c313f668",
+          "app_entropy_hex": "c6938d9081e2d2fa74f032526bca542063dea72a27fbb5195760330d",
+          "output": "shoot organ goddess adult coffee large stable alien fame furnace never dolphin digital fatal possible youth relax skirt submit gravity style",
+          "params": {
+            "language": 0,
+            "words": 21,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/24'/0'",
+          "derived_key": "",
+          "entropy_hex": "ae131e2312cdc61331542efe0d1077bac5ea803adf24b313a4f0e48e9c51f37f6f6bba7cc92a2d1f5954b4ba442510e1e2179ec5f2ca003169803cfcbcc8e9e8",
+          "app_entropy_hex": "ae131e2312cdc61331542efe0d1077bac5ea803adf24b313a4f0e48e9c51f37f",
+          "output": "puppy ocean match cereal symbol another shed magic wrap hammer bulb intact gadget divorce twin tonight reason outdoor destroy simple truth cigar social volcano",
+          "params": {
+            "language": 0,
+            "words": 24,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/24'/1'",
+          "derived_key": "",
+          "entropy_hex": "29aa627357e00f09d28aa19499fc0bf06256ab389d72d7580cc450b4f2cf87e0b261cba192ff0fd48e4d057669c2955d7a8ec2272512b2bbcb78368669c5a442",
+          "app_entropy_hex": "29aa627357e00f09d28aa19499fc0bf06256ab389d72d7580cc450b4f2cf87e0",
+          "output": "claim fantasy orphan quit abstract lumber enforce feature nest soup actual this century few tiny purity struggle scatter country pause execute guitar buzz athlete",
+          "params": {
+            "language": 0,
+            "words": 24,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/1'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "2536954d9c7b38f2b3a70e8aab99638181991ebea91594d97ff61330880b64137602c5e8105d3e1139640054f53dadc96ab5663880d9421095b2f26f5d869800",
+          "app_entropy_hex": "2536954d9c7b38f2b3a70e8aab996381",
+          "output": "おまいり にんてい こふん ぎんいろ にんい ぜんご ひめい まほう たたみ さとう ざいたく あてな",
+          "params": {
+            "language": 1,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/1'/24'/0'",
+          "derived_key": "",
+          "entropy_hex": "5fd76dc702fdc473eb5314811f63b1f56fa0e26247afb5f5cd18d5af12432af87f8078327f7849ff4d859d8b63a1c93a2b4c0403d2074919f6c067af0ae3c8d3",
+          "app_entropy_hex": "5fd76dc702fdc473eb5314811f63b1f56fa0e26247afb5f5cd18d5af12432af8",
+          "output": "さんか ねんど ずほう あわてる ほおん くうぐん なにごと しかく そぼく れいかん めずらしい めいうん りろん ずぶぬれ たきび らいう ぬぐう なめらか げねつ ないかく ゆうべ おくじょう ないそう うんどう",
+          "params": {
+            "language": 1,
+            "words": 24,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/2'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "586cad146750dd1eb77ff24ebb2655620178e3a1adc5b8f8fe4ffcb7fd7b0fad3b0d1caac2ce63fd5a8c18a283132cb06bdb26d974804b33d6b84652304c946e",
+          "app_entropy_hex": "586cad146750dd1eb77ff24ebb265562",
+          "output": "분필 생활 밀리미터 차남 고객 연락 코끼리 휴일 범인 축하 예절 주먹",
+          "params": {
+            "language": 2,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/3'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "2803a8a0028a63d92af53687b5fabeb6b21d9f1c7776eed58b78f89eb860a3e39d3014a34bf5a2a5f1900ada41913aee018e879443633d9fb27ae97a77266093",
+          "app_entropy_hex": "2803a8a0028a63d92af53687b5fabeb6",
+          "output": "calor baúl calor afinar oro trabajo parque osezno manejar peñón pensar hierro",
+          "params": {
+            "language": 3,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/4'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "20d11530ad4f6a09e74258a09bc7744aab9c7aadb79049852db3b14d11dabe24eb7c4790c986fbd3e1f402fda8a4f0bc26cb468ad916c9da7f22d855674eeb8d",
+          "app_entropy_hex": "20d11530ad4f6a09e74258a09bc7744a",
+          "output": "色 尺 输 逐 瞧 动 闪 负 钻 孤 覆 耕",
+          "params": {
+            "language": 4,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/5'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "f135d87a7b772b2d650ffeecada6651b10a867c5cfc8b0d4ae26d2c8f27382ef1303c0d4d76774cc33e7d17046db61baa3cc8f8b6f5ae4caac81ebafe1dc1a75",
+          "app_entropy_hex": "f135d87a7b772b2d650ffeecada6651b",
+          "output": "擋 袖 放 潑 映 禁 巨 矮 飾 免 奴 消",
+          "params": {
+            "language": 5,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/6'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "770deeb5d87ef0a2b11c1c0ca3e5dc6e8f69b4fa87fdfcda71e21176745279e80565485f1a17a2e0fc5c26c17b4fc7f37ac19d55e3f215fda9a5347f1b1614c5",
+          "app_entropy_hex": "770deeb5d87ef0a2b11c1c0ca3e5dc6e",
+          "output": "guerrier gambader orange panache trancher embryon pulsar insulter analyse blinder guerrier sextuple",
+          "params": {
+            "language": 6,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/7'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "d292332fe6cd6ef43ddbd86f5be5c25c7569c6a9948bc81ff80353f56160a692f402c4e99d0337e26f16641313b2a7116e20a226b08ce94f5186f4ad794cd8bc",
+          "app_entropy_hex": "d292332fe6cd6ef43ddbd86f5be5c25c",
+          "output": "smilzo opinione settimana sfoltire sospiro maretta verace mattone larga suonare lembo rispetto",
+          "params": {
+            "language": 7,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/8'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "1a7661722ad4fb4c794f987d70947bc3e274f0455500828c7138e909687e2a685e5582f276b398c0a802dddc17826c74b09cf978d14be38c74e9c48ad1ee1829",
+          "app_entropy_hex": "1a7661722ad4fb4c794f987d70947bc3",
+          "output": "daleko rotmistr legie kroupa konina pozor vklad zajet obejmout odpor dohra okouzlit",
+          "params": {
+            "language": 8,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/9'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "d4d61e0b270e907205b394af1efbf2a01ffbd16d01444200a347161245c5b4fbdf9a20a6cd5e6d70ed35ce65028d8a5b7a9ae9df5a15ddcf408c578a0f0a0ebd",
+          "app_entropy_hex": "d4d61e0b270e907205b394af1efbf2a0",
+          "output": "rota ossada infrator diocese tedioso ciranda arroba gelo oposto veicular visto creche",
+          "params": {
+            "language": 9,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "wif",
+          "path": "m/83696968'/2'/0'",
+          "derived_key": "",
+          "entropy_hex": "7040bb53104f27367f317558e78a994ada7296c6fde36a364e5baf206e502bb1f988080b7dd814e7ae7d6d83edbb6689886a560e165f4a740877cdf3beecacf8",
+          "app_entropy_hex": "7040bb53104f27367f317558e78a994ada7296c6fde36a364e5baf206e502bb1",
+          "output": "Kzyv4uF39d4Jrw2W7UryTHwZr1zQVNk4dAFyqE6BuMrMh1Za7uhp",
+          "params": {
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "wif",
+          "path": "m/83696968'/2'/1'",
+          "derived_key": "",
+          "entropy_hex": "ccc943df8b054bf0534a5159f8dcc44790b6e13a60c4832867173f9d01cd74a0df4eb4cecf3daa477f501fbdecb6337d16560da12a1794a126a385066d29bd36",
+          "app_entropy_hex": "ccc943df8b054bf0534a5159f8dcc44790b6e13a60c4832867173f9d01cd74a0",
+          "output": "L45nghBsnmqaGj9Vy64FCw9AyJNi6K4LUFP4r41tYHmQLEyXUkYP",
+          "params": {
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "wif",
+          "path": "m/83696968'/2'/100'",
+          "derived_key": "",
+          "entropy_hex": "35341b761cf21db82f9c2d18c5e3c9b9b9431f9fdc3081f4acf9de9d2ab658538c392e22f094da67960f591d2e8bd82f402cc059fb58a0463f5e1f01b60c1bba",
+          "app_entropy_hex": "35341b761cf21db82f9c2d18c5e3c9b9b9431f9fdc3081f4acf9de9d2ab65853",
+          "output": "Ky18b21bGpvf6WookD2HG8hKcXTRktwfAf9ivBWLZ52xkoCzixTi",
+          "params": {
+            "index": 100
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "xprv",
+          "path": "m/83696968'/32'/0'",
+          "derived_key": "",
+          "entropy_hex": "52405cd0dd21c5be78314a7c1a3c65ffd8d896536cc7dee3157db5824f0c92e2ead0b33988a616cf6a497f1c169d9e92562604e38305ccd3fc96f2252c177682",
+          "app_entropy_hex": "ead0b33988a616cf6a497f1c169d9e92562604e38305ccd3fc96f2252c177682",
+          "output": "xprv9s21ZrQH143K2srSbCSg4m4kLvPMzcWydgmKEnMmoZUurYuBuYG46c6P71UGXMzmriLzCCBvKQWBUv3vPB3m1SATMhp3uEjXHJ42jFg7myX",
+          "params": {
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "xprv",
+          "path": "m/83696968'/32'/1'",
+          "derived_key": "",
+          "entropy_hex": "6c125b51bc198e739eae5f10baa263834d14c690ff4587f0566def551ac98fa968bb25bc3d0b62b6adedf32b3cbf7b64c406f16704d89c76cc4a1a303510944a",
+          "app_entropy_hex": "68bb25bc3d0b62b6adedf32b3cbf7b64c406f16704d89c76cc4a1a303510944a",
+          "output": "xprv9s21ZrQH143K38mDZkjswdWQv6DWyjWiejciPywBBZsCnZ9Vg3WCWnhkPW3rKsPT6u3MnhDn52huxjBjFES1xCzEtxTSAfQTapE7CXcbQ4b",
+          "params": {
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "xprv",
+          "path": "m/83696968'/32'/100'",
+          "derived_key": "",
+          "entropy_hex": "c1b556e78a5aebb75477b8ad67b638a113840f907ebd3d8d73ba25754b883d81c2cdf72dcc2d0de80774ed0fec56beb65386cc07d195f5d24c9ee55f7321e36e",
+          "app_entropy_hex": "c2cdf72dcc2d0de80774ed0fec56beb65386cc07d195f5d24c9ee55f7321e36e",
+          "output": "xprv9s21ZrQH143K3zDNHTgqe9A3m61hwJDWVcYDJS8CAYcgTBFPh4pypYZaJ2ChrZEiWdGoTaKbgZ3L3j2DWDskivh6Wx6taHCFy8FmbjcBED9",
+          "params": {
+            "index": 100
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/16'/0'",
+          "derived_key": "",
+          "entropy_hex": "3c678a761e24067fecc41c328a3d253dad172048095b20ea59e92a376982be02f35a81eff0a07b2365feabe4fb86178ff3541e568f36322d3169be8e21d4a2c5",
+          "app_entropy_hex": "3c678a761e24067fecc41c328a3d253dad172048095b20ea59e92a376982be02f35a81eff0a07b2365feabe4fb86178ff3541e568f36322d3169be8e21d4a2c5",
+          "output": "3c678a761e24067fecc41c328a3d253d",
+          "params": {
+            "num_bytes": 16,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/16'/1'",
+          "derived_key": "",
+          "entropy_hex": "c8513d24fefd97eeccaf9acacea3a45210091813a2abcd1e4861057c28c5ef46f0c30670251dd55b7c3c10bb1298610b7157890455fac59fd27e2274c5530a28",
+          "app_entropy_hex": "c8513d24fefd97eeccaf9acacea3a45210091813a2abcd1e4861057c28c5ef46f0c30670251dd55b7c3c10bb1298610b7157890455fac59fd27e2274c5530a28",
+          "output": "c8513d24fefd97eeccaf9acacea3a452",
+          "params": {
+            "num_bytes": 16,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/32'/0'",
+          "derived_key": "",
+          "entropy_hex": "ea3ceb0b02ee8e587779c63f4b7b3a21e950a213f1ec53cab608d13e8796e6dc9e3548a8eafa3d247778f0327061c5289026d19ff6beeefad57683e8ff27dc80",
+          "app_entropy_hex": "ea3ceb0b02ee8e587779c63f4b7b3a21e950a213f1ec53cab608d13e8796e6dc9e3548a8eafa3d247778f0327061c5289026d19ff6beeefad57683e8ff27dc80",
+          "output": "ea3ceb0b02ee8e587779c63f4b7b3a21e950a213f1ec53cab608d13e8796e6dc",
+          "params": {
+            "num_bytes": 32,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/32'/1'",
+          "derived_key": "",
+          "entropy_hex": "e60c5cc896c377415e6d4be953e24df6b5400cdaf1cec84304c64a965987200c8803ce3d7e7e0bce40121c7d2ee6ad88e54945a47f7f879f8f4097d7cafa1ece",
+          "app_entropy_hex": "e60c5cc896c377415e6d4be953e24df6b5400cdaf1cec84304c64a965987200c8803ce3d7e7e0bce40121c7d2ee6ad88e54945a47f7f879f8f4097d7cafa1ece",
+          "output": "e60c5cc896c377415e6d4be953e24df6b5400cdaf1cec84304c64a965987200c",
+          "params": {
+            "num_bytes": 32,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/48'/0'",
+          "derived_key": "",
+          "entropy_hex": "dc2d3777a3d07f10792bd14c29f2ad64201f73c157cc233c1da9ed8e454d82ba7d5ec113297dec7ff62e966b44b8bab64ec3a3fda1967ae7b4f3bf24223bd9b6",
+          "app_entropy_hex": "dc2d3777a3d07f10792bd14c29f2ad64201f73c157cc233c1da9ed8e454d82ba7d5ec113297dec7ff62e966b44b8bab64ec3a3fda1967ae7b4f3bf24223bd9b6",
+          "output": "dc2d3777a3d07f10792bd14c29f2ad64201f73c157cc233c1da9ed8e454d82ba7d5ec113297dec7ff62e966b44b8bab6",
+          "params": {
+            "num_bytes": 48,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/48'/1'",
+          "derived_key": "",
+          "entropy_hex": "695777b9c522c55fe47d3a51295cbacea61a8dfcc9dde1f04c22e84036a2272b607fc986f85d5eda098233ef691a90d18b9e9abe4d378dde58a45cdaecbee74c",
+          "app_entropy_hex": "695777b9c522c55fe47d3a51295cbacea61a8dfcc9dde1f04c22e84036a2272b607fc986f85d5eda098233ef691a90d18b9e9abe4d378dde58a45cdaecbee74c",
+          "output": "695777b9c522c55fe47d3a51295cbacea61a8dfcc9dde1f04c22e84036a2272b607fc986f85d5eda098233ef691a90d1",
+          "params": {
+            "num_bytes": 48,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/64'/0'",
+          "derived_key": "",
+          "entropy_hex": "492db4698cf3b73a5a24998aa3e9d7fa96275d85724a91e71aa2d645442f878555d078fd1f1f67e368976f04137b1f7a0d19232136ca50c44614af72b5582a5c",
+          "app_entropy_hex": "492db4698cf3b73a5a24998aa3e9d7fa96275d85724a91e71aa2d645442f878555d078fd1f1f67e368976f04137b1f7a0d19232136ca50c44614af72b5582a5c",
+          "output": "492db4698cf3b73a5a24998aa3e9d7fa96275d85724a91e71aa2d645442f878555d078fd1f1f67e368976f04137b1f7a0d19232136ca50c44614af72b5582a5c",
+          "params": {
+            "num_bytes": 64,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/64'/1'",
+          "derived_key": "",
+          "entropy_hex": "3c7cd8fc51f7381c83c91e838f893405b9fdf14b36c847535173c9ef79723095d3ba70d28a8981129ef3937401e402cd8e7046f17fc9d65d0488107678f213ad",
+          "app_entropy_hex": "3c7cd8fc51f7381c83c91e838f893405b9fdf14b36c847535173c9ef79723095d3ba70d28a8981129ef3937401e402cd8e7046f17fc9d65d0488107678f213ad",
+          "output": "3c7cd8fc51f7381c83c91e838f893405b9fdf14b36c847535173c9ef79723095d3ba70d28a8981129ef3937401e402cd8e7046f17fc9d65d0488107678f213ad",
+          "params": {
+            "num_bytes": 64,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/32'/10000'",
+          "derived_key": "",
+          "entropy_hex": "5ae9ff7aade51d797afc1e91b6f02f5ce710e00387114fd428ca6ca8a05c8f8a5711daa368da891621c0b2f082c9662ffc8068ddde497f2f643bceaa08682d82",
+          "app_entropy_hex": "5ae9ff7aade51d797afc1e91b6f02f5ce710e00387114fd428ca6ca8a05c8f8a5711daa368da891621c0b2f082c9662ffc8068ddde497f2f643bceaa08682d82",
+          "output": "5ae9ff7aade51d797afc1e91b6f02f5ce710e00387114fd428ca6ca8a05c8f8a",
+          "params": {
+            "num_bytes": 32,
+            "index": 10000
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/32'/2147483647'",
+          "derived_key": "",
+          "entropy_hex": "aca2b0ef8b3ca198e6deebde4737ead0ad18bc8cc08a15576fc5b376559c094288055f44dc1032dea9ca91b8fc4e7115b3970544d553ff866362607e58f199b0",
+          "app_entropy_hex": "aca2b0ef8b3ca198e6deebde4737ead0ad18bc8cc08a15576fc5b376559c094288055f44dc1032dea9ca91b8fc4e7115b3970544d553ff866362607e58f199b0",
+          "output": "aca2b0ef8b3ca198e6deebde4737ead0ad18bc8cc08a15576fc5b376559c0942",
+          "params": {
+            "num_bytes": 32,
+            "index": 2147483647
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "base64",
+          "path": "m/83696968'/707764'/20'/0'",
+          "derived_key": "",
+          "entropy_hex": "46b1fbb952345e5a5d7426e2b9857efce329c5ef0faa5abdaf0581b64d3ce1d9336dc0f396463258a931fe3371c429e8eb53318fb5573b9861bc9039542386fd",
+          "app_entropy_hex": "46b1fbb952345e5a5d7426e2b9857efce329c5ef0faa5abdaf0581b64d3ce1d9336dc0f396463258a931fe3371c429e8eb53318fb5573b9861bc9039542386fd",
+          "output": "RrH7uVI0XlpddCbiuYV+",
+          "params": {
+            "pwd_len": 20,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "base64",
+          "path": "m/83696968'/707764'/21'/0'",
+          "derived_key": "",
+          "entropy_hex": "74a2e87a9ba0cdd549bdd2f9ea880d554c6c355b08ed25088cfa88f3f1c4f74632b652fd4a8f5fda43074c6f6964a3753b08bb5210c8f5e75c07a4c2a20bf6e9",
+          "app_entropy_hex": "74a2e87a9ba0cdd549bdd2f9ea880d554c6c355b08ed25088cfa88f3f1c4f74632b652fd4a8f5fda43074c6f6964a3753b08bb5210c8f5e75c07a4c2a20bf6e9",
+          "output": "dKLoepugzdVJvdL56ogNV",
+          "params": {
+            "pwd_len": 21,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "base64",
+          "path": "m/83696968'/707764'/40'/0'",
+          "derived_key": "",
+          "entropy_hex": "404afc0b5e991277e5d23cc8fde3c94207ab469eef133af59b3a5a0c7b21ce3a9379a3111563af758fb96e44f4e7b51b900a8816cc58cb43367ed0e4a5779210",
+          "app_entropy_hex": "404afc0b5e991277e5d23cc8fde3c94207ab469eef133af59b3a5a0c7b21ce3a9379a3111563af758fb96e44f4e7b51b900a8816cc58cb43367ed0e4a5779210",
+          "output": "QEr8C16ZEnfl0jzI/ePJQgerRp7vEzr1mzpaDHsh",
+          "params": {
+            "pwd_len": 40,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "base64",
+          "path": "m/83696968'/707764'/86'/0'",
+          "derived_key": "",
+          "entropy_hex": "0968ebe4bfd6ad27434e508ae283aad351b3ea30a6c777deb33b3055af5883e4e279c08b664f833a24c933f0a735c3c59076646bbb2ec4cd03e774693f478d47",
+          "app_entropy_hex": "0968ebe4bfd6ad27434e508ae283aad351b3ea30a6c777deb33b3055af5883e4e279c08b664f833a24c933f0a735c3c59076646bbb2ec4cd03e774693f478d47",
+          "output": "CWjr5L/WrSdDTlCK4oOq01Gz6jCmx3feszswVa9Yg+TiecCLZk+DOiTJM/CnNcPFkHZka7suxM0D53RpP0eNRw",
+          "params": {
+            "pwd_len": 86,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "base85",
+          "path": "m/83696968'/707785'/10'/0'",
+          "derived_key": "",
+          "entropy_hex": "f23888b908eb03cc754aff00fa9dae9d977aa3b00197dfd263c6092cdb118a5a224522b2b1917e7dff91c2614699aa6657d926929909af0940790c5218518c35",
+          "app_entropy_hex": "f23888b908eb03cc754aff00fa9dae9d977aa3b00197dfd263c6092cdb118a5a224522b2b1917e7dff91c2614699aa6657d926929909af0940790c5218518c35",
+          "output": "@;HdO2<rpP",
+          "params": {
+            "pwd_len": 10,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "base85",
+          "path": "m/83696968'/707785'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "f7cfe56f63dca2490f65fcbf9ee63dcd85d18f751b6b5e1c1b8733af6459c904a75e82b4a22efff9b9e69de2144b293aa8714319a054b6cb55826a8e51425209",
+          "app_entropy_hex": "f7cfe56f63dca2490f65fcbf9ee63dcd85d18f751b6b5e1c1b8733af6459c904a75e82b4a22efff9b9e69de2144b293aa8714319a054b6cb55826a8e51425209",
+          "output": "_s`{TW89)i4`",
+          "params": {
+            "pwd_len": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "base85",
+          "path": "m/83696968'/707785'/40'/0'",
+          "derived_key": "",
+          "entropy_hex": "4983bdfae85497e03211fefd3d7d27b420648198971f916045c39143058547e3ebd8a68ed5e13ca730a421de9463d299138da5ec71271cd350b88fbe2e4c7f2b",
+          "app_entropy_hex": "4983bdfae85497e03211fefd3d7d27b420648198971f916045c39143058547e3ebd8a68ed5e13ca730a421de9463d299138da5ec71271cd350b88fbe2e4c7f2b",
+          "output": "NrS!m=v0^BG7<j$J$)y%AY_4<mmiT}MZ=Lp1%*fB",
+          "params": {
+            "pwd_len": 40,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "base85",
+          "path": "m/83696968'/707785'/80'/0'",
+          "derived_key": "",
+          "entropy_hex": "920354ae1907356d592042f07411192ff9bcd679eb56c3b49eb8dabb7f4de781c476b11f969fce8253e0e9421ac1e92450fb2ac6088e76968023ac16cf63215c",
+          "app_entropy_hex": "920354ae1907356d592042f07411192ff9bcd679eb56c3b49eb8dabb7f4de781c476b11f969fce8253e0e9421ac1e92450fb2ac6088e76968023ac16cf63215c",
+          "output": "k^@w(83#3OSs+62bP*XZ`MlP7>sG_Gp19h(e@*9s#CEYCmY>doQ{d@B8o}u#Q2Q#z2#$7^fFrCH&toB6",
+          "params": {
+            "pwd_len": 80,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "dice",
+          "path": "m/83696968'/89101'/6'/10'/0'",
+          "derived_key": "",
+          "entropy_hex": "5e41f8f5d5d9ac09a20b8a5797a3172b28c806aead00d27e36609e2dd116a59176a738804236586f668da8a51b90c708a4226d7f92259c69f64c51124b6f6cd2",
+          "app_entropy_hex": "",
+          "output": "1,0,0,2,0,1,5,5,2,4",
+          "params": {
+            "sides": 6,
+            "rolls": 10,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "dice",
+          "path": "m/83696968'/89101'/6'/10'/1'",
+          "derived_key": "",
+          "entropy_hex": "9f49c077f06e3a4ece9024eab25c64e3114b7a1b9603031b499c71d34540197813affa7d24ae64eb08f38fbc21bd23c4a69272ec0e0da344c908b7640dcb57d8",
+          "app_entropy_hex": "",
+          "output": "1,0,0,3,3,0,4,3,3,0",
+          "params": {
+            "sides": 6,
+            "rolls": 10,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "dice",
+          "path": "m/83696968'/89101'/2'/20'/0'",
+          "derived_key": "",
+          "entropy_hex": "47977165b2b424cc248285370715e4f2db97255787fcf0df31ae9cb7ea3eb609442e911c91744ec029e742e2729b0e79117a16162723c060d79659e4890db266",
+          "app_entropy_hex": "",
+          "output": "1,1,1,1,1,0,1,0,0,1,0,0,1,1,0,0,0,1,1,1",
+          "params": {
+            "sides": 2,
+            "rolls": 20,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "dice",
+          "path": "m/83696968'/89101'/100'/10'/0'",
+          "derived_key": "",
+          "entropy_hex": "90e7ebbd731869a642b8ad0d2dd2934b7f8d5d2593aa458801e0c4cddf19aa9598e7d63e5f0c7e7c34a8f087d50cecbf7478f07f0f341716f8a0735520b5b982",
+          "app_entropy_hex": "",
+          "output": "81,13,21,21,23,06,66,24,99,05",
+          "params": {
+            "sides": 100,
+            "rolls": 10,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "master_id": "leading_zero",
+      "master_xprv": "xprv9s21ZrQH143K33feVLZmQbPSTS3sF2gaBBVRk3oCtKjpmVVtuUhXy7Yt8UfQVUyqhmmJoEouLRMReJZw3n4rtQ4FJNsyE7NTghC5QFroQQ9",
+      "master_source": "BIP39 mnemonic (leading-zero derived key at m/83696968'/0'/0'): abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon album about",
+      "vector_count": 53,
+      "vectors": [
+        {
+          "app": "core",
+          "path": "m/83696968'/0'/0'",
+          "derived_key": "004085fd27c49b5b7617721f4855b6c2a1e65733499df5cc7b53916eb4782d31",
+          "entropy_hex": "22bfc5db7e3cf685f2f1c9d475570254198b0193f7f6603a6170aabb9480e1782b56ef536747a0f7ccefbe82d13ef46591c7370f5043ff6a1fd5a85d9f129726",
+          "app_entropy_hex": "",
+          "output": "",
+          "params": {
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "core",
+          "path": "m/83696968'/0'/1'",
+          "derived_key": "9e61fe7c55f5480b1ad8b5b313bae62584c59fea1408fd9900ee1a035daf627d",
+          "entropy_hex": "e2ebb8a2b3415643c83cf321eaa36ad607c639043e58312e3a2a5ec4223590c51d4c050227134b20073e16685677e8e934d21161b54a80cb8f6e29465a8266c1",
+          "app_entropy_hex": "",
+          "output": "",
+          "params": {
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "drng",
+          "path": "m/83696968'/0'/0'",
+          "derived_key": "",
+          "entropy_hex": "22bfc5db7e3cf685f2f1c9d475570254198b0193f7f6603a6170aabb9480e1782b56ef536747a0f7ccefbe82d13ef46591c7370f5043ff6a1fd5a85d9f129726",
+          "app_entropy_hex": "",
+          "output": "c9beb1060bc88d379e0b59be88612c12a7624ff805ad5c5bd243e0c52148d51f6906f7043933e838279a6e3b3982f5836b20b767c336acaa08a27ff413743ff34edc16fc8d8c3e36bd52caace51fa439",
+          "params": {
+            "read_bytes": 80
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "drng_split",
+          "path": "m/83696968'/0'/0'",
+          "derived_key": "",
+          "entropy_hex": "22bfc5db7e3cf685f2f1c9d475570254198b0193f7f6603a6170aabb9480e1782b56ef536747a0f7ccefbe82d13ef46591c7370f5043ff6a1fd5a85d9f129726",
+          "app_entropy_hex": "",
+          "output": "c9beb1060bc88d379e0b59be88612c12a7624ff805ad5c5bd243e0c52148d51f6906f7043933e838279a6e3b3982f5836b20b767c336acaa08a27ff413743ff34edc16fc8d8c3e36bd52caace51fa439",
+          "params": {
+            "chunks": [
+              20,
+              20,
+              20,
+              20
+            ]
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "drng_split",
+          "path": "m/83696968'/0'/0'",
+          "derived_key": "",
+          "entropy_hex": "22bfc5db7e3cf685f2f1c9d475570254198b0193f7f6603a6170aabb9480e1782b56ef536747a0f7ccefbe82d13ef46591c7370f5043ff6a1fd5a85d9f129726",
+          "app_entropy_hex": "",
+          "output": "c9beb1060bc88d379e0b59be88612c12a7624ff805ad5c5bd243e0c52148d51f6906f7043933e838279a6e3b3982f5836b20b767c336acaa08a27ff413743ff34edc16fc8d8c3e36bd52caace51fa439",
+          "params": {
+            "chunks": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "3400a8c2143610a1e8a5187f698f8d0845344198f6e2b235260874fcc791b2faf5e4f16f4c6f3dabc3fdc7627543887bfaef4718c018199c18d41abb72b1b937",
+          "app_entropy_hex": "3400a8c2143610a1e8a5187f698f8d08",
+          "output": "cross aim correct chronic genre extend penalty perfect legal erase today baby",
+          "params": {
+            "language": 0,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/12'/1'",
+          "derived_key": "",
+          "entropy_hex": "628123c236e9a5c1029132fdbcf40080403526f73d1af12ff241956dd18710e2d30b20fd02a78349a0f47db0657855712e09cfffa972d26b785df7694084b88a",
+          "app_entropy_hex": "628123c236e9a5c1029132fdbcf40080",
+          "output": "glad animal vacuum horse olympic they apart chaos world tray ability abandon",
+          "params": {
+            "language": 0,
+            "words": 12,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/15'/0'",
+          "derived_key": "",
+          "entropy_hex": "2371c7b93859d5b8202a4c2c819519a55104c27cd7101761d4c83559ecf9168a55893d85419083f5e39c5171125842f0402b10cebc9c262f1a444379e5bd3e70",
+          "app_entropy_hex": "2371c7b93859d5b8202a4c2c819519a55104c27c",
+          "output": "casino mixed unusual idle outer swing level end clutch arrow edit enjoy aware gentle valid",
+          "params": {
+            "language": 0,
+            "words": 15,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/15'/1'",
+          "derived_key": "",
+          "entropy_hex": "6efb6e5ebb2b8a4cb85e157fb48ff85563166f8009018d2e0b41d5dfc194029e2b2735c8869b987aa093f4b0eabd8f4e8ea05f74bff63fa54b0e67e36d623f71",
+          "app_entropy_hex": "6efb6e5ebb2b8a4cb85e157fb48ff85563166f80",
+          "output": "humble swarm nut iron reward chaos thumb section leisure piece wrap print cousin daughter across",
+          "params": {
+            "language": 0,
+            "words": 15,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/18'/0'",
+          "derived_key": "",
+          "entropy_hex": "71fa2f230930c5b3fc75a20bb643e053fef77485a8e0e44351c496546209a7f3ee8c6b80707d62425f7b014af0f523f303569fbe93881e119ee9c90958ad663b",
+          "app_entropy_hex": "71fa2f230930c5b3fc75a20bb643e053fef77485a8e0e443",
+          "output": "impose sphere silver bar arrange supreme vault reform arm rare way pony urge ripple birth bright tone bread",
+          "params": {
+            "language": 0,
+            "words": 18,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/18'/1'",
+          "derived_key": "",
+          "entropy_hex": "94abb3a2aa7a9a3353042b4343dbb90589a990eea02a46cda7173257816a5052b65ecdef26971d1967b8fbdc0ca568466c7fa1c450447562fd1e2d369542bc49",
+          "app_entropy_hex": "94abb3a2aa7a9a3353042b4343dbb90589a990eea02a46cd",
+          "output": "net frown trim female predict boost equal lyrics drive burst unusual arch once silent ritual aim egg hospital",
+          "params": {
+            "language": 0,
+            "words": 18,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/21'/0'",
+          "derived_key": "",
+          "entropy_hex": "bcde1d0c86561e3938d58031f5a5bd189585428e3496481305669f7349f4eb7f0965e941a150906d9d3ea4afba78c8c8875a10e1f56d19a32940089811562692",
+          "app_entropy_hex": "bcde1d0c86561e3938d58031f5a5bd189585428e3496481305669f73",
+          "output": "rubber valley drip arrow giggle broken today quote cradle pudding hungry couple flame pattern decide name elite oblige fluid discover coral",
+          "params": {
+            "language": 0,
+            "words": 21,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/21'/1'",
+          "derived_key": "",
+          "entropy_hex": "f890e9c34ff186cfefb7cb44193b0215582744ed1b8f8813057a8d39b9f444146d6e6253d6e8105f6e1b64180f5157edb37b17265561f51173b97f3494271e06",
+          "app_entropy_hex": "f890e9c34ff186cfefb7cb44193b0215582744ed1b8f8813057a8d39",
+          "output": "weasel mansion ignore paper blur gun salute west dune six scene click list pen refuse impose marine oblige gadget bounce obtain",
+          "params": {
+            "language": 0,
+            "words": 21,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/24'/0'",
+          "derived_key": "",
+          "entropy_hex": "d98f37d8ca5c245130732a3baf8aa7360f14c67b03fb1ef14db4992294ac8d319e75b5ed5fbae7e8b250be5846a19b019636f2d61e5b898043d407aaad2c32a1",
+          "app_entropy_hex": "d98f37d8ca5c245130732a3baf8aa7360f14c67b03fb1ef14db4992294ac8d31",
+          "output": "sunset keen wage net seat chuckle scrub grab desert labor prefer hire vanish glimpse ugly legal bus media honey crane citizen film crumble crowd",
+          "params": {
+            "language": 0,
+            "words": 24,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/24'/1'",
+          "derived_key": "",
+          "entropy_hex": "01b18c3ac42e983a51303962d986116328d5718ae69cfdffc9843f22c77c41fcacc42b4e8068fb4edeb44557a4489705fdf3095f3a8af613893011121a6bc835",
+          "app_entropy_hex": "01b18c3ac42e983a51303962d986116328d5718ae69cfdffc9843f22c77c41fc",
+          "output": "accuse midnight attitude marriage trumpet brush dynamic already glare slow lounge shock minute rhythm clog squeeze worth wrestle genre layer cluster sail among nature",
+          "params": {
+            "language": 0,
+            "words": 24,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/1'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "1b825ab0bc1f8f08d10387a1c49c0262cb3b12df2e24eca427139d96673acd2e62d2337e9dddc2b8256db4bc418ccda6381cf0df18af2b51da1cbe8b7f2edce8",
+          "app_entropy_hex": "1b825ab0bc1f8f08d10387a1c49c0262",
+          "output": "えきたい うかぶ ながい せもたれ りゆう たいぐう けつい すばらしい てみじか おどろかす あかちゃん はっこう",
+          "params": {
+            "language": 1,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/1'/24'/0'",
+          "derived_key": "",
+          "entropy_hex": "f72bad6d72ce492b959de04588bb259cc747ec1f580b56bc6f6f1af5dd3abe99ba967e1d2c79dbe039d7a65f5480d3c018785c2b54b7eb32116ee784f0e01ae6",
+          "app_entropy_hex": "f72bad6d72ce492b959de04588bb259cc747ec1f580b56bc6f6f1af5dd3abe99",
+          "output": "られつ さばく さつえい みなみかさい みすえる ちほう こんかい ねんれい けとる けなす ひうん くいず せきむ らくがき そうなん あしあと こんしゅう みうち ほうほう きふく さほう ていさつ るいさい かんたん",
+          "params": {
+            "language": 1,
+            "words": 24,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/2'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "4f5f7641f584a378162c268ab94f2653358802994f3324ba570516bed40db7c29290b1efebdd8cbbe7551703abf1a34f13ecffc612a18a53ebc59e7d857ae831",
+          "app_entropy_hex": "4f5f7641f584a378162c268ab94f2653",
+          "output": "법칙 환자 연주 피곤 밥상 점심 불고기 안녕 엄마 지리산 지갑 이슬",
+          "params": {
+            "language": 2,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/3'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "b6a16f0e74074e85e3d776c722f4565eda79a54a78a85a95597888acc66dd7ae3882070e66d9b061c386d2d21e12f0b1983a95946b550a2f0e000a61d5c8d20f",
+          "app_entropy_hex": "b6a16f0e74074e85e3d776c722f4565e",
+          "output": "plural amasar recoger tinta jabalí diadema mimo trigo renta aumento asumir pulir",
+          "params": {
+            "language": 3,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/4'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "17d1d3a9a558cbce765026fa304e619a5007022fbbbec83ecf9df4d55aaac877f00009b5049c524ed15288d7641486ea73c59b6986c59458677d79b2af677223",
+          "app_entropy_hex": "17d1d3a9a558cbce765026fa304e619a",
+          "output": "果 监 卸 降 纤 轰 雕 年 裕 伸 朗 史",
+          "params": {
+            "language": 4,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/5'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "2c1e0271cab38d406908d063b85aa42086507a8b0c9c4f212f2b9ea46e6af98eb74461824fc5e68fc8cb93aae40223eaa3d80abe7c1ca24403d6feb31e102509",
+          "app_entropy_hex": "2c1e0271cab38d406908d063b85aa420",
+          "output": "米 拆 寸 救 斯 登 湯 件 急 槽 尊 席",
+          "params": {
+            "language": 5,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/6'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "c354c2e495c971259850616ffad68a12f3b6f75de0cca2b16b7c29e40a3bb25d44add8a1b118d5ee325d9d7d7d381b3ca5f388735cf7f8c24657d798ae1cfe5a",
+          "app_entropy_hex": "c354c2e495c971259850616ffad68a12",
+          "output": "prouesse nombreux pierre cavalier massif lundi extensif amovible garrigue sauter natation bronzer",
+          "params": {
+            "language": 6,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/7'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "3fd7f3bdcfdc583cd4d8d70d516c01de30d0c5380c2c254e80684405d854bf18f115a3b7dbb320eeedf91512ce432fed81049fcbd0c475d9aa5575c75b8eb2e7",
+          "app_entropy_hex": "3fd7f3bdcfdc583cd4d8d70d516c01de",
+          "output": "dondolo salone uditivo piattino scippo bizzarro florido beffa annegare notturno abete rumoroso",
+          "params": {
+            "language": 7,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/8'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "12266b7f576a46f68ab17febc4839bd5ec3a03e43498d50281488342a5e1ab6c3089191264183a490b8ef40e84163aef78eb4a2d97285e80409aa5137a9d184a",
+          "app_entropy_hex": "12266b7f576a46f68ab17febc4839bd5",
+          "output": "cenina hlodavec uznat rasovna poukaz nouze fejeton guma vyjmout dravec vodoznak puberta",
+          "params": {
+            "language": 8,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/9'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "b73d685827bba5663bfa3cb141645acde854a52d1a14519b97da222f698c281e1cb0132d20df87c5b6998fd03d0b71d1adc59df09d12f273077191cc8657de7a",
+          "app_entropy_hex": "b73d685827bba5663bfa3cb141645acd",
+          "output": "pausar tiara argola divisor pertence padrinho tratador degelo otimismo albino arriscar medida",
+          "params": {
+            "language": 9,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "wif",
+          "path": "m/83696968'/2'/0'",
+          "derived_key": "",
+          "entropy_hex": "301beb8ef6444c786a369a03ad239c8b7e4c492869cfb67cd40782819a080747fcf24cb88c1c4ccaa79e9a5e1f7a823f1d7bc0bccab2b28aa2a2535331627afb",
+          "app_entropy_hex": "301beb8ef6444c786a369a03ad239c8b7e4c492869cfb67cd40782819a080747",
+          "output": "KxqEDJrWHXo8g39SgtnJPEM8xGHPQEqoZnusLYu9GNM5914P7Gb6",
+          "params": {
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "wif",
+          "path": "m/83696968'/2'/1'",
+          "derived_key": "",
+          "entropy_hex": "acb064420472bbbbc43c35c7cb83665dfec3555a2abbe497414cbd74cd3c42fcd6e2f62e329790c627f19932dd7472c105498cf912549fd34287dc2258db0d93",
+          "app_entropy_hex": "acb064420472bbbbc43c35c7cb83665dfec3555a2abbe497414cbd74cd3c42fc",
+          "output": "L31Pugt7WB8wNpsPZpLjtT8fB8YTTgJicrYCTACx6Srs7PmUFGaU",
+          "params": {
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "wif",
+          "path": "m/83696968'/2'/100'",
+          "derived_key": "",
+          "entropy_hex": "3aebd58e8a91d55345089fc29d0886ef22011da7abc68d964ebb2440d3091df112c9e4dbfa614df6338a1ae39ad72e56faf5f59bc05534e5db33e8d0241f2b40",
+          "app_entropy_hex": "3aebd58e8a91d55345089fc29d0886ef22011da7abc68d964ebb2440d3091df1",
+          "output": "KyCFDxXrhesrKHLZDAkGe92xVbpho94D6bdztms35WgHzaVdPMe9",
+          "params": {
+            "index": 100
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "xprv",
+          "path": "m/83696968'/32'/0'",
+          "derived_key": "",
+          "entropy_hex": "f43bc7fa1e9a238437c7c69ee74dd80addb4c66537e777b7b8c3792893b130bcf4b785cb251a9afb2fcd7add6fe80c4fa7d7932b3adb3c8c04cade05696c151a",
+          "app_entropy_hex": "f4b785cb251a9afb2fcd7add6fe80c4fa7d7932b3adb3c8c04cade05696c151a",
+          "output": "xprv9s21ZrQH143K4VPZVWqULtbtfNsoKcrpoNBeGhVqRsGVxUcWcPj4HCR94M1Xhh9Ph3AWQbDr6TSLMrZ3PMGirS1ZGeRifNhXshZLLoSmjYb",
+          "params": {
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "xprv",
+          "path": "m/83696968'/32'/1'",
+          "derived_key": "",
+          "entropy_hex": "8f4ac48f575001443bf97acdd2861584fcf34e43e3c4654e1023d8442fcb3d0583ab3517557fc6465d46634f05a4a16350f4429e4223d2652669fe4198bc0285",
+          "app_entropy_hex": "83ab3517557fc6465d46634f05a4a16350f4429e4223d2652669fe4198bc0285",
+          "output": "xprv9s21ZrQH143K3V6pZCfhUZ9qD4eTEZmGsJEBHH3FZWvSxKCLLCiNgHc4sHeCLyiK3GtLs6vsT3P9Faynpuezkndek6cNJEKbXzEVdaUH3zz",
+          "params": {
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "xprv",
+          "path": "m/83696968'/32'/100'",
+          "derived_key": "",
+          "entropy_hex": "e90a0e3edc07cf256e92f6889d9f227dfe7c4d87136c08c2da3b9074fd5e27f455322c00402eff002d339ff912dac873565a6780dba6421735f14d5625843532",
+          "app_entropy_hex": "55322c00402eff002d339ff912dac873565a6780dba6421735f14d5625843532",
+          "output": "xprv9s21ZrQH143K4NveDiZdtnRr2JpLd88q14YU83zBDonawUUx3guoefPXrmsXfaHJz2kuFKKmfhcvgoFUxQnKdvho9iXB9YHD8rejczAwv1k",
+          "params": {
+            "index": 100
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/16'/0'",
+          "derived_key": "",
+          "entropy_hex": "c9147c70618f22652868b1fe3f69b0b3b1f7ff568461c2f126b368e1eb78fb3cf0cf0622bae083dec24d603a9a51a7e5745d471852b8aec4529cb1c7f826cce0",
+          "app_entropy_hex": "c9147c70618f22652868b1fe3f69b0b3b1f7ff568461c2f126b368e1eb78fb3cf0cf0622bae083dec24d603a9a51a7e5745d471852b8aec4529cb1c7f826cce0",
+          "output": "c9147c70618f22652868b1fe3f69b0b3",
+          "params": {
+            "num_bytes": 16,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/16'/1'",
+          "derived_key": "",
+          "entropy_hex": "5e4860b1b09f104267ceaf9be83fbe3bc5343a41ba44ccbc5d1d16443268e10db205d8ca096296d07a522e3eb809372606904f1c60ddb1083cda288c15cbe571",
+          "app_entropy_hex": "5e4860b1b09f104267ceaf9be83fbe3bc5343a41ba44ccbc5d1d16443268e10db205d8ca096296d07a522e3eb809372606904f1c60ddb1083cda288c15cbe571",
+          "output": "5e4860b1b09f104267ceaf9be83fbe3b",
+          "params": {
+            "num_bytes": 16,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/32'/0'",
+          "derived_key": "",
+          "entropy_hex": "056daa98ec7761b4ba005d1c04d29f87bce10b134a96ed927ef97fe6e7286a25ed773f2938d338f4d98700295936b1e075a4e4df38a06a2cdc6526e06f397cf9",
+          "app_entropy_hex": "056daa98ec7761b4ba005d1c04d29f87bce10b134a96ed927ef97fe6e7286a25ed773f2938d338f4d98700295936b1e075a4e4df38a06a2cdc6526e06f397cf9",
+          "output": "056daa98ec7761b4ba005d1c04d29f87bce10b134a96ed927ef97fe6e7286a25",
+          "params": {
+            "num_bytes": 32,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/32'/1'",
+          "derived_key": "",
+          "entropy_hex": "3b334a6fbf5c9a7a7e5a8d11ca73f8e35923f07c9abcdb8649ff5f6d8023b5a16f90805b87bb655e52dd1b989026aa1001006dfb404cebaa96677ccc18a2eeae",
+          "app_entropy_hex": "3b334a6fbf5c9a7a7e5a8d11ca73f8e35923f07c9abcdb8649ff5f6d8023b5a16f90805b87bb655e52dd1b989026aa1001006dfb404cebaa96677ccc18a2eeae",
+          "output": "3b334a6fbf5c9a7a7e5a8d11ca73f8e35923f07c9abcdb8649ff5f6d8023b5a1",
+          "params": {
+            "num_bytes": 32,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/48'/0'",
+          "derived_key": "",
+          "entropy_hex": "db528913b4b51d76de4766da853c9a99265f33c5b5414447d74ef40c8bf8491d347ac536af411545d0361dae123bd3936832880415501740331658beb8437132",
+          "app_entropy_hex": "db528913b4b51d76de4766da853c9a99265f33c5b5414447d74ef40c8bf8491d347ac536af411545d0361dae123bd3936832880415501740331658beb8437132",
+          "output": "db528913b4b51d76de4766da853c9a99265f33c5b5414447d74ef40c8bf8491d347ac536af411545d0361dae123bd393",
+          "params": {
+            "num_bytes": 48,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/48'/1'",
+          "derived_key": "",
+          "entropy_hex": "d84c289b6e192fb17aba6dd06f0bedcf40d864301ff5c4dcb9655e14588573bf198c33cbd487de802082c4ff4b23e4a4ce045f7c2b440e2099b09bc1a03132dc",
+          "app_entropy_hex": "d84c289b6e192fb17aba6dd06f0bedcf40d864301ff5c4dcb9655e14588573bf198c33cbd487de802082c4ff4b23e4a4ce045f7c2b440e2099b09bc1a03132dc",
+          "output": "d84c289b6e192fb17aba6dd06f0bedcf40d864301ff5c4dcb9655e14588573bf198c33cbd487de802082c4ff4b23e4a4",
+          "params": {
+            "num_bytes": 48,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/64'/0'",
+          "derived_key": "",
+          "entropy_hex": "4cc2ff04f7a8078302b30e51c1b6c849da5abf6424d23aa562926ab8e6e782c8866cc5ab9bb0a6c92fe5fd709d5f8aca86d8141d1744607fca77f8e326a95f5d",
+          "app_entropy_hex": "4cc2ff04f7a8078302b30e51c1b6c849da5abf6424d23aa562926ab8e6e782c8866cc5ab9bb0a6c92fe5fd709d5f8aca86d8141d1744607fca77f8e326a95f5d",
+          "output": "4cc2ff04f7a8078302b30e51c1b6c849da5abf6424d23aa562926ab8e6e782c8866cc5ab9bb0a6c92fe5fd709d5f8aca86d8141d1744607fca77f8e326a95f5d",
+          "params": {
+            "num_bytes": 64,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/64'/1'",
+          "derived_key": "",
+          "entropy_hex": "cce14a0b558da79b4e27f866a6548ec5ab689d03283a753fc1e80d8b82e917d16793855de232ab924fee7b63c3ff4c8af1071a7c5a091cacbf45f36f4875ee68",
+          "app_entropy_hex": "cce14a0b558da79b4e27f866a6548ec5ab689d03283a753fc1e80d8b82e917d16793855de232ab924fee7b63c3ff4c8af1071a7c5a091cacbf45f36f4875ee68",
+          "output": "cce14a0b558da79b4e27f866a6548ec5ab689d03283a753fc1e80d8b82e917d16793855de232ab924fee7b63c3ff4c8af1071a7c5a091cacbf45f36f4875ee68",
+          "params": {
+            "num_bytes": 64,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/32'/10000'",
+          "derived_key": "",
+          "entropy_hex": "3fab758e5ade1f5ab873120226d1dd924caf4dd501f5a01956c6a02c3c9f1f9ce9462a0ea9236d1c07cbf8e58bff5687470c84c7e2ba0016c3254c7fa478d296",
+          "app_entropy_hex": "3fab758e5ade1f5ab873120226d1dd924caf4dd501f5a01956c6a02c3c9f1f9ce9462a0ea9236d1c07cbf8e58bff5687470c84c7e2ba0016c3254c7fa478d296",
+          "output": "3fab758e5ade1f5ab873120226d1dd924caf4dd501f5a01956c6a02c3c9f1f9c",
+          "params": {
+            "num_bytes": 32,
+            "index": 10000
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/32'/2147483647'",
+          "derived_key": "",
+          "entropy_hex": "f05e387ea5b1ed318edfdc14ece972d26351fedfe86414e17afa6cc716ef5f7c218c8f5b1ee706c73b9a52d91cd026019f9067dbcbb3612fbb9ae10aee1b6344",
+          "app_entropy_hex": "f05e387ea5b1ed318edfdc14ece972d26351fedfe86414e17afa6cc716ef5f7c218c8f5b1ee706c73b9a52d91cd026019f9067dbcbb3612fbb9ae10aee1b6344",
+          "output": "f05e387ea5b1ed318edfdc14ece972d26351fedfe86414e17afa6cc716ef5f7c",
+          "params": {
+            "num_bytes": 32,
+            "index": 2147483647
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "base64",
+          "path": "m/83696968'/707764'/20'/0'",
+          "derived_key": "",
+          "entropy_hex": "fe3ba14629987547093fd35be06010009ca08a2760384fe64763d0a3734bf74f739025c3400f4f82e388353b03718071226786a58969aa3c225e201e3184471c",
+          "app_entropy_hex": "fe3ba14629987547093fd35be06010009ca08a2760384fe64763d0a3734bf74f739025c3400f4f82e388353b03718071226786a58969aa3c225e201e3184471c",
+          "output": "/juhRimYdUcJP9Nb4GAQ",
+          "params": {
+            "pwd_len": 20,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "base64",
+          "path": "m/83696968'/707764'/21'/0'",
+          "derived_key": "",
+          "entropy_hex": "f648f918cdfff1098d7efbe5374a62c7e0b83da320f178b2f55967c4dfabb7e51e26b7e555e724a1bfa02d889fb4cdda355bae1a46f03ccbc262732cdd95b51f",
+          "app_entropy_hex": "f648f918cdfff1098d7efbe5374a62c7e0b83da320f178b2f55967c4dfabb7e51e26b7e555e724a1bfa02d889fb4cdda355bae1a46f03ccbc262732cdd95b51f",
+          "output": "9kj5GM3/8QmNfvvlN0pix",
+          "params": {
+            "pwd_len": 21,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "base64",
+          "path": "m/83696968'/707764'/40'/0'",
+          "derived_key": "",
+          "entropy_hex": "97e1172edf219cb05120765ecfc5984f31daab2a81bf650875960ca15e126bdc7a74e6ba53af45df602c6bd1fc6021ae624485010f82c60a67bb73d07ff71780",
+          "app_entropy_hex": "97e1172edf219cb05120765ecfc5984f31daab2a81bf650875960ca15e126bdc7a74e6ba53af45df602c6bd1fc6021ae624485010f82c60a67bb73d07ff71780",
+          "output": "l+EXLt8hnLBRIHZez8WYTzHaqyqBv2UIdZYMoV4S",
+          "params": {
+            "pwd_len": 40,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "base64",
+          "path": "m/83696968'/707764'/86'/0'",
+          "derived_key": "",
+          "entropy_hex": "994d8ada7e2b86f917e3efe6e57b3b692dfa95a400e900f62fb45013cf52caae80dca96a16bbca83f061fc12525a6535c5e98d67e45d5600ad699829ec4c2281",
+          "app_entropy_hex": "994d8ada7e2b86f917e3efe6e57b3b692dfa95a400e900f62fb45013cf52caae80dca96a16bbca83f061fc12525a6535c5e98d67e45d5600ad699829ec4c2281",
+          "output": "mU2K2n4rhvkX4+/m5Xs7aS36laQA6QD2L7RQE89Syq6A3KlqFrvKg/Bh/BJSWmU1xemNZ+RdVgCtaZgp7EwigQ",
+          "params": {
+            "pwd_len": 86,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "base85",
+          "path": "m/83696968'/707785'/10'/0'",
+          "derived_key": "",
+          "entropy_hex": "dfc5956e3292bda3022e12ee175821b5cf71abb6c039ccef370a76742934a89f9b0f54584cd573705f17ad217a613b7b78bb280d7e0b590a6c247a988558fa01",
+          "app_entropy_hex": "dfc5956e3292bda3022e12ee175821b5cf71abb6c039ccef370a76742934a89f9b0f54584cd573705f17ad217a613b7b78bb280d7e0b590a6c247a988558fa01",
+          "output": "-^G<~GLpTc",
+          "params": {
+            "pwd_len": 10,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "base85",
+          "path": "m/83696968'/707785'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "a51f8244060858808b998a85ef14c37a564c1b6a7b9b844b7268a1b5d1f348255eca9b65b12ca789ec461e2c888672262d66a18ac690e1a90fec1db1a6ed1632",
+          "app_entropy_hex": "a51f8244060858808b998a85ef14c37a564c1b6a7b9b844b7268a1b5d1f348255eca9b65b12ca789ec461e2c888672262d66a18ac690e1a90fec1db1a6ed1632",
+          "output": "r5}Ps1_)Syi<",
+          "params": {
+            "pwd_len": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "base85",
+          "path": "m/83696968'/707785'/40'/0'",
+          "derived_key": "",
+          "entropy_hex": "09eba3181a53530088d0ed273101393cb3a83e585ec32b2f496a0b4d3fa4dfcb59af0bf160fd26b03fb95ceac54e06b9697ed98141e37cd505473bc1f1dd795d",
+          "app_entropy_hex": "09eba3181a53530088d0ed273101393cb3a83e585ec32b2f496a0b4d3fa4dfcb59af0bf160fd26b03fb95ceac54e06b9697ed98141e37cd505473bc1f1dd795d",
+          "output": "3G1U68dFmMh|ujPF#$O|v#35;Uc)OdNoosCKcwHw",
+          "params": {
+            "pwd_len": 40,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "base85",
+          "path": "m/83696968'/707785'/80'/0'",
+          "derived_key": "",
+          "entropy_hex": "eb66338d9f5958a604475806627f8a74da47a6d062b899b6e2aff7debe6a69acb2888a3c62b5836816072fdcbcb38d3ba30d4384a47a93415c59281bbe8e8fae",
+          "app_entropy_hex": "eb66338d9f5958a604475806627f8a74da47a6d062b899b6e2aff7debe6a69acb2888a3c62b5836816072fdcbcb38d3ba30d4384a47a93415c59281bbe8e8fae",
+          "output": ">t-{JpIKO@1V>l~Vt<Ns+DE3)Vz`;M;;;AKzG`W#vWSX2Vzq;476&ifyt9ovqYXoZq<WJ<Tv;d^zK)Ns",
+          "params": {
+            "pwd_len": 80,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "dice",
+          "path": "m/83696968'/89101'/6'/10'/0'",
+          "derived_key": "",
+          "entropy_hex": "b52e1917aa1a2f8cc87d0513a42f0fa453ff1930c8313e1a90860e59fe1d971049b3784fd791a9c67eb59662b09f4c1c29302b6a21813997422df22a0a1d4fd6",
+          "app_entropy_hex": "",
+          "output": "5,4,5,4,5,4,4,5,5,5",
+          "params": {
+            "sides": 6,
+            "rolls": 10,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "dice",
+          "path": "m/83696968'/89101'/6'/10'/1'",
+          "derived_key": "",
+          "entropy_hex": "ddb98591642679c8457e1a9e2835027572c6368ee27266e138386166f74bf82c9a9261fb0a16f15d9c7f783a4e7a06339048266cc3b7e563d5e12dd67428f871",
+          "app_entropy_hex": "",
+          "output": "5,5,1,2,5,0,2,4,1,5",
+          "params": {
+            "sides": 6,
+            "rolls": 10,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "dice",
+          "path": "m/83696968'/89101'/2'/20'/0'",
+          "derived_key": "",
+          "entropy_hex": "cafe772470aef215272aef3c96f551886a4a84d2c394fa48b90727bbe80806890f763f6ccb75be58c15e33bb3c4d5434e7dea0ee9dd295955df672d5c40abaf3",
+          "app_entropy_hex": "",
+          "output": "0,0,0,1,1,0,1,1,0,1,1,0,1,0,0,0,1,1,0,0",
+          "params": {
+            "sides": 2,
+            "rolls": 20,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "dice",
+          "path": "m/83696968'/89101'/100'/10'/0'",
+          "derived_key": "",
+          "entropy_hex": "8a3e18b7a2feccd7e7799b188107d2c1446696e57f9c7095e41ea854fe55012186293ac9b394c464578d66c67f3bb3dc0a37170f69b11854f24d04fa309c9ecd",
+          "app_entropy_hex": "",
+          "output": "12,42,76,94,13,81,39,94,28,35",
+          "params": {
+            "sides": 100,
+            "rolls": 10,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "master_id": "12word",
+      "master_xprv": "xprv9s21ZrQH143K3GJpoapnV8SFfukcVBSfeCficPSGfubmSFDxo1kuHnLisriDvSnRRuL2Qrg5ggqHKNVpxR86QEC8w35uxmGoggxtQTPvfUu",
+      "master_source": "BIP39 mnemonic: abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about",
+      "vector_count": 53,
+      "vectors": [
+        {
+          "app": "core",
+          "path": "m/83696968'/0'/0'",
+          "derived_key": "26938fb6897a5e0d3bea1954bbba45be2fcd5c8825a683e58968850d606836c6",
+          "entropy_hex": "0d4f934f9a4a9506335d4d875068da705c5e93f3a78e1aed5be85eab47f99dede255814774164d511e9e995fbb0fbf7e5be8b66d365cfd1fd79122a4239ee636",
+          "app_entropy_hex": "",
+          "output": "",
+          "params": {
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "core",
+          "path": "m/83696968'/0'/1'",
+          "derived_key": "422919c9712459a25d6be00b54755f2c5e2e006570acd048a2477777ce7ff686",
+          "entropy_hex": "86468a53fdcb0bf5692ff2b5eb3cd4f88cf3fd074b94ae0aaf61f0b78328454fda339248deeabdf047cfd7d7c432b199dfbedb1e49452aa04704c8cf3fcff2c8",
+          "app_entropy_hex": "",
+          "output": "",
+          "params": {
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "drng",
+          "path": "m/83696968'/0'/0'",
+          "derived_key": "",
+          "entropy_hex": "0d4f934f9a4a9506335d4d875068da705c5e93f3a78e1aed5be85eab47f99dede255814774164d511e9e995fbb0fbf7e5be8b66d365cfd1fd79122a4239ee636",
+          "app_entropy_hex": "",
+          "output": "e177122582d561fca45916d6eb12b072441ae25b497ff464e59e6b0e130aa248dd3df0f18c27e84c317928f8ddcf9231b1f29f8c80dd4090ddc74742cba09f68ba1f4bc7e15bba67fe3e2d32a620d0f5",
+          "params": {
+            "read_bytes": 80
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "drng_split",
+          "path": "m/83696968'/0'/0'",
+          "derived_key": "",
+          "entropy_hex": "0d4f934f9a4a9506335d4d875068da705c5e93f3a78e1aed5be85eab47f99dede255814774164d511e9e995fbb0fbf7e5be8b66d365cfd1fd79122a4239ee636",
+          "app_entropy_hex": "",
+          "output": "e177122582d561fca45916d6eb12b072441ae25b497ff464e59e6b0e130aa248dd3df0f18c27e84c317928f8ddcf9231b1f29f8c80dd4090ddc74742cba09f68ba1f4bc7e15bba67fe3e2d32a620d0f5",
+          "params": {
+            "chunks": [
+              20,
+              20,
+              20,
+              20
+            ]
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "drng_split",
+          "path": "m/83696968'/0'/0'",
+          "derived_key": "",
+          "entropy_hex": "0d4f934f9a4a9506335d4d875068da705c5e93f3a78e1aed5be85eab47f99dede255814774164d511e9e995fbb0fbf7e5be8b66d365cfd1fd79122a4239ee636",
+          "app_entropy_hex": "",
+          "output": "e177122582d561fca45916d6eb12b072441ae25b497ff464e59e6b0e130aa248dd3df0f18c27e84c317928f8ddcf9231b1f29f8c80dd4090ddc74742cba09f68ba1f4bc7e15bba67fe3e2d32a620d0f5",
+          "params": {
+            "chunks": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "ac98dac5d4f4ebad6056682ac95eb9ad9ba94fb68e96848264dad0b4357d002e41b3dd7a4c6f4ebc234be6938495840a73f59e9ba0e8e5c5208c94e6df2d7709",
+          "app_entropy_hex": "ac98dac5d4f4ebad6056682ac95eb9ad",
+          "output": "prosper short ramp prepare exchange stove life snack client enough purpose fold",
+          "params": {
+            "language": 0,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/12'/1'",
+          "derived_key": "",
+          "entropy_hex": "c9597c49b37609a2edcadf849ea23a1d4d262bebded60f19fb67647a1f31ac0e509356cdce57ecf6f318b57b111e50362e42db7efcc5e3f092fd2ea6eced8328",
+          "app_entropy_hex": "c9597c49b37609a2edcadf849ea23a1d",
+          "output": "sing slogan bar group gauge sphere rescue fossil loyal vital model desert",
+          "params": {
+            "language": 0,
+            "words": 12,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/15'/0'",
+          "derived_key": "",
+          "entropy_hex": "5dc4f27a1bbcabfbed28723f2ac282194ec617dd549ac10bc0365ee77457ffb6912561ff590a85e8917326c0f6470eee3c9958b40b205d097fd341b23685201d",
+          "app_entropy_hex": "5dc4f27a1bbcabfbed28723f2ac282194ec617dd",
+          "output": "fruit chest ozone danger skirt worth regret atom dish figure party crater unaware armor insect",
+          "params": {
+            "language": 0,
+            "words": 15,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/15'/1'",
+          "derived_key": "",
+          "entropy_hex": "cd41afbd23f1b54a3d972599e6f6ddcd985925615795a707f15ccfddcbaedbe99c8469ef75c54ca316bafdf2b29063a175a79d35e75b7bb258c0255c0de7bedc",
+          "app_entropy_hex": "cd41afbd23f1b54a3d972599e6f6ddcd98592561",
+          "output": "snap aspect urban elevator brave pink wagon tool okay dash resist open machine naive love",
+          "params": {
+            "language": 0,
+            "words": 15,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/18'/0'",
+          "derived_key": "",
+          "entropy_hex": "fc039f51d67ed7dfd01552f27de28887cf3e58655153e44b023d37578321f7083241970730e522d3f20b38a5296c5e51e57e0429546629704a09c6d1e2d10829",
+          "app_entropy_hex": "fc039f51d67ed7dfd01552f27de28887cf3e58655153e44b",
+          "output": "winter brother stamp provide uniform useful doctor prevent venue upper peasant auto view club next clerk tone fox",
+          "params": {
+            "language": 0,
+            "words": 18,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/18'/1'",
+          "derived_key": "",
+          "entropy_hex": "5eaf36fd0a3de6e2fb3537a5df2b86c2b6506f2b208f4593d7c4625f745486169ccb34456334f6ed7a99a7c1ca48ee16741aa52ece071bc33b7b65281029d983",
+          "app_entropy_hex": "5eaf36fd0a3de6e2fb3537a5df2b86c2b6506f2b208f4593",
+          "output": "gadget keen satisfy behave taxi imitate under plunge place welcome ticket lyrics govern daring prosper ball easily opera",
+          "params": {
+            "language": 0,
+            "words": 18,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/21'/0'",
+          "derived_key": "",
+          "entropy_hex": "abacef4d18a3d9f11d93b59e99f8183176ea6dc4f7ebf14afbfd16d2312eb60a1001e223b8c71a67c1a3406307c8f1230a786e3e87ae6e53ba9f3af0fb2484e8",
+          "app_entropy_hex": "abacef4d18a3d9f11d93b59e99f8183176ea6dc4f7ebf14afbfd16d2",
+          "output": "produce guess spy course diesel weasel iron issue ozone sound alcohol glass huge dad because word vanish fit young color champion",
+          "params": {
+            "language": 0,
+            "words": 21,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/21'/1'",
+          "derived_key": "",
+          "entropy_hex": "67b46144c37de4e486043641f67a3fe98757c0595bb2a99c317266297aefe5eddbf455e742d57ad139126f4af83a60bc241ee4c73e7f3b3c6b94b88a9157f35b",
+          "app_entropy_hex": "67b46144c37de4e486043641f67a3fe98757c0595bb2a99c31726629",
+          "output": "guilt perfect eye manage tattoo inch blossom man draft record morning spread install then grace iron praise thunder frame slush off",
+          "params": {
+            "language": 0,
+            "words": 21,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/24'/0'",
+          "derived_key": "",
+          "entropy_hex": "d5a9cb46670566c4246b6e7af22e1dfc3668744ed831afea7ce2beea44e34e23e348e86091f24394f4be6253a7d5d24b91b1c4e0863b296e9e541e8018288897",
+          "app_entropy_hex": "d5a9cb46670566c4246b6e7af22e1dfc3668744ed831afea7ce2beea44e34e23",
+          "output": "stick exact spice sock filter ginger museum horse kit multiply manual wear grief demand derive alert quiz fault december lava picture immune decade jaguar",
+          "params": {
+            "language": 0,
+            "words": 24,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/24'/1'",
+          "derived_key": "",
+          "entropy_hex": "e6a56e3b7572c908f6974e1ef715b9f499f53d96fc9c66e4001a3001a00f5fb3663bf0fe7de5248f273f0cc3bfb31b07d49864f705e8cfd2bfbc08cf9564f495",
+          "app_entropy_hex": "e6a56e3b7572c908f6974e1ef715b9f499f53d96fc9c66e4001a3001a00f5fb3",
+          "output": "trade clock mom turtle clutch love surge truth bus reward hover truck palm paddle fossil near group cactus alley gas borrow amateur learn leisure",
+          "params": {
+            "language": 0,
+            "words": 24,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/1'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "341a4eded3f3d7764b81b6d0a69cb1dc2537b44f9fc56d538c29fbfb50379c60c95837c9544220f88faa0e26d173e624ab9fa0af820fc6b59d351cf1befdfb61",
+          "app_entropy_hex": "341a4eded3f3d7764b81b6d0a69cb1dc",
+          "output": "きつつき ふうふ ねこぜ とこや くつろぐ ねんし かんけい きめる ひんかく きなこ かほう ねすごす",
+          "params": {
+            "language": 1,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/1'/24'/0'",
+          "derived_key": "",
+          "entropy_hex": "d3088afaaa5ba5db227cf216d628d1448477dbf47e46bdef4520d3b0e723a0dcfa27f442bb330261cf75511de26f2c3384ae38f54b2fc69c9a3ac4a809b8f976",
+          "app_entropy_hex": "d3088afaaa5ba5db227cf216d628d1448477dbf47e46bdef4520d3b0e723a0dc",
+          "output": "ふくざつ けっこん のらねこ こもの ねわざ もえる たすける ていぼう うなずく にちようび きてい たきび けもの もくようび ふうけい はんぼうき のはら せんちょう けんお とくに いはん たんめい そんみん たかい",
+          "params": {
+            "language": 1,
+            "words": 24,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/2'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "7cbdaa0877166f398ecf27c40e1e58ddceee7a6954da79a0a5c8de09d1d4b3c71660d8bd336e626658abd26f6de5f722a3be8b2fecca9106b6897d73c7575125",
+          "app_entropy_hex": "7cbdaa0877166f398ecf27c40e1e58dd",
+          "output": "식품 하천 아드님 학년 석사 우정 며칠 특성 좌석 수건 오렌지 전후",
+          "params": {
+            "language": 2,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/3'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "7e26fde80c74aa3a9c27a69a763548dfa92ce07fdb5bc06565dd695874526fc77ba7474d2d48f9e61504fedc3f267d830824cfac17cc77e8b598f2e14d8001f2",
+          "app_entropy_hex": "7e26fde80c74aa3a9c27a69a763548df",
+          "output": "letra consejo laico avión elipse baúl ídolo vajilla nido pesa exacto puño",
+          "params": {
+            "language": 3,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/4'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "238dc58727067557ad9b6ca9c3a0e92790168dae21edd8b0dc4b1614115721348beb64530cac5f413cf0262a82bc8638dd62d4d4ebb82ece3cb2a1449599571c",
+          "app_entropy_hex": "238dc58727067557ad9b6ca9c3a0e927",
+          "output": "增 慢 银 职 谓 穷 赤 福 氏 手 派 助",
+          "params": {
+            "language": 4,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/5'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "bb09dfce2a512112173e4d6c7a54efdc4fb5ae29759cd8afb32c333e8766d0840101fef126f18f0ed9a335666c2cdbdb809d2873d621bcebdf276598d8c7f42b",
+          "app_entropy_hex": "bb09dfce2a512112173e4d6c7a54efdc",
+          "output": "兄 雖 喬 微 看 雄 燒 淀 臉 僚 圓 允",
+          "params": {
+            "language": 5,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/6'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "a942b9c10daf12b6cad4adac5b3adf4eae5ccebcfe445d7faca815d957ab80aeee748793bf808639775c584a08bdc839f20154867645d54416c02c1c9ab5ac8a",
+          "app_entropy_hex": "a942b9c10daf12b6cad4adac5b3adf4e",
+          "output": "obturer autruche géant bélier troupeau étagère causer manteau opale semaine pétrir moderne",
+          "params": {
+            "language": 6,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/7'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "c0f5c29116ef2476847246f87158ad093834df22eb9cc896febe22e3c5651c95aeea559a0250a05bfddc823a0089718d7483d74fc6d26f3b434142e0e1c36c75",
+          "app_entropy_hex": "c0f5c29116ef2476847246f87158ad09",
+          "output": "satellite ramarro pollice cocco usato dicembre arsenico esagono vessillo normale chimera aspro",
+          "params": {
+            "language": 7,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/8'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "01d43327f5a2903ee1cb7b9405c7f937698580df19c6c290d58e4fa075b0ab9d179c5df5dce74b0f141c3c2a232a0e007f07feeaca5335f4fc95737de7f00278",
+          "app_entropy_hex": "01d43327f5a2903ee1cb7b9405c7f937",
+          "output": "anulovat popud storno vyhradit exkurze dokola ohryzek mstitel pecka geolog zrovna moucha",
+          "params": {
+            "language": 8,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/9'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "35368d0ea28a1c79e81fb64e48624e125677c93df5f89c7a025e8e475eb989a61dc8b4c360ed11629a085d4dacf650b0ed4e4867d50a7bdc20efe570b179ae21",
+          "app_entropy_hex": "35368d0ea28a1c79e81fb64e48624e12",
+          "output": "cerveja palpitar cujo curto molinete comentar misturar vascular discreta crua longe blindado",
+          "params": {
+            "language": 9,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "wif",
+          "path": "m/83696968'/2'/0'",
+          "derived_key": "",
+          "entropy_hex": "f8c4bd4d57899c08b083e5d999c5041e1cd05bf6a6cded6e382bd231839cd2d8423537c72b52cacfb68181db8486dbbf6e6abe92c666ed9175a3e011d02f558d",
+          "app_entropy_hex": "f8c4bd4d57899c08b083e5d999c5041e1cd05bf6a6cded6e382bd231839cd2d8",
+          "output": "L5ZHSrU5auKHKJuK4KnyJM85gERCxjRnBTBe7ZTBdFmSCUjPNArr",
+          "params": {
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "wif",
+          "path": "m/83696968'/2'/1'",
+          "derived_key": "",
+          "entropy_hex": "eb220a7f99369506312724f3c6f9aa8760e5ea8220eaa19e87c5e98d90107ce961cb17251e39abf7e60aaf0635bda74307bb7c4e08b54cac45ff25beee4619f8",
+          "app_entropy_hex": "eb220a7f99369506312724f3c6f9aa8760e5ea8220eaa19e87c5e98d90107ce9",
+          "output": "L56n7eTvwZXAiSwCPbAbVCe6ocJVC8BdkoBJmTStyms8t4odFKKy",
+          "params": {
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "wif",
+          "path": "m/83696968'/2'/100'",
+          "derived_key": "",
+          "entropy_hex": "794fe1684e914232e4cad370b5cc0fce77710d163bad144fee7287cbd953bc5e26bba63d5245a8cc9946809f8e130273c423d9340d86e84ab7d3ee7d16ecd8db",
+          "app_entropy_hex": "794fe1684e914232e4cad370b5cc0fce77710d163bad144fee7287cbd953bc5e",
+          "output": "L1HXSShyLe2ASbHpwhxcxhYJmUFtGHxwZPSdg5Bd3EHYUwRnoZCH",
+          "params": {
+            "index": 100
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "xprv",
+          "path": "m/83696968'/32'/0'",
+          "derived_key": "",
+          "entropy_hex": "6940a025903a538c7ceb1bd31c56ff0a0035f6b9b4d1f1d206c3adfcf9395c31c7c45a4a89aefbfb4d68e65db789a4a834572bb3873566058f5e74cd86365464",
+          "app_entropy_hex": "c7c45a4a89aefbfb4d68e65db789a4a834572bb3873566058f5e74cd86365464",
+          "output": "xprv9s21ZrQH143K378o2qoTfJeZGMSGHRkfuyoSebTPGQBH1dsMbt4tBWXVgLYbWkv7PK9C2RvYkJA3VfBjkgdS5rFSagbFicZunndqdRfmmmG",
+          "params": {
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "xprv",
+          "path": "m/83696968'/32'/1'",
+          "derived_key": "",
+          "entropy_hex": "551c3eafc4cc71d6dd06c966e69eb13bdf9e21ab0589c98ed9486d7932a3fbb51d5fba43a0d9bc131933bdaefa7350a4ae02cf03843ee6b3f6960287a6188030",
+          "app_entropy_hex": "1d5fba43a0d9bc131933bdaefa7350a4ae02cf03843ee6b3f6960287a6188030",
+          "output": "xprv9s21ZrQH143K2uWC9i6HeggTxgWbisoNYNWxsds8kTtyNmmxS2P4szXENKY96gypzFvRNpud3mEquLj8jvgCLGQR3xL8s8QvDoFVPwG2AUD",
+          "params": {
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "xprv",
+          "path": "m/83696968'/32'/100'",
+          "derived_key": "",
+          "entropy_hex": "5f774a0d4dd94dc86f2a6531104d3170b99eb091b264a8be4ceb53cb9a44527d6d08f9cb77cc1cbf94aaab8ba37a59d86245fb32263d6afcde32ed4d6e85310a",
+          "app_entropy_hex": "6d08f9cb77cc1cbf94aaab8ba37a59d86245fb32263d6afcde32ed4d6e85310a",
+          "output": "xprv9s21ZrQH143K31V2QrCLvCRRByPt2f6RPsGrbkoTi25fFD4iPycrDYMavP6rHhXJ7LRjX9ZuVsr9A92oLTHj5wbrSf6sL2DfvgAg1YZF2Jg",
+          "params": {
+            "index": 100
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/16'/0'",
+          "derived_key": "",
+          "entropy_hex": "866a12e42e31a09aa8ca4f25a02e999e9352d7ce935e53cb3b9d3db85466d5de64a711f11e2771b2ea092d0d0dd91f1e4a76e755902ba3a087a6825b9ac746c2",
+          "app_entropy_hex": "866a12e42e31a09aa8ca4f25a02e999e9352d7ce935e53cb3b9d3db85466d5de64a711f11e2771b2ea092d0d0dd91f1e4a76e755902ba3a087a6825b9ac746c2",
+          "output": "866a12e42e31a09aa8ca4f25a02e999e",
+          "params": {
+            "num_bytes": 16,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/16'/1'",
+          "derived_key": "",
+          "entropy_hex": "75673945599b92b7b08336283af0191824202fc8c7c11400980fffe04ecdf2da0d69588b59e6fc96eeaa7cb8e04b7d1fe26e935736f1bf01d2638cb67fb29b2f",
+          "app_entropy_hex": "75673945599b92b7b08336283af0191824202fc8c7c11400980fffe04ecdf2da0d69588b59e6fc96eeaa7cb8e04b7d1fe26e935736f1bf01d2638cb67fb29b2f",
+          "output": "75673945599b92b7b08336283af01918",
+          "params": {
+            "num_bytes": 16,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/32'/0'",
+          "derived_key": "",
+          "entropy_hex": "e477d4694160a384b28ee2f72b54edcf0822fd6e1ee1780447455cdbed8f8c45ef2043ba0393bc197724a8b5489012d010069139e20bbcf9148da523499c85d7",
+          "app_entropy_hex": "e477d4694160a384b28ee2f72b54edcf0822fd6e1ee1780447455cdbed8f8c45ef2043ba0393bc197724a8b5489012d010069139e20bbcf9148da523499c85d7",
+          "output": "e477d4694160a384b28ee2f72b54edcf0822fd6e1ee1780447455cdbed8f8c45",
+          "params": {
+            "num_bytes": 32,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/32'/1'",
+          "derived_key": "",
+          "entropy_hex": "1cbcb9200cc786c83bc6307b112d113fb1f8426ca52aa1acdad4bb8b29a52169eb91cc3194136793520ca346feb9faa52ca02a60ac49270e6e6ee56b12b2ccee",
+          "app_entropy_hex": "1cbcb9200cc786c83bc6307b112d113fb1f8426ca52aa1acdad4bb8b29a52169eb91cc3194136793520ca346feb9faa52ca02a60ac49270e6e6ee56b12b2ccee",
+          "output": "1cbcb9200cc786c83bc6307b112d113fb1f8426ca52aa1acdad4bb8b29a52169",
+          "params": {
+            "num_bytes": 32,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/48'/0'",
+          "derived_key": "",
+          "entropy_hex": "0a51330acaea2823bb86694209c7d9ddb184def840af6a9181072266174139ce2ffd64355558fc116d133fc9df4aac145d6760329418fdeb9b45e70dc6012fcc",
+          "app_entropy_hex": "0a51330acaea2823bb86694209c7d9ddb184def840af6a9181072266174139ce2ffd64355558fc116d133fc9df4aac145d6760329418fdeb9b45e70dc6012fcc",
+          "output": "0a51330acaea2823bb86694209c7d9ddb184def840af6a9181072266174139ce2ffd64355558fc116d133fc9df4aac14",
+          "params": {
+            "num_bytes": 48,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/48'/1'",
+          "derived_key": "",
+          "entropy_hex": "0de8ff7a408fdbb274491b402152abbd08906acd153ddd42fd216fc4c45b01081e19889d571e1d16f267a9aeeab33ec4e8143243683e967f377ea5150c028ba1",
+          "app_entropy_hex": "0de8ff7a408fdbb274491b402152abbd08906acd153ddd42fd216fc4c45b01081e19889d571e1d16f267a9aeeab33ec4e8143243683e967f377ea5150c028ba1",
+          "output": "0de8ff7a408fdbb274491b402152abbd08906acd153ddd42fd216fc4c45b01081e19889d571e1d16f267a9aeeab33ec4",
+          "params": {
+            "num_bytes": 48,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/64'/0'",
+          "derived_key": "",
+          "entropy_hex": "379f3ff670bf391ca62e6fbd62359a753e89c46bcb02751066ee5897c292487accbfb091d2b59002086eb13d0f9d6746e7ab74d4a60a5f4998cfba3d3687f89a",
+          "app_entropy_hex": "379f3ff670bf391ca62e6fbd62359a753e89c46bcb02751066ee5897c292487accbfb091d2b59002086eb13d0f9d6746e7ab74d4a60a5f4998cfba3d3687f89a",
+          "output": "379f3ff670bf391ca62e6fbd62359a753e89c46bcb02751066ee5897c292487accbfb091d2b59002086eb13d0f9d6746e7ab74d4a60a5f4998cfba3d3687f89a",
+          "params": {
+            "num_bytes": 64,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/64'/1'",
+          "derived_key": "",
+          "entropy_hex": "12f588b09473d36861e00ea27a00968cbd44bef29680eebf33f2dee31c68854064b6bc0a40c59baab1d1c5605a04286d4a6e27e8e1728b979d717cbcd468934b",
+          "app_entropy_hex": "12f588b09473d36861e00ea27a00968cbd44bef29680eebf33f2dee31c68854064b6bc0a40c59baab1d1c5605a04286d4a6e27e8e1728b979d717cbcd468934b",
+          "output": "12f588b09473d36861e00ea27a00968cbd44bef29680eebf33f2dee31c68854064b6bc0a40c59baab1d1c5605a04286d4a6e27e8e1728b979d717cbcd468934b",
+          "params": {
+            "num_bytes": 64,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/32'/10000'",
+          "derived_key": "",
+          "entropy_hex": "e38ee7783992918036f853abbf7d3746a20ed5323164bc03b6944195641881d84b63453b27f2cb103229a0bb618a86192d4233933947eab9e9e1505b74385777",
+          "app_entropy_hex": "e38ee7783992918036f853abbf7d3746a20ed5323164bc03b6944195641881d84b63453b27f2cb103229a0bb618a86192d4233933947eab9e9e1505b74385777",
+          "output": "e38ee7783992918036f853abbf7d3746a20ed5323164bc03b6944195641881d8",
+          "params": {
+            "num_bytes": 32,
+            "index": 10000
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/32'/2147483647'",
+          "derived_key": "",
+          "entropy_hex": "a8e89a3b4ff1ece1be0f9a2337e7b458be7815a287cc1643b4df52fd018073fac488347cc8cff589b8d56c5422365bc1c505bc855fc487cb065a91e23768a701",
+          "app_entropy_hex": "a8e89a3b4ff1ece1be0f9a2337e7b458be7815a287cc1643b4df52fd018073fac488347cc8cff589b8d56c5422365bc1c505bc855fc487cb065a91e23768a701",
+          "output": "a8e89a3b4ff1ece1be0f9a2337e7b458be7815a287cc1643b4df52fd018073fa",
+          "params": {
+            "num_bytes": 32,
+            "index": 2147483647
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "base64",
+          "path": "m/83696968'/707764'/20'/0'",
+          "derived_key": "",
+          "entropy_hex": "e3fd9d5994578a562a0f7ef1e2435119accc02d3e6708494592eb37ece26b80f4c28cbdb96d647c3e2daaa1e464b41e715d591243695f527060a5d4c39418a28",
+          "app_entropy_hex": "e3fd9d5994578a562a0f7ef1e2435119accc02d3e6708494592eb37ece26b80f4c28cbdb96d647c3e2daaa1e464b41e715d591243695f527060a5d4c39418a28",
+          "output": "4/2dWZRXilYqD37x4kNR",
+          "params": {
+            "pwd_len": 20,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "base64",
+          "path": "m/83696968'/707764'/21'/0'",
+          "derived_key": "",
+          "entropy_hex": "7773d0a474ca83ae6b91cb055cbede53cea5fe50e38bed8b55b6162a9cafe2aefaaa14d8be099af2ead3acb51077c929d83e6862ab455efec81eea557bed9297",
+          "app_entropy_hex": "7773d0a474ca83ae6b91cb055cbede53cea5fe50e38bed8b55b6162a9cafe2aefaaa14d8be099af2ead3acb51077c929d83e6862ab455efec81eea557bed9297",
+          "output": "d3PQpHTKg65rkcsFXL7eU",
+          "params": {
+            "pwd_len": 21,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "base64",
+          "path": "m/83696968'/707764'/40'/0'",
+          "derived_key": "",
+          "entropy_hex": "d25ce67a6b9a21abb6dfbc83dbf5c93cb87031f0f29326c23ad75adb7dabb6de8d2ff0aedbb38068c6da1c9f75711f81f254ac260fb6871e8f55979073c227ef",
+          "app_entropy_hex": "d25ce67a6b9a21abb6dfbc83dbf5c93cb87031f0f29326c23ad75adb7dabb6de8d2ff0aedbb38068c6da1c9f75711f81f254ac260fb6871e8f55979073c227ef",
+          "output": "0lzmemuaIau237yD2/XJPLhwMfDykybCOtda232r",
+          "params": {
+            "pwd_len": 40,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "base64",
+          "path": "m/83696968'/707764'/86'/0'",
+          "derived_key": "",
+          "entropy_hex": "a6bb8febfa172834b5efd38060cb7442406ffa60cf155785945af2f34fc9d6197a417bf159a014fb2306ee2a5e7b8acd7ea2a5b223e3dcfc7b2138b6a9c68a9b",
+          "app_entropy_hex": "a6bb8febfa172834b5efd38060cb7442406ffa60cf155785945af2f34fc9d6197a417bf159a014fb2306ee2a5e7b8acd7ea2a5b223e3dcfc7b2138b6a9c68a9b",
+          "output": "pruP6/oXKDS179OAYMt0QkBv+mDPFVeFlFry80/J1hl6QXvxWaAU+yMG7ipee4rNfqKlsiPj3Px7ITi2qcaKmw",
+          "params": {
+            "pwd_len": 86,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "base85",
+          "path": "m/83696968'/707785'/10'/0'",
+          "derived_key": "",
+          "entropy_hex": "9f83f52c1d5a41d395e23bbd5f869a13e304b7457f5747c5342f4c521ae24a00351ebb1a247b8895b7141476ba1ab288a5387e41435bddeab415e190a6df5fec",
+          "app_entropy_hex": "9f83f52c1d5a41d395e23bbd5f869a13e304b7457f5747c5342f4c521ae24a00351ebb1a247b8895b7141476ba1ab288a5387e41435bddeab415e190a6df5fec",
+          "output": "pM&)*9a=%t",
+          "params": {
+            "pwd_len": 10,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "base85",
+          "path": "m/83696968'/707785'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "1b6f2254c6c10b4e356ee7c95d337f132c99e55e38297136f6fc4644a5b3c8523a660246e4ada6c23999209d5188aa258545cd46d34b1fe6c0b4fef41d306026",
+          "app_entropy_hex": "1b6f2254c6c10b4e356ee7c95d337f132c99e55e38297136f6fc4644a5b3c8523a660246e4ada6c23999209d5188aa258545cd46d34b1fe6c0b4fef41d306026",
+          "output": "8*d_1#=#3tHE",
+          "params": {
+            "pwd_len": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "base85",
+          "path": "m/83696968'/707785'/40'/0'",
+          "derived_key": "",
+          "entropy_hex": "cbd0718a846f02a84760d1f6eb70599e01fd486d3bedca374da9330668f2957cb0d7d54178808d1e6b0a31b861132a7cd1fabf5884c2ff2bf8aa41986766c34b",
+          "app_entropy_hex": "cbd0718a846f02a84760d1f6eb70599e01fd486d3bedca374da9330668f2957cb0d7d54178808d1e6b0a31b861132a7cd1fabf5884c2ff2bf8aa41986766c34b",
+          "output": "%g}L(gl__<M_|$R>u_0~0sTmAJMGFhO{p^mX!4bO",
+          "params": {
+            "pwd_len": 40,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "base85",
+          "path": "m/83696968'/707785'/80'/0'",
+          "derived_key": "",
+          "entropy_hex": "41b9ee2347efbe906b69c39957479f590076f599de5ccb8b711382e4bcad1574e53aeead8f0db4a8cea47e27a92e841c597407dc815f1ca40d58dc59a3367636",
+          "app_entropy_hex": "41b9ee2347efbe906b69c39957479f590076f599de5ccb8b711382e4bcad1574e53aeead8f0db4a8cea47e27a92e841c597407dc815f1ca40d58dc59a3367636",
+          "output": "LAmZDNAJFnYiYxoS4W>&0Cx46-dxLzaT9{%ysZ^<<vQ-Ij}5e_&ZK@PsV;;ZS#$^7fnOY?4OrY+qc(On",
+          "params": {
+            "pwd_len": 80,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "dice",
+          "path": "m/83696968'/89101'/6'/10'/0'",
+          "derived_key": "",
+          "entropy_hex": "b52e0fa909479266ab798e1c94c74fe771e4a081dfca277c82518bd8e926da0eee32f4036a2003898b862797662fc041a48172c05196812ca801a0cdb51d7ae1",
+          "app_entropy_hex": "",
+          "output": "0,0,3,4,1,0,2,3,2,4",
+          "params": {
+            "sides": 6,
+            "rolls": 10,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "dice",
+          "path": "m/83696968'/89101'/6'/10'/1'",
+          "derived_key": "",
+          "entropy_hex": "82ea8b76534261827f9b27e8498e56892be2bb5d4bf69c56fc919465ff74dbf9de3f1d8149c8d331309d5df9c5a4834299252223ac395bb6020e4cb669fa3863",
+          "app_entropy_hex": "",
+          "output": "0,4,5,4,0,4,3,5,1,2",
+          "params": {
+            "sides": 6,
+            "rolls": 10,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "dice",
+          "path": "m/83696968'/89101'/2'/20'/0'",
+          "derived_key": "",
+          "entropy_hex": "13c068b6ef845ee57c503c2a9a2f3f68804fded82f4caaacea63b37957feba0cb0099279111126c764e0ea38e51b1be0fb960a9ff8966f7cfceb7779f975427e",
+          "app_entropy_hex": "",
+          "output": "1,0,1,1,1,1,0,0,1,0,0,0,1,1,0,1,1,1,1,0",
+          "params": {
+            "sides": 2,
+            "rolls": 20,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "dice",
+          "path": "m/83696968'/89101'/100'/10'/0'",
+          "derived_key": "",
+          "entropy_hex": "42c0130a7d12ea68b06867fe506925a5f645c5ee8611640c33c8a5fa4809a4e9320e49ab9d10bf65dacf4b0d022a01573616b6aeda06ec287f3f23f23599f13c",
+          "app_entropy_hex": "",
+          "output": "15,97,69,20,07,31,86,80,03,18",
+          "params": {
+            "sides": 100,
+            "rolls": 10,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "master_id": "24word",
+      "master_xprv": "xprv9s21ZrQH143K3329FhZffUDjuazewaSj3MVwupEhgySd9UDPn1cxxB2fCNBcZuNxKEJfJsUTPFCEB9FfDkmDLLjmutwHsS4daucUjPMjZZo",
+      "master_source": "BIP39 mnemonic: zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo wrong",
+      "vector_count": 53,
+      "vectors": [
+        {
+          "app": "core",
+          "path": "m/83696968'/0'/0'",
+          "derived_key": "f6984932c19e1a9bf6650681fbf5a71ea3ba6a5da19b6f6ef8e5428bb5e048c4",
+          "entropy_hex": "a1addee7836deb8fa2824f6fd5b32bbee9322b3f97db60057780d786108da07a779eae71e40d63a909a4ba8f3429b2dfbc33cea34161b824d9c5251dde13e6fb",
+          "app_entropy_hex": "",
+          "output": "",
+          "params": {
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "core",
+          "path": "m/83696968'/0'/1'",
+          "derived_key": "85382a50f5edb5bb1ef8623ecddaf90fc3324ea1d426a07391a961d9c585a773",
+          "entropy_hex": "fe6590057a5e714967fd720cc3a66e14fb9af98d47b980d21affbbf944f4398747a7c6ec38497d82397f51b5f11b2a3d733e1c56b67d33fe928360b10e32a515",
+          "app_entropy_hex": "",
+          "output": "",
+          "params": {
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "drng",
+          "path": "m/83696968'/0'/0'",
+          "derived_key": "",
+          "entropy_hex": "a1addee7836deb8fa2824f6fd5b32bbee9322b3f97db60057780d786108da07a779eae71e40d63a909a4ba8f3429b2dfbc33cea34161b824d9c5251dde13e6fb",
+          "app_entropy_hex": "",
+          "output": "3e20fc5d35ebae4f97d14f69854bb5b1398afd04ea25a8496706589c3bbd57927f91aa254bef468fd6c6cd7c05b0d17c43c8351930734247f375628f2e314997fdba0fece25a80999c3f1008c00ac269",
+          "params": {
+            "read_bytes": 80
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "drng_split",
+          "path": "m/83696968'/0'/0'",
+          "derived_key": "",
+          "entropy_hex": "a1addee7836deb8fa2824f6fd5b32bbee9322b3f97db60057780d786108da07a779eae71e40d63a909a4ba8f3429b2dfbc33cea34161b824d9c5251dde13e6fb",
+          "app_entropy_hex": "",
+          "output": "3e20fc5d35ebae4f97d14f69854bb5b1398afd04ea25a8496706589c3bbd57927f91aa254bef468fd6c6cd7c05b0d17c43c8351930734247f375628f2e314997fdba0fece25a80999c3f1008c00ac269",
+          "params": {
+            "chunks": [
+              20,
+              20,
+              20,
+              20
+            ]
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "drng_split",
+          "path": "m/83696968'/0'/0'",
+          "derived_key": "",
+          "entropy_hex": "a1addee7836deb8fa2824f6fd5b32bbee9322b3f97db60057780d786108da07a779eae71e40d63a909a4ba8f3429b2dfbc33cea34161b824d9c5251dde13e6fb",
+          "app_entropy_hex": "",
+          "output": "3e20fc5d35ebae4f97d14f69854bb5b1398afd04ea25a8496706589c3bbd57927f91aa254bef468fd6c6cd7c05b0d17c43c8351930734247f375628f2e314997fdba0fece25a80999c3f1008c00ac269",
+          "params": {
+            "chunks": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "b3f57ca8c2188605a70660410305a316ef4ac121e7476be0a0b28af87125959f8e3762d637b1cd6502661b8191dddcbbe52fd99f17070f894a05cda286cfcb14",
+          "app_entropy_hex": "b3f57ca8c2188605a70660410305a316",
+          "output": "recycle program clay loud mask actress orchard slot donate blouse hand color",
+          "params": {
+            "language": 0,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/12'/1'",
+          "derived_key": "",
+          "entropy_hex": "f2167aba949c9025162d907f5879b2699d6dd436f6583dbafe758136c9ca092821203b63911e9281d37ad89457f1d76b7de00ddd91109865569ea4026a1989ce",
+          "app_entropy_hex": "f2167aba949c9025162d907f5879b269",
+          "output": "velvet record push circle simple barely flavor rare leg sense hold sport",
+          "params": {
+            "language": 0,
+            "words": 12,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/15'/0'",
+          "derived_key": "",
+          "entropy_hex": "057a940b5c54770b019d1bcc8a404c725cd136f0e195dec8511c2704dc34a31b0a2edd545771e464c982057d29c61f5a71434f639bfc48e025087beebf1ffe7e",
+          "app_entropy_hex": "057a940b5c54770b019d1bcc8a404c725cd136f0",
+          "output": "air start actress reward electric machine all pet smart faith basic tool snack opinion screen",
+          "params": {
+            "language": 0,
+            "words": 15,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/15'/1'",
+          "derived_key": "",
+          "entropy_hex": "39b44d9a30402b2888b05c0a9e40ad6544379b21b48d969b01952639d439fccfcc4f3e2519587ce3d0610257da2b3eede5e934bc7bc8c5bd8a9c5496dec0e9d4",
+          "app_entropy_hex": "39b44d9a30402b2888b05c0a9e40ad6544379b21",
+          "output": "defy pen grief gauge actor nephew carpet argue appear velvet clip skin drop snow magic",
+          "params": {
+            "language": 0,
+            "words": 15,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/18'/0'",
+          "derived_key": "",
+          "entropy_hex": "35d52abec2f35778c2c13eed8e35a0f07ff94c87c1034ca38c0c63bc7770a518e9ad849b3f215092d5534751b68180a45ab13dd2ec2a155a899fb6b575e98e14",
+          "app_entropy_hex": "35d52abec2f35778c2c13eed8e35a0f07ff94c87c1034ca3",
+          "output": "cupboard power quick magnet cube round arch chief unique immune habit thought zebra play business call erosion bronze",
+          "params": {
+            "language": 0,
+            "words": 18,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/18'/1'",
+          "derived_key": "",
+          "entropy_hex": "d99ef30562201b5642fef739a0cf26cf2bfb813f593f3163b7380c787ddc8c21e8b7b2f9edb9a43eb8d5433b14773d0a341787feeec1da58cea4f9cbf7cb8fd6",
+          "app_entropy_hex": "d99ef30562201b5642fef739a0cf26cf2bfb813f593f3163",
+          "output": "sunset wasp scout session accuse private armor ten defy all situate oxygen sausage scene word child cousin brave",
+          "params": {
+            "language": 0,
+            "words": 18,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/21'/0'",
+          "derived_key": "",
+          "entropy_hex": "8db5c530fc5a46e87d55772ac22c7bfaf545c2a6dc701cf7be32b1860e854283793a84b6bc29a197a9a06f5e6ec528bc32d00d882a44dc80ceaae1866b7e104d",
+          "app_entropy_hex": "8db5c530fc5a46e87d55772ac22c7bfaf545c2a6dc701cf7be32b186",
+          "output": "misery purchase equip weather piece injury vocal puzzle client badge bus vote february throw opinion mix brother sadness million glide grape",
+          "params": {
+            "language": 0,
+            "words": 21,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/21'/1'",
+          "derived_key": "",
+          "entropy_hex": "616b312c1c26f2c01fe2d7402de296c2572e6e93e3a5f85e7871a6f845dd319a11bd0d83d96e190ff2bc1607d1bc4b34b8aed79f3da6c5aaed64d19ebb023455",
+          "app_entropy_hex": "616b312c1c26f2c01fe2d7402de296c2572e6e93e3a5f85e7871a6f8",
+          "output": "gesture flower enrich debate hundred gas legend foot dizzy humor pizza lucky indicate dance exhibit input weapon video broccoli evil mistake",
+          "params": {
+            "language": 0,
+            "words": 21,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/24'/0'",
+          "derived_key": "",
+          "entropy_hex": "1b80f559f60c1e2274758d62100fe99b9cc07ac5a2bf84acd41cc3db9743bb8d3b5236605e6cf0db1e1bdbc15a7152bbf946f3a8465894cc78bf8b774f84031f",
+          "app_entropy_hex": "1b80f559f60c1e2274758d62100fe99b9cc07ac5a2bf84acd41cc3db9743bb8d",
+          "output": "breeze amateur filter ugly sea bachelor spike random ginger lesson whip damp slot dice bird fitness lucky grit already marble ride peace until piano",
+          "params": {
+            "language": 0,
+            "words": 24,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/24'/1'",
+          "derived_key": "",
+          "entropy_hex": "d82d1954b7555f2c6a1bc236f9999385a6bad62099646d7aeb8875c23d6a301e953a7415c45e3231e2b6c66b39b3e8a483b1042ac083e1c9192c81e31fff64d2",
+          "app_entropy_hex": "d82d1954b7555f2c6a1bc236f9999385a6bad62099646d7aeb8875c23d6a301e",
+          "output": "subway hand festival huge field normal position joke dad smoke gossip area hill help list clutch hope struggle tilt twist cat relax scatter stadium",
+          "params": {
+            "language": 0,
+            "words": 24,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/1'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "1893adb3fa5819d03c43f4938d2bec5049c62e1c5fd98dfe1f8075a9ab5f35c7ef01eb49b4e0f9b80b191d8e9a2c4207cd39c93e0dfe4926d6ddc0267177b6a4",
+          "app_entropy_hex": "1893adb3fa5819d03c43f4938d2bec50",
+          "output": "うりあげ ていし しんりん よそう そむく むける ゆうびんきょく そこそこ ちけん しゃしん れいかん てぬぐい",
+          "params": {
+            "language": 1,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/1'/24'/0'",
+          "derived_key": "",
+          "entropy_hex": "36496461cf6496efa1c6c1473cc32eb9471bc7c676c76f3a1c89d220a4c92cb0808b180ee789196364c105cc14eae7fcf26621e7fffdf50378cae34a1b5215f2",
+          "app_entropy_hex": "36496461cf6496efa1c6c1473cc32eb9471bc7c676c76f3a1c89d220a4c92cb0",
+          "output": "きほん こうえん うらない てくび けんてい せまい たいみんぐ へいおん けむし みほん ひだり すらすら すべる みかん うんちん へいしゃ すごい ひんこん おさえる てんぷら いぜん してつ にまめ うのう",
+          "params": {
+            "language": 1,
+            "words": 24,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/2'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "90dc4c1c09019c77952d885ebbe960cf5b1ca493bd38d8fc1ac8c51eda5e5a54fb916c4f0d3fc5975660277563d78b77a25da54852c8b8555bea550067c68ed4",
+          "app_entropy_hex": "90dc4c1c09019c77952d885ebbe960cf",
+          "output": "연합 토마토 개성 공책 군대 명예 봉지 작가 사설 큰소리 분야 원래",
+          "params": {
+            "language": 2,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/3'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "2c3f0cfce924eaf30ce21518b34e7a1c089ae49cef92065fe4bc4866c1c163f907b2a3e4d4ffa265dd5068a78a0c4c6b6212e94a908f2a1abcbc54032637ca0b",
+          "app_entropy_hex": "2c3f0cfce924eaf30ce21518b34e7a1c",
+          "output": "casco verbo dardo sangre equipo ladrón claro día avena nido obra cordón",
+          "params": {
+            "language": 3,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/4'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "1e68facbb53819c677e7d45e85d587917362940c8bb6a26e6d130ce5f7c8c28e3f689601a4d8ec533b2ff539feb4475029e23d8a54f67030a5016c74f0f91388",
+          "app_entropy_hex": "1e68facbb53819c677e7d45e85d58791",
+          "output": "强 左 洁 握 虑 笼 谐 捐 待 林 语 志",
+          "params": {
+            "language": 4,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/5'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "ead916d2191ebb2af5a2c184b166a8c68d520f22920dbb2b61e5ba49aefa748673b5010b1ae86bb228f0830827b2bdb212f195d7856108ce7033e7de03ff0f5c",
+          "app_entropy_hex": "ead916d2191ebb2af5a2c184b166a8c6",
+          "output": "闢 偵 屆 難 漂 救 拜 塊 旋 脂 震 楚",
+          "params": {
+            "language": 5,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/6'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "ab9b1da826822cdeb5223934cee46208aa1a2efcbf38c4cb7c2b7b5be0e916e56c3044a41706cb1d5766654612caea7146834ba871dee184ea7e47d3e4d99bf7",
+          "app_entropy_hex": "ab9b1da826822cdeb5223934cee46208",
+          "output": "ombrage secouer fonderie école brebis galerie sabre diriger coffre guide balcon arpenter",
+          "params": {
+            "language": 6,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/7'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "10093f58440eb2390e7cea30cf3e1b6afc29b1c431446304afb5bc3346f9c58a7ce0bdf0a43738fc6c98edc899e1046ed2513e73243e9b92958808c6c3f0a871",
+          "app_entropy_hex": "10093f58440eb2390e7cea30cf3e1b6a",
+          "output": "arazzo esistere sopra nebulosa trasloco bifido deposito perforare consumo marcire nafta sogno",
+          "params": {
+            "language": 7,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/8'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "54b87715cfccbedeabb555b1b622e58ea832cea26ced6a9a7055fc009a04f6b0b282418dd23597b1e441663164854e3f4e6d14abb34e7dc82075c6cb4e1c7b95",
+          "app_entropy_hex": "54b87715cfccbedeabb555b1b622e58e",
+          "output": "krize smysl soulad polynom sundat mrzutost rasovna ptactvo robotika revma secese detektiv",
+          "params": {
+            "language": 8,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/9'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "41e69c0296cd8b947acf147ef04bdf813d446f7686d97411ff16ac2c261ea12082f85505fbba0d4140d04805ea503cb6d8ae13dfc4e3101218634310c6d69547",
+          "app_entropy_hex": "41e69c0296cd8b947acf147ef04bdf81",
+          "output": "creme cerrado abelha calcular sambar rasgar texugo submerso imediato infestar veleiro acelerar",
+          "params": {
+            "language": 9,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "wif",
+          "path": "m/83696968'/2'/0'",
+          "derived_key": "",
+          "entropy_hex": "4d1fe51d322fdf92680c4c1a39ae459d5fc56975817dceda88ae2b84700f9e46e2c3760f434645ee2e91362560c8a577f43b7ba722795be6e8f6701556b5aece",
+          "app_entropy_hex": "4d1fe51d322fdf92680c4c1a39ae459d5fc56975817dceda88ae2b84700f9e46",
+          "output": "KyodYxQrgyzabVmMSBGHzLNn16F4NFberQc8HFroWdx9snrJEwrT",
+          "params": {
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "wif",
+          "path": "m/83696968'/2'/1'",
+          "derived_key": "",
+          "entropy_hex": "64748f10c9a3015f89a6412bbf5cea9c78111e7cea3f092b3e9894c9f19a19fe4a64ad9e03d1daeb943b303b304d9a1a6e28c2d6a205a36e5138a6d07c7e4ff1",
+          "app_entropy_hex": "64748f10c9a3015f89a6412bbf5cea9c78111e7cea3f092b3e9894c9f19a19fe",
+          "output": "KzayxdziBXyuxs3iEzw73PJqAoLyibaMmr7EsKtQD8inVrRad53u",
+          "params": {
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "wif",
+          "path": "m/83696968'/2'/100'",
+          "derived_key": "",
+          "entropy_hex": "148465277089e8bc8d5d88a5725048460d26263d764bbb4c35c64c0fc3795b10bd16e66959466e38f7c699166a8ead1db3d8ce08817279b1b2b5ba77f7c9c47f",
+          "app_entropy_hex": "148465277089e8bc8d5d88a5725048460d26263d764bbb4c35c64c0fc3795b10",
+          "output": "KwubP3QeA4haP4z5EtNxTA97jdGVQF5befxVP1Exy1D6Xdt59JTw",
+          "params": {
+            "index": 100
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "xprv",
+          "path": "m/83696968'/32'/0'",
+          "derived_key": "",
+          "entropy_hex": "943ec0f8d432aae9ae773f9484fbb6a1cd3e55e66b3682c5dd6c1bf949100b6116779401882c8c4b17427fad485eb7f55df4acba0b7fcf6972c5691872e13970",
+          "app_entropy_hex": "16779401882c8c4b17427fad485eb7f55df4acba0b7fcf6972c5691872e13970",
+          "output": "xprv9s21ZrQH143K3Xxi6gZCQmYuGcUcpoqhAWmkxEeXw1yB2GYdrPRwz63qWcwezeG7cmZGPCRD7WL9J2JLyqaRnjT4HXHVDQi8ZKqW3RhaAEf",
+          "params": {
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "xprv",
+          "path": "m/83696968'/32'/1'",
+          "derived_key": "",
+          "entropy_hex": "1798db2af4266428766b07373e212ab372d58cb770a1d59062a62eebd587df7cbca7adafc3e67177cfc33791c5b36ef3daef1bcb0178c0bc1f5200b163c164c0",
+          "app_entropy_hex": "bca7adafc3e67177cfc33791c5b36ef3daef1bcb0178c0bc1f5200b163c164c0",
+          "output": "xprv9s21ZrQH143K2HyzA2PxdG2wHi8z6Mfj3rkd1QrfjeEajoBm7fvDqXTXuQQYQKE9o1wv8cq8EW4k2LsF7Jq1NhaYGQ5uVyBaUkyuhjaA4nK",
+          "params": {
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "xprv",
+          "path": "m/83696968'/32'/100'",
+          "derived_key": "",
+          "entropy_hex": "4f2bb63ea61e10e5ba6eb6fa9d8f9b8b8df03044f449639f38505914b40c892c609577a046be02eaff33e7cda7574acfc5b0ff2263e58610a6f35e9265094b7f",
+          "app_entropy_hex": "609577a046be02eaff33e7cda7574acfc5b0ff2263e58610a6f35e9265094b7f",
+          "output": "xprv9s21ZrQH143K2r5GGXzABgkrEPC3qEytySvk1ST5QmmFtkKuJnjiCgLKzFy1tkaHTzRor3LtC1vumyUyFKgvRdUqjvBBfd9HdhKvcaxxiya",
+          "params": {
+            "index": 100
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/16'/0'",
+          "derived_key": "",
+          "entropy_hex": "6b7592a9cc16c34834fabd38ac1f9ab9c3fd9b7c3f89bd8197821e0c9b365aa8f01e1478ba6dcc9d9550d61c8775a0882de6be900e05f016f8fc2cfbd3307e78",
+          "app_entropy_hex": "6b7592a9cc16c34834fabd38ac1f9ab9c3fd9b7c3f89bd8197821e0c9b365aa8f01e1478ba6dcc9d9550d61c8775a0882de6be900e05f016f8fc2cfbd3307e78",
+          "output": "6b7592a9cc16c34834fabd38ac1f9ab9",
+          "params": {
+            "num_bytes": 16,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/16'/1'",
+          "derived_key": "",
+          "entropy_hex": "e4b9ec7717657302fd5c309197e267836234a47ba4728c068c7320db3866e4a89f87a7d46c5a7e5e3d2432beac931b23039f57bc303903d8b6f5beeb8f9dcd37",
+          "app_entropy_hex": "e4b9ec7717657302fd5c309197e267836234a47ba4728c068c7320db3866e4a89f87a7d46c5a7e5e3d2432beac931b23039f57bc303903d8b6f5beeb8f9dcd37",
+          "output": "e4b9ec7717657302fd5c309197e26783",
+          "params": {
+            "num_bytes": 16,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/32'/0'",
+          "derived_key": "",
+          "entropy_hex": "b7caa882d478c6244e83abba184c702d6cfe0a619e4302323be675945b749a1e4b46f6dbb87797bd2e164cd2e5df1563fa7cf256bbb70ad26b980633583ba469",
+          "app_entropy_hex": "b7caa882d478c6244e83abba184c702d6cfe0a619e4302323be675945b749a1e4b46f6dbb87797bd2e164cd2e5df1563fa7cf256bbb70ad26b980633583ba469",
+          "output": "b7caa882d478c6244e83abba184c702d6cfe0a619e4302323be675945b749a1e",
+          "params": {
+            "num_bytes": 32,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/32'/1'",
+          "derived_key": "",
+          "entropy_hex": "591fdf4cc616c7c0aed647e16794dd5d498156e979479510fd8a6593aaedb20431452cb3fb806cf0b38bbaa78d86ce2d33cde9079db467b6acaa26c8247af436",
+          "app_entropy_hex": "591fdf4cc616c7c0aed647e16794dd5d498156e979479510fd8a6593aaedb20431452cb3fb806cf0b38bbaa78d86ce2d33cde9079db467b6acaa26c8247af436",
+          "output": "591fdf4cc616c7c0aed647e16794dd5d498156e979479510fd8a6593aaedb204",
+          "params": {
+            "num_bytes": 32,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/48'/0'",
+          "derived_key": "",
+          "entropy_hex": "a97d9efb75e8ab123fb7b949c8bd09f6a50c303342348957c195bc47bcc9e7be483d624967207ad5fda56e01b94ddcc8f70238526a9371b48e2fe0c2f78a5820",
+          "app_entropy_hex": "a97d9efb75e8ab123fb7b949c8bd09f6a50c303342348957c195bc47bcc9e7be483d624967207ad5fda56e01b94ddcc8f70238526a9371b48e2fe0c2f78a5820",
+          "output": "a97d9efb75e8ab123fb7b949c8bd09f6a50c303342348957c195bc47bcc9e7be483d624967207ad5fda56e01b94ddcc8",
+          "params": {
+            "num_bytes": 48,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/48'/1'",
+          "derived_key": "",
+          "entropy_hex": "4faecb41777edc21b98ce6a4b6ae2634454d077353079fd90b9e9ce4232fa638d35971a8265dfffeca8c4699b98d53862d40d49475afccedf8212ec4c07e03cf",
+          "app_entropy_hex": "4faecb41777edc21b98ce6a4b6ae2634454d077353079fd90b9e9ce4232fa638d35971a8265dfffeca8c4699b98d53862d40d49475afccedf8212ec4c07e03cf",
+          "output": "4faecb41777edc21b98ce6a4b6ae2634454d077353079fd90b9e9ce4232fa638d35971a8265dfffeca8c4699b98d5386",
+          "params": {
+            "num_bytes": 48,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/64'/0'",
+          "derived_key": "",
+          "entropy_hex": "8c5750d4fe0b3e1a3ba6499253764c18f1cae07ff20e6ffc23044dfc959ac917ba54c4fcc012c0a43676aed88ec8091d446a6695908a59440d85de6793f61f61",
+          "app_entropy_hex": "8c5750d4fe0b3e1a3ba6499253764c18f1cae07ff20e6ffc23044dfc959ac917ba54c4fcc012c0a43676aed88ec8091d446a6695908a59440d85de6793f61f61",
+          "output": "8c5750d4fe0b3e1a3ba6499253764c18f1cae07ff20e6ffc23044dfc959ac917ba54c4fcc012c0a43676aed88ec8091d446a6695908a59440d85de6793f61f61",
+          "params": {
+            "num_bytes": 64,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/64'/1'",
+          "derived_key": "",
+          "entropy_hex": "53c53c07269ad80f37a0b7f433c37e7b5efac406834b47fcaaf6fef3ba2e6a21a18da79fd89680d2d6f4de7f37cd4072fe719e50b92478e304e93070170b548e",
+          "app_entropy_hex": "53c53c07269ad80f37a0b7f433c37e7b5efac406834b47fcaaf6fef3ba2e6a21a18da79fd89680d2d6f4de7f37cd4072fe719e50b92478e304e93070170b548e",
+          "output": "53c53c07269ad80f37a0b7f433c37e7b5efac406834b47fcaaf6fef3ba2e6a21a18da79fd89680d2d6f4de7f37cd4072fe719e50b92478e304e93070170b548e",
+          "params": {
+            "num_bytes": 64,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/32'/10000'",
+          "derived_key": "",
+          "entropy_hex": "da7d583b94a3f746ff2ebe396a8027cb9debbb86f1f5dd3ae6e493d10d47bfadfaa621b9a521bb8308befdae3c3ea45e04f13787257f587436da49fdc1faf28c",
+          "app_entropy_hex": "da7d583b94a3f746ff2ebe396a8027cb9debbb86f1f5dd3ae6e493d10d47bfadfaa621b9a521bb8308befdae3c3ea45e04f13787257f587436da49fdc1faf28c",
+          "output": "da7d583b94a3f746ff2ebe396a8027cb9debbb86f1f5dd3ae6e493d10d47bfad",
+          "params": {
+            "num_bytes": 32,
+            "index": 10000
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/32'/2147483647'",
+          "derived_key": "",
+          "entropy_hex": "eadb281431a1d854d29e4812e61946ea6b407e04bb3653c6a14980e63631193177d45d1aa8953fbcc43f76b9fe7ab48a1fb943b87c70e7bc2b0947664ed8eef8",
+          "app_entropy_hex": "eadb281431a1d854d29e4812e61946ea6b407e04bb3653c6a14980e63631193177d45d1aa8953fbcc43f76b9fe7ab48a1fb943b87c70e7bc2b0947664ed8eef8",
+          "output": "eadb281431a1d854d29e4812e61946ea6b407e04bb3653c6a14980e636311931",
+          "params": {
+            "num_bytes": 32,
+            "index": 2147483647
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "base64",
+          "path": "m/83696968'/707764'/20'/0'",
+          "derived_key": "",
+          "entropy_hex": "318f1e21f3391d469f5e533f2c9fc5254d071e775268927e124915b2c8efb59700296cf555577bb9ca4becd4de26c8554d4df1efb4ff84db4a8f881c5063073a",
+          "app_entropy_hex": "318f1e21f3391d469f5e533f2c9fc5254d071e775268927e124915b2c8efb59700296cf555577bb9ca4becd4de26c8554d4df1efb4ff84db4a8f881c5063073a",
+          "output": "MY8eIfM5HUafXlM/LJ/F",
+          "params": {
+            "pwd_len": 20,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "base64",
+          "path": "m/83696968'/707764'/21'/0'",
+          "derived_key": "",
+          "entropy_hex": "cb4a4edbe4893be24aa34941e0702337965ddb52456403b2fb7cec9669e552da656593a72f22c42d1e924cc23b344219d4c5239d276ed4c19e3bb2044cd74c35",
+          "app_entropy_hex": "cb4a4edbe4893be24aa34941e0702337965ddb52456403b2fb7cec9669e552da656593a72f22c42d1e924cc23b344219d4c5239d276ed4c19e3bb2044cd74c35",
+          "output": "y0pO2+SJO+JKo0lB4HAjN",
+          "params": {
+            "pwd_len": 21,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "base64",
+          "path": "m/83696968'/707764'/40'/0'",
+          "derived_key": "",
+          "entropy_hex": "805b865cc4ddc71d76221882a9d3ecf57607bcaa37f9e1dd7b4a505ee1f2eb4c23447bf92d056af28b3aa5d7a1245944073a24bc13ebfeab02b21e87ff0a622d",
+          "app_entropy_hex": "805b865cc4ddc71d76221882a9d3ecf57607bcaa37f9e1dd7b4a505ee1f2eb4c23447bf92d056af28b3aa5d7a1245944073a24bc13ebfeab02b21e87ff0a622d",
+          "output": "gFuGXMTdxx12IhiCqdPs9XYHvKo3+eHde0pQXuHy",
+          "params": {
+            "pwd_len": 40,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "base64",
+          "path": "m/83696968'/707764'/86'/0'",
+          "derived_key": "",
+          "entropy_hex": "966a863ba8b6f5e45411aef7f44bb645c4ba0340913563f234295dda33898457644373f5307cf9681a41107370a3e8d402cda503cd0d810186ccbe6b76974cb6",
+          "app_entropy_hex": "966a863ba8b6f5e45411aef7f44bb645c4ba0340913563f234295dda33898457644373f5307cf9681a41107370a3e8d402cda503cd0d810186ccbe6b76974cb6",
+          "output": "lmqGO6i29eRUEa739Eu2RcS6A0CRNWPyNCld2jOJhFdkQ3P1MHz5aBpBEHNwo+jUAs2lA80NgQGGzL5rdpdMtg",
+          "params": {
+            "pwd_len": 86,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "base85",
+          "path": "m/83696968'/707785'/10'/0'",
+          "derived_key": "",
+          "entropy_hex": "f2c62577b78e25741618aa5f1c651334f6a2d5023c0f07596093af07ac85dd0c690144a6fd6668659bcd3d4c49fced392efbff92f27e85a17855baf440f15aff",
+          "app_entropy_hex": "f2c62577b78e25741618aa5f1c651334f6a2d5023c0f07596093af07ac85dd0c690144a6fd6668659bcd3d4c49fced392efbff92f27e85a17855baf440f15aff",
+          "output": "^2Q~1w~i%r",
+          "params": {
+            "pwd_len": 10,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "base85",
+          "path": "m/83696968'/707785'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "372784e398bf75573ab04f8f39e761a9960983334c76bd60ee67598e5474b0ac2d57dc60ac9206d19a7d0152d2f55857244373f5d585cd5dffc150b672988488",
+          "app_entropy_hex": "372784e398bf75573ab04f8f39e761a9960983334c76bd60ee67598e5474b0ac2d57dc60ac9206d19a7d0152d2f55857244373f5d585cd5dffc150b672988488",
+          "output": "Hz$PSn7?&bI<",
+          "params": {
+            "pwd_len": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "base85",
+          "path": "m/83696968'/707785'/40'/0'",
+          "derived_key": "",
+          "entropy_hex": "84755617d04bb6c9d1665bb85285d223857b1f0611a3a9c1bea4c20c401587d47592f4e0f49374cc84bf1d20e6ca61e079cb5ad5c00d5b964b2dc8a9668165e2",
+          "app_entropy_hex": "84755617d04bb6c9d1665bb85285d223857b1f0611a3a9c1bea4c20c401587d47592f4e0f49374cc84bf1d20e6ca61e079cb5ad5c00d5b964b2dc8a9668165e2",
+          "output": "gmqRI&`Y+-(Pmq?QiakZg?k?c5u>TWzNEqoKoy77",
+          "params": {
+            "pwd_len": 40,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "base85",
+          "path": "m/83696968'/707785'/80'/0'",
+          "derived_key": "",
+          "entropy_hex": "ac97884dcc1b6282a89c50a5056c1d6ebf42d97db21c7099551cbf338a990a0a6f43718c161c7f877fde66dd2b7580ce7f09d48a9d33ce4b062d987ccd7c80bf",
+          "app_entropy_hex": "ac97884dcc1b6282a89c50a5056c1d6ebf42d97db21c7099551cbf338a990a0a6f43718c161c7f877fde66dd2b7580ce7f09d48a9d33ce4b062d987ccd7c80bf",
+          "output": "te1#Q%o}2YsGLxx1#BH|ze3r4vK(-kRUE%FikS)uZ$oj6794+vf8J)@D|LX*e+krzoiol$1}&I;&3u5r",
+          "params": {
+            "pwd_len": 80,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "dice",
+          "path": "m/83696968'/89101'/6'/10'/0'",
+          "derived_key": "",
+          "entropy_hex": "28ef41f7749ec2b6017f05bb85339d8bdb744920ea824bfd4525baae6589613f23d065c0ec9b043987038b52c7211871e232720edbe922e16d932996897d2c86",
+          "app_entropy_hex": "",
+          "output": "2,0,4,4,2,2,2,2,5,2",
+          "params": {
+            "sides": 6,
+            "rolls": 10,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "dice",
+          "path": "m/83696968'/89101'/6'/10'/1'",
+          "derived_key": "",
+          "entropy_hex": "8f8a05eec8f9898b3f7fa6ca38d872a491584eadb07ccaab7ae5a05b548191eb752a8efd7f3cf74e71cf4847b3f389ebfc81a2318742f2779beda3d401bf8aa7",
+          "app_entropy_hex": "",
+          "output": "5,4,1,2,5,3,1,5,4,0",
+          "params": {
+            "sides": 6,
+            "rolls": 10,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "dice",
+          "path": "m/83696968'/89101'/2'/20'/0'",
+          "derived_key": "",
+          "entropy_hex": "1b6afe053e5c42e8ca7468dea36c71fe43aa877ad0b744d59dfc073ba96baf3bd36940446a06728aafaa84529438c7227b7e5e70c5c3d50056fcff3d89ffa75d",
+          "app_entropy_hex": "",
+          "output": "0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0",
+          "params": {
+            "sides": 2,
+            "rolls": 20,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "dice",
+          "path": "m/83696968'/89101'/100'/10'/0'",
+          "derived_key": "",
+          "entropy_hex": "df40ea35d9e524e5bcaf219820f9cd6aaded6343211b59ce180e09325f6b421054fc8f0344913ba820bb53644f1d110c0cb3152179ab6c356f59b5178e217fcb",
+          "app_entropy_hex": "",
+          "output": "82,77,06,50,15,63,59,71,51,26",
+          "params": {
+            "sides": 100,
+            "rolls": 10,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "master_id": "testnet",
+      "master_xprv": "tprv8ZgxMBicQKsPe5YMU9gHen4Ez3ApihUfykaqUorj9t6FDqy3nP6eoXiAo2ssvpAjoLroQxHqr3R5nE3a5dU3DHTjTgJDd7zrbniJr6nrCzd",
+      "master_source": "BIP39 mnemonic (testnet): abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about",
+      "vector_count": 53,
+      "vectors": [
+        {
+          "app": "core",
+          "path": "m/83696968'/0'/0'",
+          "derived_key": "26938fb6897a5e0d3bea1954bbba45be2fcd5c8825a683e58968850d606836c6",
+          "entropy_hex": "0d4f934f9a4a9506335d4d875068da705c5e93f3a78e1aed5be85eab47f99dede255814774164d511e9e995fbb0fbf7e5be8b66d365cfd1fd79122a4239ee636",
+          "app_entropy_hex": "",
+          "output": "",
+          "params": {
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "core",
+          "path": "m/83696968'/0'/1'",
+          "derived_key": "422919c9712459a25d6be00b54755f2c5e2e006570acd048a2477777ce7ff686",
+          "entropy_hex": "86468a53fdcb0bf5692ff2b5eb3cd4f88cf3fd074b94ae0aaf61f0b78328454fda339248deeabdf047cfd7d7c432b199dfbedb1e49452aa04704c8cf3fcff2c8",
+          "app_entropy_hex": "",
+          "output": "",
+          "params": {
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "drng",
+          "path": "m/83696968'/0'/0'",
+          "derived_key": "",
+          "entropy_hex": "0d4f934f9a4a9506335d4d875068da705c5e93f3a78e1aed5be85eab47f99dede255814774164d511e9e995fbb0fbf7e5be8b66d365cfd1fd79122a4239ee636",
+          "app_entropy_hex": "",
+          "output": "e177122582d561fca45916d6eb12b072441ae25b497ff464e59e6b0e130aa248dd3df0f18c27e84c317928f8ddcf9231b1f29f8c80dd4090ddc74742cba09f68ba1f4bc7e15bba67fe3e2d32a620d0f5",
+          "params": {
+            "read_bytes": 80
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "drng_split",
+          "path": "m/83696968'/0'/0'",
+          "derived_key": "",
+          "entropy_hex": "0d4f934f9a4a9506335d4d875068da705c5e93f3a78e1aed5be85eab47f99dede255814774164d511e9e995fbb0fbf7e5be8b66d365cfd1fd79122a4239ee636",
+          "app_entropy_hex": "",
+          "output": "e177122582d561fca45916d6eb12b072441ae25b497ff464e59e6b0e130aa248dd3df0f18c27e84c317928f8ddcf9231b1f29f8c80dd4090ddc74742cba09f68ba1f4bc7e15bba67fe3e2d32a620d0f5",
+          "params": {
+            "chunks": [
+              20,
+              20,
+              20,
+              20
+            ]
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "drng_split",
+          "path": "m/83696968'/0'/0'",
+          "derived_key": "",
+          "entropy_hex": "0d4f934f9a4a9506335d4d875068da705c5e93f3a78e1aed5be85eab47f99dede255814774164d511e9e995fbb0fbf7e5be8b66d365cfd1fd79122a4239ee636",
+          "app_entropy_hex": "",
+          "output": "e177122582d561fca45916d6eb12b072441ae25b497ff464e59e6b0e130aa248dd3df0f18c27e84c317928f8ddcf9231b1f29f8c80dd4090ddc74742cba09f68ba1f4bc7e15bba67fe3e2d32a620d0f5",
+          "params": {
+            "chunks": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "ac98dac5d4f4ebad6056682ac95eb9ad9ba94fb68e96848264dad0b4357d002e41b3dd7a4c6f4ebc234be6938495840a73f59e9ba0e8e5c5208c94e6df2d7709",
+          "app_entropy_hex": "ac98dac5d4f4ebad6056682ac95eb9ad",
+          "output": "prosper short ramp prepare exchange stove life snack client enough purpose fold",
+          "params": {
+            "language": 0,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/12'/1'",
+          "derived_key": "",
+          "entropy_hex": "c9597c49b37609a2edcadf849ea23a1d4d262bebded60f19fb67647a1f31ac0e509356cdce57ecf6f318b57b111e50362e42db7efcc5e3f092fd2ea6eced8328",
+          "app_entropy_hex": "c9597c49b37609a2edcadf849ea23a1d",
+          "output": "sing slogan bar group gauge sphere rescue fossil loyal vital model desert",
+          "params": {
+            "language": 0,
+            "words": 12,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/15'/0'",
+          "derived_key": "",
+          "entropy_hex": "5dc4f27a1bbcabfbed28723f2ac282194ec617dd549ac10bc0365ee77457ffb6912561ff590a85e8917326c0f6470eee3c9958b40b205d097fd341b23685201d",
+          "app_entropy_hex": "5dc4f27a1bbcabfbed28723f2ac282194ec617dd",
+          "output": "fruit chest ozone danger skirt worth regret atom dish figure party crater unaware armor insect",
+          "params": {
+            "language": 0,
+            "words": 15,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/15'/1'",
+          "derived_key": "",
+          "entropy_hex": "cd41afbd23f1b54a3d972599e6f6ddcd985925615795a707f15ccfddcbaedbe99c8469ef75c54ca316bafdf2b29063a175a79d35e75b7bb258c0255c0de7bedc",
+          "app_entropy_hex": "cd41afbd23f1b54a3d972599e6f6ddcd98592561",
+          "output": "snap aspect urban elevator brave pink wagon tool okay dash resist open machine naive love",
+          "params": {
+            "language": 0,
+            "words": 15,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/18'/0'",
+          "derived_key": "",
+          "entropy_hex": "fc039f51d67ed7dfd01552f27de28887cf3e58655153e44b023d37578321f7083241970730e522d3f20b38a5296c5e51e57e0429546629704a09c6d1e2d10829",
+          "app_entropy_hex": "fc039f51d67ed7dfd01552f27de28887cf3e58655153e44b",
+          "output": "winter brother stamp provide uniform useful doctor prevent venue upper peasant auto view club next clerk tone fox",
+          "params": {
+            "language": 0,
+            "words": 18,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/18'/1'",
+          "derived_key": "",
+          "entropy_hex": "5eaf36fd0a3de6e2fb3537a5df2b86c2b6506f2b208f4593d7c4625f745486169ccb34456334f6ed7a99a7c1ca48ee16741aa52ece071bc33b7b65281029d983",
+          "app_entropy_hex": "5eaf36fd0a3de6e2fb3537a5df2b86c2b6506f2b208f4593",
+          "output": "gadget keen satisfy behave taxi imitate under plunge place welcome ticket lyrics govern daring prosper ball easily opera",
+          "params": {
+            "language": 0,
+            "words": 18,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/21'/0'",
+          "derived_key": "",
+          "entropy_hex": "abacef4d18a3d9f11d93b59e99f8183176ea6dc4f7ebf14afbfd16d2312eb60a1001e223b8c71a67c1a3406307c8f1230a786e3e87ae6e53ba9f3af0fb2484e8",
+          "app_entropy_hex": "abacef4d18a3d9f11d93b59e99f8183176ea6dc4f7ebf14afbfd16d2",
+          "output": "produce guess spy course diesel weasel iron issue ozone sound alcohol glass huge dad because word vanish fit young color champion",
+          "params": {
+            "language": 0,
+            "words": 21,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/21'/1'",
+          "derived_key": "",
+          "entropy_hex": "67b46144c37de4e486043641f67a3fe98757c0595bb2a99c317266297aefe5eddbf455e742d57ad139126f4af83a60bc241ee4c73e7f3b3c6b94b88a9157f35b",
+          "app_entropy_hex": "67b46144c37de4e486043641f67a3fe98757c0595bb2a99c31726629",
+          "output": "guilt perfect eye manage tattoo inch blossom man draft record morning spread install then grace iron praise thunder frame slush off",
+          "params": {
+            "language": 0,
+            "words": 21,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/24'/0'",
+          "derived_key": "",
+          "entropy_hex": "d5a9cb46670566c4246b6e7af22e1dfc3668744ed831afea7ce2beea44e34e23e348e86091f24394f4be6253a7d5d24b91b1c4e0863b296e9e541e8018288897",
+          "app_entropy_hex": "d5a9cb46670566c4246b6e7af22e1dfc3668744ed831afea7ce2beea44e34e23",
+          "output": "stick exact spice sock filter ginger museum horse kit multiply manual wear grief demand derive alert quiz fault december lava picture immune decade jaguar",
+          "params": {
+            "language": 0,
+            "words": 24,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/0'/24'/1'",
+          "derived_key": "",
+          "entropy_hex": "e6a56e3b7572c908f6974e1ef715b9f499f53d96fc9c66e4001a3001a00f5fb3663bf0fe7de5248f273f0cc3bfb31b07d49864f705e8cfd2bfbc08cf9564f495",
+          "app_entropy_hex": "e6a56e3b7572c908f6974e1ef715b9f499f53d96fc9c66e4001a3001a00f5fb3",
+          "output": "trade clock mom turtle clutch love surge truth bus reward hover truck palm paddle fossil near group cactus alley gas borrow amateur learn leisure",
+          "params": {
+            "language": 0,
+            "words": 24,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/1'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "341a4eded3f3d7764b81b6d0a69cb1dc2537b44f9fc56d538c29fbfb50379c60c95837c9544220f88faa0e26d173e624ab9fa0af820fc6b59d351cf1befdfb61",
+          "app_entropy_hex": "341a4eded3f3d7764b81b6d0a69cb1dc",
+          "output": "きつつき ふうふ ねこぜ とこや くつろぐ ねんし かんけい きめる ひんかく きなこ かほう ねすごす",
+          "params": {
+            "language": 1,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/1'/24'/0'",
+          "derived_key": "",
+          "entropy_hex": "d3088afaaa5ba5db227cf216d628d1448477dbf47e46bdef4520d3b0e723a0dcfa27f442bb330261cf75511de26f2c3384ae38f54b2fc69c9a3ac4a809b8f976",
+          "app_entropy_hex": "d3088afaaa5ba5db227cf216d628d1448477dbf47e46bdef4520d3b0e723a0dc",
+          "output": "ふくざつ けっこん のらねこ こもの ねわざ もえる たすける ていぼう うなずく にちようび きてい たきび けもの もくようび ふうけい はんぼうき のはら せんちょう けんお とくに いはん たんめい そんみん たかい",
+          "params": {
+            "language": 1,
+            "words": 24,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/2'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "7cbdaa0877166f398ecf27c40e1e58ddceee7a6954da79a0a5c8de09d1d4b3c71660d8bd336e626658abd26f6de5f722a3be8b2fecca9106b6897d73c7575125",
+          "app_entropy_hex": "7cbdaa0877166f398ecf27c40e1e58dd",
+          "output": "식품 하천 아드님 학년 석사 우정 며칠 특성 좌석 수건 오렌지 전후",
+          "params": {
+            "language": 2,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/3'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "7e26fde80c74aa3a9c27a69a763548dfa92ce07fdb5bc06565dd695874526fc77ba7474d2d48f9e61504fedc3f267d830824cfac17cc77e8b598f2e14d8001f2",
+          "app_entropy_hex": "7e26fde80c74aa3a9c27a69a763548df",
+          "output": "letra consejo laico avión elipse baúl ídolo vajilla nido pesa exacto puño",
+          "params": {
+            "language": 3,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/4'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "238dc58727067557ad9b6ca9c3a0e92790168dae21edd8b0dc4b1614115721348beb64530cac5f413cf0262a82bc8638dd62d4d4ebb82ece3cb2a1449599571c",
+          "app_entropy_hex": "238dc58727067557ad9b6ca9c3a0e927",
+          "output": "增 慢 银 职 谓 穷 赤 福 氏 手 派 助",
+          "params": {
+            "language": 4,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/5'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "bb09dfce2a512112173e4d6c7a54efdc4fb5ae29759cd8afb32c333e8766d0840101fef126f18f0ed9a335666c2cdbdb809d2873d621bcebdf276598d8c7f42b",
+          "app_entropy_hex": "bb09dfce2a512112173e4d6c7a54efdc",
+          "output": "兄 雖 喬 微 看 雄 燒 淀 臉 僚 圓 允",
+          "params": {
+            "language": 5,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/6'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "a942b9c10daf12b6cad4adac5b3adf4eae5ccebcfe445d7faca815d957ab80aeee748793bf808639775c584a08bdc839f20154867645d54416c02c1c9ab5ac8a",
+          "app_entropy_hex": "a942b9c10daf12b6cad4adac5b3adf4e",
+          "output": "obturer autruche géant bélier troupeau étagère causer manteau opale semaine pétrir moderne",
+          "params": {
+            "language": 6,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/7'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "c0f5c29116ef2476847246f87158ad093834df22eb9cc896febe22e3c5651c95aeea559a0250a05bfddc823a0089718d7483d74fc6d26f3b434142e0e1c36c75",
+          "app_entropy_hex": "c0f5c29116ef2476847246f87158ad09",
+          "output": "satellite ramarro pollice cocco usato dicembre arsenico esagono vessillo normale chimera aspro",
+          "params": {
+            "language": 7,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/8'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "01d43327f5a2903ee1cb7b9405c7f937698580df19c6c290d58e4fa075b0ab9d179c5df5dce74b0f141c3c2a232a0e007f07feeaca5335f4fc95737de7f00278",
+          "app_entropy_hex": "01d43327f5a2903ee1cb7b9405c7f937",
+          "output": "anulovat popud storno vyhradit exkurze dokola ohryzek mstitel pecka geolog zrovna moucha",
+          "params": {
+            "language": 8,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "bip39",
+          "path": "m/83696968'/39'/9'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "35368d0ea28a1c79e81fb64e48624e125677c93df5f89c7a025e8e475eb989a61dc8b4c360ed11629a085d4dacf650b0ed4e4867d50a7bdc20efe570b179ae21",
+          "app_entropy_hex": "35368d0ea28a1c79e81fb64e48624e12",
+          "output": "cerveja palpitar cujo curto molinete comentar misturar vascular discreta crua longe blindado",
+          "params": {
+            "language": 9,
+            "words": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "wif",
+          "path": "m/83696968'/2'/0'",
+          "derived_key": "",
+          "entropy_hex": "f8c4bd4d57899c08b083e5d999c5041e1cd05bf6a6cded6e382bd231839cd2d8423537c72b52cacfb68181db8486dbbf6e6abe92c666ed9175a3e011d02f558d",
+          "app_entropy_hex": "f8c4bd4d57899c08b083e5d999c5041e1cd05bf6a6cded6e382bd231839cd2d8",
+          "output": "cVvGumTw1y1YUkNaSjc6ffd9JTicdBXUFVL7Dyuh8NRSTDoMdv2C",
+          "params": {
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "wif",
+          "path": "m/83696968'/2'/1'",
+          "derived_key": "",
+          "entropy_hex": "eb220a7f99369506312724f3c6f9aa8760e5ea8220eaa19e87c5e98d90107ce961cb17251e39abf7e60aaf0635bda74307bb7c4e08b54cac45ff25beee4619f8",
+          "app_entropy_hex": "eb220a7f99369506312724f3c6f9aa8760e5ea8220eaa19e87c5e98d90107ce9",
+          "output": "cVTmaZTnNdDRstQTmzyirX9ARqbtraHKpqKmssuQUtX98ooqJToo",
+          "params": {
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "wif",
+          "path": "m/83696968'/2'/100'",
+          "derived_key": "",
+          "entropy_hex": "794fe1684e914232e4cad370b5cc0fce77710d163bad144fee7287cbd953bc5e26bba63d5245a8cc9946809f8e130273c423d9340d86e84ab7d3ee7d16ecd8db",
+          "app_entropy_hex": "794fe1684e914232e4cad370b5cc0fce77710d163bad144fee7287cbd953bc5e",
+          "output": "cReWuMhpmhiRc2m6L7mkL23NPhZHvk4ddRb6nVe8YLwYjgRr1q4w",
+          "params": {
+            "index": 100
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "xprv",
+          "path": "m/83696968'/32'/0'",
+          "derived_key": "",
+          "entropy_hex": "6940a025903a538c7ceb1bd31c56ff0a0035f6b9b4d1f1d206c3adfcf9395c31c7c45a4a89aefbfb4d68e65db789a4a834572bb3873566058f5e74cd86365464",
+          "app_entropy_hex": "c7c45a4a89aefbfb4d68e65db789a4a834572bb3873566058f5e74cd86365464",
+          "output": "xprv9s21ZrQH143K378o2qoTfJeZGMSGHRkfuyoSebTPGQBH1dsMbt4tBWXVgLYbWkv7PK9C2RvYkJA3VfBjkgdS5rFSagbFicZunndqdRfmmmG",
+          "params": {
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": "bipsea emits xprv for testnet input (spec says MAY support testnet). Go impl should emit tprv when input is tprv."
+        },
+        {
+          "app": "xprv",
+          "path": "m/83696968'/32'/1'",
+          "derived_key": "",
+          "entropy_hex": "551c3eafc4cc71d6dd06c966e69eb13bdf9e21ab0589c98ed9486d7932a3fbb51d5fba43a0d9bc131933bdaefa7350a4ae02cf03843ee6b3f6960287a6188030",
+          "app_entropy_hex": "1d5fba43a0d9bc131933bdaefa7350a4ae02cf03843ee6b3f6960287a6188030",
+          "output": "xprv9s21ZrQH143K2uWC9i6HeggTxgWbisoNYNWxsds8kTtyNmmxS2P4szXENKY96gypzFvRNpud3mEquLj8jvgCLGQR3xL8s8QvDoFVPwG2AUD",
+          "params": {
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": "bipsea emits xprv for testnet input (spec says MAY support testnet). Go impl should emit tprv when input is tprv."
+        },
+        {
+          "app": "xprv",
+          "path": "m/83696968'/32'/100'",
+          "derived_key": "",
+          "entropy_hex": "5f774a0d4dd94dc86f2a6531104d3170b99eb091b264a8be4ceb53cb9a44527d6d08f9cb77cc1cbf94aaab8ba37a59d86245fb32263d6afcde32ed4d6e85310a",
+          "app_entropy_hex": "6d08f9cb77cc1cbf94aaab8ba37a59d86245fb32263d6afcde32ed4d6e85310a",
+          "output": "xprv9s21ZrQH143K31V2QrCLvCRRByPt2f6RPsGrbkoTi25fFD4iPycrDYMavP6rHhXJ7LRjX9ZuVsr9A92oLTHj5wbrSf6sL2DfvgAg1YZF2Jg",
+          "params": {
+            "index": 100
+          },
+          "source": "bipsea",
+          "note": "bipsea emits xprv for testnet input (spec says MAY support testnet). Go impl should emit tprv when input is tprv."
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/16'/0'",
+          "derived_key": "",
+          "entropy_hex": "866a12e42e31a09aa8ca4f25a02e999e9352d7ce935e53cb3b9d3db85466d5de64a711f11e2771b2ea092d0d0dd91f1e4a76e755902ba3a087a6825b9ac746c2",
+          "app_entropy_hex": "866a12e42e31a09aa8ca4f25a02e999e9352d7ce935e53cb3b9d3db85466d5de64a711f11e2771b2ea092d0d0dd91f1e4a76e755902ba3a087a6825b9ac746c2",
+          "output": "866a12e42e31a09aa8ca4f25a02e999e",
+          "params": {
+            "num_bytes": 16,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/16'/1'",
+          "derived_key": "",
+          "entropy_hex": "75673945599b92b7b08336283af0191824202fc8c7c11400980fffe04ecdf2da0d69588b59e6fc96eeaa7cb8e04b7d1fe26e935736f1bf01d2638cb67fb29b2f",
+          "app_entropy_hex": "75673945599b92b7b08336283af0191824202fc8c7c11400980fffe04ecdf2da0d69588b59e6fc96eeaa7cb8e04b7d1fe26e935736f1bf01d2638cb67fb29b2f",
+          "output": "75673945599b92b7b08336283af01918",
+          "params": {
+            "num_bytes": 16,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/32'/0'",
+          "derived_key": "",
+          "entropy_hex": "e477d4694160a384b28ee2f72b54edcf0822fd6e1ee1780447455cdbed8f8c45ef2043ba0393bc197724a8b5489012d010069139e20bbcf9148da523499c85d7",
+          "app_entropy_hex": "e477d4694160a384b28ee2f72b54edcf0822fd6e1ee1780447455cdbed8f8c45ef2043ba0393bc197724a8b5489012d010069139e20bbcf9148da523499c85d7",
+          "output": "e477d4694160a384b28ee2f72b54edcf0822fd6e1ee1780447455cdbed8f8c45",
+          "params": {
+            "num_bytes": 32,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/32'/1'",
+          "derived_key": "",
+          "entropy_hex": "1cbcb9200cc786c83bc6307b112d113fb1f8426ca52aa1acdad4bb8b29a52169eb91cc3194136793520ca346feb9faa52ca02a60ac49270e6e6ee56b12b2ccee",
+          "app_entropy_hex": "1cbcb9200cc786c83bc6307b112d113fb1f8426ca52aa1acdad4bb8b29a52169eb91cc3194136793520ca346feb9faa52ca02a60ac49270e6e6ee56b12b2ccee",
+          "output": "1cbcb9200cc786c83bc6307b112d113fb1f8426ca52aa1acdad4bb8b29a52169",
+          "params": {
+            "num_bytes": 32,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/48'/0'",
+          "derived_key": "",
+          "entropy_hex": "0a51330acaea2823bb86694209c7d9ddb184def840af6a9181072266174139ce2ffd64355558fc116d133fc9df4aac145d6760329418fdeb9b45e70dc6012fcc",
+          "app_entropy_hex": "0a51330acaea2823bb86694209c7d9ddb184def840af6a9181072266174139ce2ffd64355558fc116d133fc9df4aac145d6760329418fdeb9b45e70dc6012fcc",
+          "output": "0a51330acaea2823bb86694209c7d9ddb184def840af6a9181072266174139ce2ffd64355558fc116d133fc9df4aac14",
+          "params": {
+            "num_bytes": 48,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/48'/1'",
+          "derived_key": "",
+          "entropy_hex": "0de8ff7a408fdbb274491b402152abbd08906acd153ddd42fd216fc4c45b01081e19889d571e1d16f267a9aeeab33ec4e8143243683e967f377ea5150c028ba1",
+          "app_entropy_hex": "0de8ff7a408fdbb274491b402152abbd08906acd153ddd42fd216fc4c45b01081e19889d571e1d16f267a9aeeab33ec4e8143243683e967f377ea5150c028ba1",
+          "output": "0de8ff7a408fdbb274491b402152abbd08906acd153ddd42fd216fc4c45b01081e19889d571e1d16f267a9aeeab33ec4",
+          "params": {
+            "num_bytes": 48,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/64'/0'",
+          "derived_key": "",
+          "entropy_hex": "379f3ff670bf391ca62e6fbd62359a753e89c46bcb02751066ee5897c292487accbfb091d2b59002086eb13d0f9d6746e7ab74d4a60a5f4998cfba3d3687f89a",
+          "app_entropy_hex": "379f3ff670bf391ca62e6fbd62359a753e89c46bcb02751066ee5897c292487accbfb091d2b59002086eb13d0f9d6746e7ab74d4a60a5f4998cfba3d3687f89a",
+          "output": "379f3ff670bf391ca62e6fbd62359a753e89c46bcb02751066ee5897c292487accbfb091d2b59002086eb13d0f9d6746e7ab74d4a60a5f4998cfba3d3687f89a",
+          "params": {
+            "num_bytes": 64,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/64'/1'",
+          "derived_key": "",
+          "entropy_hex": "12f588b09473d36861e00ea27a00968cbd44bef29680eebf33f2dee31c68854064b6bc0a40c59baab1d1c5605a04286d4a6e27e8e1728b979d717cbcd468934b",
+          "app_entropy_hex": "12f588b09473d36861e00ea27a00968cbd44bef29680eebf33f2dee31c68854064b6bc0a40c59baab1d1c5605a04286d4a6e27e8e1728b979d717cbcd468934b",
+          "output": "12f588b09473d36861e00ea27a00968cbd44bef29680eebf33f2dee31c68854064b6bc0a40c59baab1d1c5605a04286d4a6e27e8e1728b979d717cbcd468934b",
+          "params": {
+            "num_bytes": 64,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/32'/10000'",
+          "derived_key": "",
+          "entropy_hex": "e38ee7783992918036f853abbf7d3746a20ed5323164bc03b6944195641881d84b63453b27f2cb103229a0bb618a86192d4233933947eab9e9e1505b74385777",
+          "app_entropy_hex": "e38ee7783992918036f853abbf7d3746a20ed5323164bc03b6944195641881d84b63453b27f2cb103229a0bb618a86192d4233933947eab9e9e1505b74385777",
+          "output": "e38ee7783992918036f853abbf7d3746a20ed5323164bc03b6944195641881d8",
+          "params": {
+            "num_bytes": 32,
+            "index": 10000
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/32'/2147483647'",
+          "derived_key": "",
+          "entropy_hex": "a8e89a3b4ff1ece1be0f9a2337e7b458be7815a287cc1643b4df52fd018073fac488347cc8cff589b8d56c5422365bc1c505bc855fc487cb065a91e23768a701",
+          "app_entropy_hex": "a8e89a3b4ff1ece1be0f9a2337e7b458be7815a287cc1643b4df52fd018073fac488347cc8cff589b8d56c5422365bc1c505bc855fc487cb065a91e23768a701",
+          "output": "a8e89a3b4ff1ece1be0f9a2337e7b458be7815a287cc1643b4df52fd018073fa",
+          "params": {
+            "num_bytes": 32,
+            "index": 2147483647
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "base64",
+          "path": "m/83696968'/707764'/20'/0'",
+          "derived_key": "",
+          "entropy_hex": "e3fd9d5994578a562a0f7ef1e2435119accc02d3e6708494592eb37ece26b80f4c28cbdb96d647c3e2daaa1e464b41e715d591243695f527060a5d4c39418a28",
+          "app_entropy_hex": "e3fd9d5994578a562a0f7ef1e2435119accc02d3e6708494592eb37ece26b80f4c28cbdb96d647c3e2daaa1e464b41e715d591243695f527060a5d4c39418a28",
+          "output": "4/2dWZRXilYqD37x4kNR",
+          "params": {
+            "pwd_len": 20,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "base64",
+          "path": "m/83696968'/707764'/21'/0'",
+          "derived_key": "",
+          "entropy_hex": "7773d0a474ca83ae6b91cb055cbede53cea5fe50e38bed8b55b6162a9cafe2aefaaa14d8be099af2ead3acb51077c929d83e6862ab455efec81eea557bed9297",
+          "app_entropy_hex": "7773d0a474ca83ae6b91cb055cbede53cea5fe50e38bed8b55b6162a9cafe2aefaaa14d8be099af2ead3acb51077c929d83e6862ab455efec81eea557bed9297",
+          "output": "d3PQpHTKg65rkcsFXL7eU",
+          "params": {
+            "pwd_len": 21,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "base64",
+          "path": "m/83696968'/707764'/40'/0'",
+          "derived_key": "",
+          "entropy_hex": "d25ce67a6b9a21abb6dfbc83dbf5c93cb87031f0f29326c23ad75adb7dabb6de8d2ff0aedbb38068c6da1c9f75711f81f254ac260fb6871e8f55979073c227ef",
+          "app_entropy_hex": "d25ce67a6b9a21abb6dfbc83dbf5c93cb87031f0f29326c23ad75adb7dabb6de8d2ff0aedbb38068c6da1c9f75711f81f254ac260fb6871e8f55979073c227ef",
+          "output": "0lzmemuaIau237yD2/XJPLhwMfDykybCOtda232r",
+          "params": {
+            "pwd_len": 40,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "base64",
+          "path": "m/83696968'/707764'/86'/0'",
+          "derived_key": "",
+          "entropy_hex": "a6bb8febfa172834b5efd38060cb7442406ffa60cf155785945af2f34fc9d6197a417bf159a014fb2306ee2a5e7b8acd7ea2a5b223e3dcfc7b2138b6a9c68a9b",
+          "app_entropy_hex": "a6bb8febfa172834b5efd38060cb7442406ffa60cf155785945af2f34fc9d6197a417bf159a014fb2306ee2a5e7b8acd7ea2a5b223e3dcfc7b2138b6a9c68a9b",
+          "output": "pruP6/oXKDS179OAYMt0QkBv+mDPFVeFlFry80/J1hl6QXvxWaAU+yMG7ipee4rNfqKlsiPj3Px7ITi2qcaKmw",
+          "params": {
+            "pwd_len": 86,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "base85",
+          "path": "m/83696968'/707785'/10'/0'",
+          "derived_key": "",
+          "entropy_hex": "9f83f52c1d5a41d395e23bbd5f869a13e304b7457f5747c5342f4c521ae24a00351ebb1a247b8895b7141476ba1ab288a5387e41435bddeab415e190a6df5fec",
+          "app_entropy_hex": "9f83f52c1d5a41d395e23bbd5f869a13e304b7457f5747c5342f4c521ae24a00351ebb1a247b8895b7141476ba1ab288a5387e41435bddeab415e190a6df5fec",
+          "output": "pM&)*9a=%t",
+          "params": {
+            "pwd_len": 10,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "base85",
+          "path": "m/83696968'/707785'/12'/0'",
+          "derived_key": "",
+          "entropy_hex": "1b6f2254c6c10b4e356ee7c95d337f132c99e55e38297136f6fc4644a5b3c8523a660246e4ada6c23999209d5188aa258545cd46d34b1fe6c0b4fef41d306026",
+          "app_entropy_hex": "1b6f2254c6c10b4e356ee7c95d337f132c99e55e38297136f6fc4644a5b3c8523a660246e4ada6c23999209d5188aa258545cd46d34b1fe6c0b4fef41d306026",
+          "output": "8*d_1#=#3tHE",
+          "params": {
+            "pwd_len": 12,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "base85",
+          "path": "m/83696968'/707785'/40'/0'",
+          "derived_key": "",
+          "entropy_hex": "cbd0718a846f02a84760d1f6eb70599e01fd486d3bedca374da9330668f2957cb0d7d54178808d1e6b0a31b861132a7cd1fabf5884c2ff2bf8aa41986766c34b",
+          "app_entropy_hex": "cbd0718a846f02a84760d1f6eb70599e01fd486d3bedca374da9330668f2957cb0d7d54178808d1e6b0a31b861132a7cd1fabf5884c2ff2bf8aa41986766c34b",
+          "output": "%g}L(gl__<M_|$R>u_0~0sTmAJMGFhO{p^mX!4bO",
+          "params": {
+            "pwd_len": 40,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "base85",
+          "path": "m/83696968'/707785'/80'/0'",
+          "derived_key": "",
+          "entropy_hex": "41b9ee2347efbe906b69c39957479f590076f599de5ccb8b711382e4bcad1574e53aeead8f0db4a8cea47e27a92e841c597407dc815f1ca40d58dc59a3367636",
+          "app_entropy_hex": "41b9ee2347efbe906b69c39957479f590076f599de5ccb8b711382e4bcad1574e53aeead8f0db4a8cea47e27a92e841c597407dc815f1ca40d58dc59a3367636",
+          "output": "LAmZDNAJFnYiYxoS4W>&0Cx46-dxLzaT9{%ysZ^<<vQ-Ij}5e_&ZK@PsV;;ZS#$^7fnOY?4OrY+qc(On",
+          "params": {
+            "pwd_len": 80,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "dice",
+          "path": "m/83696968'/89101'/6'/10'/0'",
+          "derived_key": "",
+          "entropy_hex": "b52e0fa909479266ab798e1c94c74fe771e4a081dfca277c82518bd8e926da0eee32f4036a2003898b862797662fc041a48172c05196812ca801a0cdb51d7ae1",
+          "app_entropy_hex": "",
+          "output": "0,0,3,4,1,0,2,3,2,4",
+          "params": {
+            "sides": 6,
+            "rolls": 10,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "dice",
+          "path": "m/83696968'/89101'/6'/10'/1'",
+          "derived_key": "",
+          "entropy_hex": "82ea8b76534261827f9b27e8498e56892be2bb5d4bf69c56fc919465ff74dbf9de3f1d8149c8d331309d5df9c5a4834299252223ac395bb6020e4cb669fa3863",
+          "app_entropy_hex": "",
+          "output": "0,4,5,4,0,4,3,5,1,2",
+          "params": {
+            "sides": 6,
+            "rolls": 10,
+            "index": 1
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "dice",
+          "path": "m/83696968'/89101'/2'/20'/0'",
+          "derived_key": "",
+          "entropy_hex": "13c068b6ef845ee57c503c2a9a2f3f68804fded82f4caaacea63b37957feba0cb0099279111126c764e0ea38e51b1be0fb960a9ff8966f7cfceb7779f975427e",
+          "app_entropy_hex": "",
+          "output": "1,0,1,1,1,1,0,0,1,0,0,0,1,1,0,1,1,1,1,0",
+          "params": {
+            "sides": 2,
+            "rolls": 20,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        },
+        {
+          "app": "dice",
+          "path": "m/83696968'/89101'/100'/10'/0'",
+          "derived_key": "",
+          "entropy_hex": "42c0130a7d12ea68b06867fe506925a5f645c5ee8611640c33c8a5fa4809a4e9320e49ab9d10bf65dacf4b0d022a01573616b6aeda06ec287f3f23f23599f13c",
+          "app_entropy_hex": "",
+          "output": "15,97,69,20,07,31,86,80,03,18",
+          "params": {
+            "sides": 100,
+            "rolls": 10,
+            "index": 0
+          },
+          "source": "bipsea",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "master_id": "ethankosakovsky",
+      "master_xprv": "xprv9s21ZrQH143K2LBWUUQRFXhucrQqBpKdRRxNVq2zBqsx8HVqFk2uYo8kmbaLLHRdqtQpUm98uKfu3vca1LqdGhUtyoFnCNkfmXRyPXLjbKb",
+      "master_source": "ethankosakovsky/bip85 test suite extra vectors (spec master key)",
+      "vector_count": 9,
+      "vectors": [
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/32'/0'",
+          "derived_key": "",
+          "entropy_hex": "ea3ceb0b02ee8e587779c63f4b7b3a21e950a213f1ec53cab608d13e8796e6dc9e3548a8eafa3d247778f0327061c5289026d19ff6beeefad57683e8ff27dc80",
+          "app_entropy_hex": "ea3ceb0b02ee8e587779c63f4b7b3a21e950a213f1ec53cab608d13e8796e6dc9e3548a8eafa3d247778f0327061c5289026d19ff6beeefad57683e8ff27dc80",
+          "output": "ea3ceb0b02ee8e587779c63f4b7b3a21e950a213f1ec53cab608d13e8796e6dc",
+          "params": {
+            "num_bytes": 32,
+            "index": 0
+          },
+          "source": "ethankosakovsky",
+          "note": ""
+        },
+        {
+          "app": "hex",
+          "path": "m/83696968'/128169'/64'/1234'",
+          "derived_key": "",
+          "entropy_hex": "61d3c182f7388268463ef327c454a10bc01b3992fa9d2ee1b3891a6b487a5248793e61271066be53660d24e8cb76ff0cfdd0e84e478845d797324c195df9ab8e",
+          "app_entropy_hex": "61d3c182f7388268463ef327c454a10bc01b3992fa9d2ee1b3891a6b487a5248793e61271066be53660d24e8cb76ff0cfdd0e84e478845d797324c195df9ab8e",
+          "output": "61d3c182f7388268463ef327c454a10bc01b3992fa9d2ee1b3891a6b487a5248793e61271066be53660d24e8cb76ff0cfdd0e84e478845d797324c195df9ab8e",
+          "params": {
+            "num_bytes": 64,
+            "index": 1234
+          },
+          "source": "ethankosakovsky",
+          "note": ""
+        },
+        {
+          "app": "drng_sequential",
+          "path": "m/83696968'/0'/0'",
+          "derived_key": "",
+          "entropy_hex": "efecfbccffea313214232d29e71563d941229afb4338c21f9517c41aaa0d16f00b83d2a09ef747e7a64e8e2bd5a14869e693da66ce94ac2da570ab7ee48618f7",
+          "app_entropy_hex": "",
+          "output": "b78b1ee6b345eae6836c2d53d33c64cdaf9a696487be81b03e822dc84b3f1cd883d7559e53d175f243e4c349e822a957bbff",
+          "params": {
+            "read_bytes": 50,
+            "cumulative_offset": 0
+          },
+          "source": "ethankosakovsky",
+          "note": ""
+        },
+        {
+          "app": "drng_sequential",
+          "path": "m/83696968'/0'/0'",
+          "derived_key": "",
+          "entropy_hex": "efecfbccffea313214232d29e71563d941229afb4338c21f9517c41aaa0d16f00b83d2a09ef747e7a64e8e2bd5a14869e693da66ce94ac2da570ab7ee48618f7",
+          "app_entropy_hex": "",
+          "output": "9224bc5dde9492ef54e8a439f6bc8c7355b87a925a37ee405a7502991111cd2dddaf1883f4e962abf4fb4b31cd28d5cf6b14f6ddcc9c19fd56d7f960a4b27f1d423a55dda4865aa6ddd6b4c26f18d400bb0a593e6c785d6d7e28c9c64608624318eddc01",
+          "params": {
+            "read_bytes": 100,
+            "cumulative_offset": 50
+          },
+          "source": "ethankosakovsky",
+          "note": ""
+        },
+        {
+          "app": "drng_sequential",
+          "path": "m/83696968'/0'/0'",
+          "derived_key": "",
+          "entropy_hex": "efecfbccffea313214232d29e71563d941229afb4338c21f9517c41aaa0d16f00b83d2a09ef747e7a64e8e2bd5a14869e693da66ce94ac2da570ab7ee48618f7",
+          "app_entropy_hex": "",
+          "output": "23750caa2a271f35faa6a3ca292b4be357404eca6842c69a3717dc3e41f7b38c67be492395b32221470aa08a2c489018c635a175f731245330e1f47091dbfb26f2923d10bd2e09280bffd1d94eb2a88f964aeb1774da04aad3bb1fdde0f77cd5ca79617ae317375417a51339523057bebef434c4400303890332e458425242f56a4293dad4f632b82713467b18ed6e1dab633220523d",
+          "params": {
+            "read_bytes": 150,
+            "cumulative_offset": 150
+          },
+          "source": "ethankosakovsky",
+          "note": ""
+        },
+        {
+          "app": "drng_sequential",
+          "path": "m/83696968'/0'/0'",
+          "derived_key": "",
+          "entropy_hex": "efecfbccffea313214232d29e71563d941229afb4338c21f9517c41aaa0d16f00b83d2a09ef747e7a64e8e2bd5a14869e693da66ce94ac2da570ab7ee48618f7",
+          "app_entropy_hex": "",
+          "output": "b78b1ee6b345eae6836c2d53d33c64cdaf9a696487be81b03e822dc84b3f1cd883d7559e53d175f243e4c349e822a957bbff9224bc5dde9492ef54e8a439f6bc8c7355b87a925a37ee405a7502991111",
+          "params": {
+            "read_bytes": 80,
+            "cumulative_offset": 0
+          },
+          "source": "ethankosakovsky",
+          "note": ""
+        },
+        {
+          "app": "drng_sequential",
+          "path": "m/83696968'/0'/0'",
+          "derived_key": "",
+          "entropy_hex": "efecfbccffea313214232d29e71563d941229afb4338c21f9517c41aaa0d16f00b83d2a09ef747e7a64e8e2bd5a14869e693da66ce94ac2da570ab7ee48618f7",
+          "app_entropy_hex": "",
+          "output": "cd2dddaf1883f4e962abf4fb4b31cd28d5cf6b14f6ddcc9c19",
+          "params": {
+            "read_bytes": 25,
+            "cumulative_offset": 80
+          },
+          "source": "ethankosakovsky",
+          "note": ""
+        },
+        {
+          "app": "drng_sequential",
+          "path": "m/83696968'/0'/0'",
+          "derived_key": "",
+          "entropy_hex": "efecfbccffea313214232d29e71563d941229afb4338c21f9517c41aaa0d16f00b83d2a09ef747e7a64e8e2bd5a14869e693da66ce94ac2da570ab7ee48618f7",
+          "app_entropy_hex": "",
+          "output": "b78b1ee6b345eae6836c2d53d33c64cdaf9a6964",
+          "params": {
+            "read_bytes": 20,
+            "cumulative_offset": 0
+          },
+          "source": "ethankosakovsky",
+          "note": ""
+        },
+        {
+          "app": "drng_sequential",
+          "path": "m/83696968'/0'/0'",
+          "derived_key": "",
+          "entropy_hex": "efecfbccffea313214232d29e71563d941229afb4338c21f9517c41aaa0d16f00b83d2a09ef747e7a64e8e2bd5a14869e693da66ce94ac2da570ab7ee48618f7",
+          "app_entropy_hex": "",
+          "output": "87be81b03e822dc84b3f1cd883d7559e53d175f243e4c349e8",
+          "params": {
+            "read_bytes": 25,
+            "cumulative_offset": 20
+          },
+          "source": "ethankosakovsky",
+          "note": ""
+        }
+      ]
+    }
+  ]
+}
