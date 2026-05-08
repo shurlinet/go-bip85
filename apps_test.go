@@ -196,14 +196,24 @@ func TestDRNG_ReadZero(t *testing.T) {
 	}
 }
 
-func TestDRNG_PanicsOnWrongEntropy(t *testing.T) {
+func TestDRNG_PanicsOnShortEntropy(t *testing.T) {
 	defer func() {
 		r := recover()
 		if r == nil {
-			t.Fatal("expected panic on non-64-byte entropy")
+			t.Fatal("expected panic on 32-byte entropy")
 		}
 	}()
 	NewDRNG(make([]byte, 32))
+}
+
+func TestDRNG_PanicsOnLongEntropy(t *testing.T) {
+	defer func() {
+		r := recover()
+		if r == nil {
+			t.Fatal("expected panic on 65-byte entropy")
+		}
+	}()
+	NewDRNG(make([]byte, 65))
 }
 
 // --- WIF round-trip ---
