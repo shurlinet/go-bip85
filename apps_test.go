@@ -196,6 +196,85 @@ func TestDRNG_ReadZero(t *testing.T) {
 	}
 }
 
+func TestDRNG_AsymmetricSplitRead(t *testing.T) {
+	// Three DRNG instances from same seed, reading 100 bytes total
+	// in different chunk sizes. All must produce identical output.
+	// (ethankosakovsky: test_determinism)
+	entropy, _ := hex.DecodeString("efecfbccffea313214232d29e71563d941229afb4338c21f9517c41aaa0d16f00b83d2a09ef747e7a64e8e2bd5a14869e693da66ce94ac2da570ab7ee48618f7")
+
+	// Pattern 1: 10+20+30+40
+	drng1 := NewDRNG(entropy)
+	var r1 []byte
+	for _, n := range []int{10, 20, 30, 40} {
+		buf := make([]byte, n)
+		drng1.Read(buf)
+		r1 = append(r1, buf...)
+	}
+
+	// Pattern 2: 40+30+20+10
+	drng2 := NewDRNG(entropy)
+	var r2 []byte
+	for _, n := range []int{40, 30, 20, 10} {
+		buf := make([]byte, n)
+		drng2.Read(buf)
+		r2 = append(r2, buf...)
+	}
+
+	// Pattern 3: single read of 100
+	drng3 := NewDRNG(entropy)
+	r3 := make([]byte, 100)
+	drng3.Read(r3)
+
+	if !bytes.Equal(r1, r2) {
+		t.Error("10+20+30+40 != 40+30+20+10")
+	}
+	if !bytes.Equal(r2, r3) {
+		t.Error("chunked reads != single read of 100")
+	}
+}
+
+func TestDRNG_LargeRead(t *testing.T) {
+	// Verify DRNG handles reads up to 1MB without error.
+	// (ethankosakovsky: test_lengths, scaled down from 10M)
+	entropy, _ := hex.DecodeString("efecfbccffea313214232d29e71563d941229afb4338c21f9517c41aaa0d16f00b83d2a09ef747e7a64e8e2bd5a14869e693da66ce94ac2da570ab7ee48618f7")
+	drng := NewDRNG(entropy)
+
+	for _, size := range []int{1, 10, 100, 1000, 10000, 1000000} {
+		buf := make([]byte, size)
+		n, err := drng.Read(buf)
+		if err != nil {
+			t.Fatalf("Read(%d): %v", size, err)
+		}
+		if n != size {
+			t.Fatalf("Read(%d): got %d bytes", size, n)
+		}
+	}
+}
+
+func TestDRNG_PanicsOnAllInvalidLengths(t *testing.T) {
+	// Verify DRNG rejects ALL lengths 0-63 and 65.
+	// (ethankosakovsky: test_drng_exceptions)
+	for i := 0; i <= 63; i++ {
+		func(n int) {
+			defer func() {
+				if r := recover(); r == nil {
+					t.Errorf("NewDRNG(%d bytes): expected panic, got none", n)
+				}
+			}()
+			NewDRNG(make([]byte, n))
+		}(i)
+	}
+	// Also 65 (one too long).
+	func() {
+		defer func() {
+			if r := recover(); r == nil {
+				t.Error("NewDRNG(65 bytes): expected panic, got none")
+			}
+		}()
+		NewDRNG(make([]byte, 65))
+	}()
+}
+
 func TestDRNG_PanicsOnShortEntropy(t *testing.T) {
 	defer func() {
 		r := recover()
