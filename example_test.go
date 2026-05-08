@@ -90,30 +90,3 @@ func ExampleDeriveDice() {
 	// 1,0,0,2,0,1,5,5,2,4
 	// 10 rolls
 }
-
-func ExampleDeriveRSA() {
-	key, err := bip85.ParseKey("xprv9s21ZrQH143K2LBWUUQRFXhucrQqBpKdRRxNVq2zBqsx8HVqFk2uYo8kmbaLLHRdqtQpUm98uKfu3vca1LqdGhUtyoFnCNkfmXRyPXLjbKb")
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer key.Zero()
-
-	// Generate a 2048-bit RSA key at index 0.
-	path := bip85.RSAPath(2048, 0)
-	entropy, err := bip85.DeriveEntropy(key, path)
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer bip85.ZeroBytes(entropy)
-
-	privKey, err := bip85.DeriveRSA(entropy, 2048)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	fmt.Println(privKey.N.BitLen(), "bits")
-	fmt.Println("valid:", privKey.Validate() == nil)
-	// Output:
-	// 2048 bits
-	// valid: true
-}

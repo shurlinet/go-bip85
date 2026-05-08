@@ -17,7 +17,14 @@
 //   - PWD BASE64: Base64-encoded password (20-86 characters)
 //   - PWD BASE85: RFC 1924 Base85-encoded password (10-80 characters)
 //   - DICE: Rejection-sampled dice rolls (2 to 2^32-1 sides)
-//   - RSA: RSA key generation via DRNG (cross-impl reproducibility not guaranteed)
+//
+// RSA key generation (BIP85 app 828365') is intentionally not provided as a
+// high-level function. Go's crypto/rsa (since Go 1.24) mixes system entropy
+// into prime generation for FIPS 140-3 compliance, making RSA output
+// non-deterministic and non-recoverable from a seed backup. Consumers who
+// need RSA can use the DRNG (io.Reader) directly with their own key
+// generation code. See RSAPath and GPGCreationTimestamp for path building
+// and GPG key creation date constants.
 //
 // # Two-Tier API
 //

@@ -75,10 +75,4 @@ var (
 
 	// ErrInvalidDiceRolls indicates the rolls parameter is less than 1.
 	ErrInvalidDiceRolls = errors.New("bip85: invalid dice rolls")
-
-	// RSA application errors
-
-	// ErrInvalidRSAKeyBits indicates the RSA key size is out of the
-	// allowed range. Valid: 1024 to 16384.
-	ErrInvalidRSAKeyBits = errors.New("bip85: invalid RSA key size")
 )
