@@ -66,4 +66,19 @@ var (
 	// ErrInvalidLanguage indicates an unsupported BIP39 language code.
 	// Valid codes: 0 (English) through 9 (Portuguese).
 	ErrInvalidLanguage = errors.New("bip85: invalid language code")
+
+	// DICE application errors
+
+	// ErrInvalidDiceSides indicates the sides parameter is out of the
+	// allowed range for the DICE application. Valid: 2 to 2^32-1.
+	ErrInvalidDiceSides = errors.New("bip85: invalid dice sides")
+
+	// ErrInvalidDiceRolls indicates the rolls parameter is less than 1.
+	ErrInvalidDiceRolls = errors.New("bip85: invalid dice rolls")
+
+	// RSA application errors
+
+	// ErrInvalidRSAKeyBits indicates the RSA key size is out of the
+	// allowed range. Valid: 1024 to 16384.
+	ErrInvalidRSAKeyBits = errors.New("bip85: invalid RSA key size")
 )

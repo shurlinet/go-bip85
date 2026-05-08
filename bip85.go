@@ -16,8 +16,8 @@
 //   - XPRV: BIP32 extended private key with reversed field ordering
 //   - PWD BASE64: Base64-encoded password (20-86 characters)
 //   - PWD BASE85: RFC 1924 Base85-encoded password (10-80 characters)
-//
-// RSA keys and dice rolls are planned for future releases.
+//   - DICE: Rejection-sampled dice rolls (2 to 2^32-1 sides)
+//   - RSA: RSA key generation via DRNG (cross-impl reproducibility not guaranteed)
 //
 // # Two-Tier API
 //

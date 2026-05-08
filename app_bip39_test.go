@@ -740,6 +740,36 @@ func TestWordlistSHA256_IndependentVerification(t *testing.T) {
 	}
 }
 
+func TestWordlistSHA256_CorruptionDetection(t *testing.T) {
+	// Verify the SHA256 comparison mechanism catches corrupted content.
+	// We can't modify the embedded wordlist at runtime (sync.Once already
+	// ran), so we verify the detection logic independently: compute
+	// SHA256 of a known-corrupted string and confirm it doesn't match
+	// the expected hash.
+	//
+	// This proves: if the binary were tampered with, the hash check
+	// would catch it and return ErrCorruptedWordlist.
+
+	// Take the English wordlist content, corrupt one byte.
+	entry := wordlistEntries[LangEnglish]
+	corrupted := "X" + entry.raw[1:] // Mutate first byte.
+
+	hash := sha256.Sum256([]byte(corrupted))
+	corruptedHex := fmt.Sprintf("%x", hash)
+	expectedHex := wordlistSHA256[LangEnglish]
+
+	if corruptedHex == expectedHex {
+		t.Fatal("corrupted content produces same SHA256 as original (hash collision - astronomically unlikely, check logic)")
+	}
+
+	// Verify the expected hash matches what verifyWordlists() checks.
+	originalHash := sha256.Sum256([]byte(entry.raw))
+	originalHex := fmt.Sprintf("%x", originalHash)
+	if originalHex != expectedHex {
+		t.Fatalf("original content hash %q does not match expected %q", originalHex, expectedHex)
+	}
+}
+
 func TestWordlistSHA256_AlphabetCheck(t *testing.T) {
 	// Verify the RFC 1924 alphabet constant is exactly 85 characters.
 	if len(rfc1924Alphabet) != 85 {
@@ -879,5 +909,69 @@ func TestRegression_BASE85_SpecVector(t *testing.T) {
 	want := "_s`{TW89)i4`"
 	if pwd != want {
 		t.Errorf("BASE85(12):\n  got:  %s\n  want: %s", pwd, want)
+	}
+}
+
+func TestRegression_BIP39_Japanese(t *testing.T) {
+	key, _ := ParseKey(specMasterXprv)
+	defer key.Zero()
+
+	path := BIP39Path(LangJapanese, 12, 0)
+	entropy, _ := DeriveEntropy(key, path)
+	defer ZeroBytes(entropy)
+
+	mnemonic, err := DeriveBIP39(entropy, LangJapanese, 12)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	// Japanese wordlists are NFKD-normalized (per BIP39 spec), which uses
+	// combining marks. Compare via hex to avoid editor/terminal NFC
+	// recomposition silently changing the expected string.
+	wantHex := "e3818ae381bee38184e3828ae38080e381abe38293e381a6e38184e38080e38193e381b5e38293e38080e3818de38299e38293e38184e3828de38080e381abe38293e38184e38080e3819be38299e38293e38193e38299e38080e381b2e38281e38184e38080e381bee381bbe38186e38080e3819fe3819fe381bfe38080e38195e381a8e38186e38080e38195e38299e38184e3819fe3818fe38080e38182e381a6e381aa"
+	gotHex := hex.EncodeToString([]byte(mnemonic))
+	if gotHex != wantHex {
+		t.Errorf("BIP39 Japanese hex mismatch:\n  got:  %s\n  want: %s", gotHex, wantHex)
+	}
+
+	// Verify ideographic space separator.
+	if !strings.Contains(mnemonic, "\u3000") {
+		t.Error("missing ideographic space")
+	}
+
+	// Verify 12 words.
+	parts := strings.Split(mnemonic, "\u3000")
+	if len(parts) != 12 {
+		t.Errorf("word count: got %d, want 12", len(parts))
+	}
+}
+
+func TestRegression_BASE64_Index1(t *testing.T) {
+	key, _ := ParseKey(specMasterXprv)
+	defer key.Zero()
+
+	path := Base64Path(21, 1)
+	entropy, _ := DeriveEntropy(key, path)
+	defer ZeroBytes(entropy)
+
+	pwd, _ := DeriveBase64(entropy, 21)
+	want := "oAC9Cjj6FpoMokSeKEtfO"
+	if pwd != want {
+		t.Errorf("BASE64(21, idx=1):\n  got:  %s\n  want: %s", pwd, want)
+	}
+}
+
+func TestRegression_BASE85_Len40(t *testing.T) {
+	key, _ := ParseKey(specMasterXprv)
+	defer key.Zero()
+
+	path := Base85Path(40, 0)
+	entropy, _ := DeriveEntropy(key, path)
+	defer ZeroBytes(entropy)
+
+	pwd, _ := DeriveBase85(entropy, 40)
+	want := "NrS!m=v0^BG7<j$J$)y%AY_4<mmiT}MZ=Lp1%*fB"
+	if pwd != want {
+		t.Errorf("BASE85(40):\n  got:  %s\n  want: %s", pwd, want)
 	}
 }

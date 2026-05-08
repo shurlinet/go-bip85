@@ -1086,6 +1086,79 @@ func TestRegression_WIF_LeadingZeroMaster(t *testing.T) {
 	}
 }
 
+func TestRegression_WIF_Testnet(t *testing.T) {
+	// Testnet WIF starts with 'c'. Spec master key.
+	key, _ := ParseKey(specMasterXprv)
+	defer key.Zero()
+
+	path := WIFPath(0)
+	entropy, _ := DeriveEntropy(key, path)
+	defer ZeroBytes(entropy)
+
+	wif, err := DeriveWIF(entropy, &chaincfg.TestNet3Params)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	want := "cRLuXpEtagka2NVmVtg6pcSdUFHp9pqkhCQSweYhQUWMwkdaaVsk"
+	if wif != want {
+		t.Errorf("WIF testnet:\n  got:  %s\n  want: %s", wif, want)
+	}
+}
+
+func TestRegression_XPRV_Testnet(t *testing.T) {
+	key, _ := ParseKey(specMasterXprv)
+	defer key.Zero()
+
+	path := XPRVPath(0)
+	entropy, _ := DeriveEntropy(key, path)
+	defer ZeroBytes(entropy)
+
+	tprv, err := DeriveXPRV(entropy, &chaincfg.TestNet3Params)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	want := "tprv8ZgxMBicQKsPdh5yFmJBEQgjf3oaE8YyyEgS7CnEHXyPe9eGtubocMTq2BdvXjP6E9smCHogUm5ywmbfWPPhpVS3tM2MZbTaCPoTB1Yq51L"
+	if tprv != want {
+		t.Errorf("XPRV testnet:\n  got:  %s\n  want: %s", tprv, want)
+	}
+}
+
+func TestRegression_HEX_Index1(t *testing.T) {
+	key, _ := ParseKey(specMasterXprv)
+	defer key.Zero()
+
+	path := HexPath(32, 1)
+	entropy, _ := DeriveEntropy(key, path)
+	defer ZeroBytes(entropy)
+
+	hexStr, _ := DeriveHex(entropy, 32)
+	want := "e60c5cc896c377415e6d4be953e24df6b5400cdaf1cec84304c64a965987200c"
+	if hexStr != want {
+		t.Errorf("HEX(32, idx=1):\n  got:  %s\n  want: %s", hexStr, want)
+	}
+}
+
+func TestRegression_DRNG_LeadingZeroMaster(t *testing.T) {
+	masterXprv := "xprv9s21ZrQH143K33feVLZmQbPSTS3sF2gaBBVRk3oCtKjpmVVtuUhXy7Yt8UfQVUyqhmmJoEouLRMReJZw3n4rtQ4FJNsyE7NTghC5QFroQQ9"
+	key, _ := ParseKey(masterXprv)
+	defer key.Zero()
+
+	path, _ := ParsePath("m/83696968'/0'/0'")
+	entropy, _ := DeriveEntropy(key, path)
+	defer ZeroBytes(entropy)
+
+	drng := NewDRNG(entropy)
+	buf := make([]byte, 80)
+	drng.Read(buf)
+
+	want := "c9beb1060bc88d379e0b59be88612c12a7624ff805ad5c5bd243e0c52148d51f6906f7043933e838279a6e3b3982f5836b20b767c336acaa08a27ff413743ff34edc16fc8d8c3e36bd52caace51fa439"
+	if got := hex.EncodeToString(buf); got != want {
+		t.Errorf("DRNG leading-zero master:\n  got:  %s\n  want: %s", got, want)
+	}
+}
+
 // --- Anti-tamper: version byte constants ---
 
 func TestXPRV_VersionConstants(t *testing.T) {

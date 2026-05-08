@@ -3,7 +3,7 @@ package bip85
 import "golang.org/x/crypto/sha3"
 
 // DRNG is a deterministic random number generator seeded with BIP85 entropy.
-// It implements io.Reader by wrapping SHAKE256 (NIST SP 800-185).
+// It implements io.Reader by wrapping SHAKE256 (FIPS 202).
 //
 // BIP85-DRNG-SHAKE256 seeds a SHAKE256 XOF with the 64-byte HMAC-SHA512
 // output and produces an unlimited deterministic byte stream.
