@@ -1,6 +1,10 @@
 package bip85
 
-import "golang.org/x/crypto/sha3"
+import (
+	"strconv"
+
+	"golang.org/x/crypto/sha3"
+)
 
 // DRNG is a deterministic random number generator seeded with BIP85 entropy.
 // It implements io.Reader by wrapping SHAKE256 (FIPS 202).
@@ -26,8 +30,12 @@ func NewDRNG(entropy []byte) *DRNG {
 		panic("bip85: DRNG requires exactly 64 bytes of entropy")
 	}
 	xof := sha3.NewShake256()
-	if _, err := xof.Write(entropy); err != nil {
+	n, err := xof.Write(entropy)
+	if err != nil {
 		panic("bip85: SHAKE256 write failed: " + err.Error())
+	}
+	if n != 64 {
+		panic("bip85: SHAKE256 write accepted only " + strconv.Itoa(n) + " of 64 bytes")
 	}
 	return &DRNG{xof: xof}
 }

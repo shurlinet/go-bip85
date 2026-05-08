@@ -114,9 +114,14 @@ func deriveChild(root *hdkeychain.ExtendedKey, path Path, hmacKey []byte) (deriv
 
 	// HMAC-SHA512(key="bip-entropy-from-k", msg=k) -> 64 bytes of entropy.
 	mac := hmac.New(sha512.New, hmacKey)
-	if _, err := mac.Write(keyBytes); err != nil {
+	nw, err := mac.Write(keyBytes)
+	if err != nil {
 		ZeroBytes(derivedKeyCopy)
 		return nil, nil, fmt.Errorf("bip85: HMAC write failed: %w", err)
+	}
+	if nw != len(keyBytes) {
+		ZeroBytes(derivedKeyCopy)
+		return nil, nil, fmt.Errorf("bip85: HMAC write accepted %d of %d bytes", nw, len(keyBytes))
 	}
 	entropyOut := mac.Sum(nil)
 

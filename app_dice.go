@@ -54,6 +54,10 @@ func DeriveRolls(entropy []byte, sides uint32, rolls int) ([]int, error) {
 	}
 	bytesPerRoll := (bitsPerRoll + 7) / 8 // integer ceiling division
 
+	// Precompute the right-shift amount. This is invariant across all rolls:
+	// we read bytesPerRoll*8 bits but only keep bitsPerRoll MSBs.
+	shiftBits := uint(bytesPerRoll*8 - bitsPerRoll)
+
 	// Cap pre-allocation to avoid a single massive allocation for
 	// very large rolls values. Go's slice growth handles the rest.
 	prealloc := rolls
@@ -79,20 +83,13 @@ func DeriveRolls(entropy []byte, sides uint32, rolls int) ([]int, error) {
 				return nil, fmt.Errorf("bip85: DRNG read returned %d bytes, expected %d", n, bytesPerRoll)
 			}
 
-			// Interpret bytes as big-endian integer.
+			// Interpret bytes as big-endian integer, then retain
+			// only the most significant bitsPerRoll bits.
 			var val uint32
 			for _, b := range buf {
 				val = (val << 8) | uint32(b)
 			}
-
-			// Retain only the most significant bitsPerRoll bits.
-			// The excess bits are at the low end.
-			totalBits := bytesPerRoll * 8
-			excessBits := totalBits - bitsPerRoll
-			if excessBits < 0 {
-				return nil, fmt.Errorf("bip85: dice internal error: negative excess bits %d (bytesPerRoll=%d, bitsPerRoll=%d)", excessBits, bytesPerRoll, bitsPerRoll)
-			}
-			val >>= uint(excessBits)
+			val >>= shiftBits
 
 			if val < sides {
 				result = append(result, int(val))

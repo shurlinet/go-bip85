@@ -184,6 +184,9 @@ func getWordlist(lang uint32) ([]string, error) {
 
 // DeriveBIP39 derives a BIP39 mnemonic from BIP85 entropy.
 //
+// The returned mnemonic is a secret recovery phrase. Do not log it,
+// display it in UI without user intent, or pass it to tracing frameworks.
+//
 // The entropy is truncated to the byte length required for the given
 // word count, then a SHA256 checksum is appended per BIP39. The combined
 // bits are split into 11-bit groups (MSB-first), each group indexing

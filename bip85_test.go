@@ -2,8 +2,11 @@ package bip85
 
 import (
 	"bytes"
+	"crypto/hmac"
+	"crypto/sha512"
 	"encoding/hex"
 	"errors"
+	"strings"
 	"testing"
 
 	btcec "github.com/btcsuite/btcd/btcec/v2"
@@ -767,4 +770,250 @@ func TestZeroBytes_NilSafe(t *testing.T) {
 	ZeroBytes(nil)
 	// Must not panic on empty slice.
 	ZeroBytes([]byte{})
+}
+
+// ========================================================================
+// AI threat defense tests
+//
+// These tests defend against a compromised AI (or rogue human contributor)
+// introducing subtle changes that produce valid-looking but cryptographically
+// wrong output. Each test verifies a specific attack vector that would be
+// invisible to standard unit tests.
+//
+// Design principle: every test uses at least TWO independent verification
+// paths. An attacker must modify BOTH paths simultaneously, which is
+// highly visible in code review.
+// ========================================================================
+
+// TestAntiAI_HMACArgumentOrder verifies HMAC is called with the correct
+// argument order: key="bip-entropy-from-k", message=derived_private_key.
+//
+// Attack: swap key and message in hmac.New(). Both produce valid 64-byte
+// output, but the entropy is completely different. Spec vectors catch this,
+// but this test makes the defense EXPLICIT and independent.
+func TestAntiAI_HMACArgumentOrder(t *testing.T) {
+	// Compute HMAC-SHA512 manually with the correct argument order.
+	derivedKey, _ := hex.DecodeString("cca20ccb0e9a90feb0912870c3323b24874b0ca3d8018c4b96d0b97c0e82ded0")
+
+	// Correct: HMAC(key=hmacKey, msg=derivedKey)
+	correctMAC := hmac.New(sha512.New, hmacKeyBIP85)
+	correctMAC.Write(derivedKey)
+	correctEntropy := correctMAC.Sum(nil)
+
+	// Wrong: HMAC(key=derivedKey, msg=hmacKey) - swapped arguments
+	wrongMAC := hmac.New(sha512.New, derivedKey)
+	wrongMAC.Write(hmacKeyBIP85)
+	wrongEntropy := wrongMAC.Sum(nil)
+
+	// The two must differ (proves the order matters).
+	if bytes.Equal(correctEntropy, wrongEntropy) {
+		t.Fatal("HMAC with swapped key/message produced identical output (mathematically impossible)")
+	}
+
+	// The correct order must match what DeriveEntropy produces.
+	// This uses EntropyFromRawKey which applies the same HMAC step.
+	libEntropy, err := EntropyFromRawKey(derivedKey)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	if !bytes.Equal(libEntropy, correctEntropy) {
+		t.Fatal("library HMAC argument order does not match correct order (key=hmacKey, msg=derivedKey)")
+	}
+}
+
+// TestAntiAI_FullEntropyUsedInHMAC verifies that the full 32-byte derived
+// key is used as HMAC input, not a truncated or zeroed version.
+//
+// Attack: silently zero or truncate bytes before HMAC. Output is still
+// deterministic and 64 bytes, but entropy is reduced. This test catches
+// any truncation by verifying the output matches the spec.
+func TestAntiAI_FullEntropyUsedInHMAC(t *testing.T) {
+	// Spec vector 1: derived key -> entropy.
+	fullKey, _ := hex.DecodeString("cca20ccb0e9a90feb0912870c3323b24874b0ca3d8018c4b96d0b97c0e82ded0")
+	wantEntropy := "efecfbccffea313214232d29e71563d941229afb4338c21f9517c41aaa0d16f00b83d2a09ef747e7a64e8e2bd5a14869e693da66ce94ac2da570ab7ee48618f7"
+
+	// Library output with full key.
+	libEntropy, err := EntropyFromRawKey(fullKey)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if hex.EncodeToString(libEntropy) != wantEntropy {
+		t.Fatal("library entropy does not match spec vector (full key may not be used in HMAC)")
+	}
+
+	// Verify truncation would produce different output.
+	// Zero the last byte of the key and re-derive.
+	truncatedKey := make([]byte, 32)
+	copy(truncatedKey, fullKey)
+	truncatedKey[31] = 0x00 // Corrupt last byte.
+
+	truncatedEntropy, err := EntropyFromRawKey(truncatedKey)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	if bytes.Equal(libEntropy, truncatedEntropy) {
+		t.Fatal("truncating last byte of key produced same entropy (HMAC may not use full key)")
+	}
+	ZeroBytes(truncatedKey)
+	ZeroBytes(truncatedEntropy)
+	ZeroBytes(libEntropy)
+}
+
+// TestAntiAI_SpecVectorIndependentHMAC recomputes spec vector 1 entropy
+// using only Go stdlib crypto/hmac + crypto/sha512, without calling any
+// go-bip85 function. This is the core pipeline oracle.
+//
+// Attack: modify the library's HMAC implementation to produce biased
+// output AND update the expected test values to match. This independent
+// computation catches it because the attacker would need to also modify
+// this test's inline HMAC computation.
+func TestAntiAI_SpecVectorIndependentHMAC(t *testing.T) {
+	// BIP85 spec vector 1:
+	// Derived key at m/83696968'/0'/0' from spec master key.
+	derivedKey, _ := hex.DecodeString("cca20ccb0e9a90feb0912870c3323b24874b0ca3d8018c4b96d0b97c0e82ded0")
+
+	// Independent HMAC computation using only stdlib.
+	key := []byte("bip-entropy-from-k") // 18 bytes, ASCII
+	mac := hmac.New(sha512.New, key)
+	mac.Write(derivedKey)
+	entropy := mac.Sum(nil)
+
+	// Expected entropy from spec (hardcoded, not from any go-bip85 variable).
+	want := "efecfbccffea313214232d29e71563d941229afb4338c21f9517c41aaa0d16f00b83d2a09ef747e7a64e8e2bd5a14869e693da66ce94ac2da570ab7ee48618f7"
+
+	got := hex.EncodeToString(entropy)
+	if got != want {
+		t.Fatalf("independent HMAC computation does not match spec:\n  got:  %s\n  want: %s", got, want)
+	}
+
+	// Cross-check: library must produce the same result.
+	libEntropy, err := EntropyFromRawKey(derivedKey)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if !bytes.Equal(entropy, libEntropy) {
+		t.Fatal("library output diverges from independent HMAC computation")
+	}
+}
+
+// TestAntiAI_NoKeyMaterialInErrors verifies that error messages from the
+// derivation pipeline never contain key bytes, entropy bytes, or xprv
+// strings. A rogue AI could embed key material in error messages to
+// exfiltrate secrets via logging frameworks.
+func TestAntiAI_NoKeyMaterialInErrors(t *testing.T) {
+	// Trigger various error paths and inspect the error messages.
+	testCases := []struct {
+		name string
+		fn   func() error
+	}{
+		{"nil key", func() error {
+			_, err := DeriveEntropy(nil, CorePath(0, 0))
+			return err
+		}},
+		{"empty xprv", func() error {
+			_, err := ParseKey("")
+			return err
+		}},
+		{"invalid xprv", func() error {
+			_, err := ParseKey("xprv_clearly_invalid_but_long_enough_to_contain_fake_key_material_abcdef1234567890")
+			return err
+		}},
+		{"public key", func() error {
+			_, err := ParseKey("xpub661MyMwAqRbcEpFyaVwRcfeeAtFKbH3UnesyJDSbkBQw15pyoHMA6bTEcsSY1NQ8Yxfme29GEXRdj9fWwnPrAG7wX9VbT3GUh9d4GMhawAT")
+			return err
+		}},
+		{"invalid WIF entropy", func() error {
+			_, err := DeriveWIF(make([]byte, 31), nil)
+			return err
+		}},
+		{"zero secp256k1 key", func() error {
+			return ValidateSecp256k1Key(make([]byte, 32))
+		}},
+	}
+
+	// Patterns that should NEVER appear in error messages.
+	// These are hex fragments of the spec master key's private key data
+	// and common xprv prefixes that would indicate key material leakage.
+	forbidden := []string{
+		"xprv9s21ZrQH143K", // xprv prefix (first 16 chars)
+		"efecfbcc",         // spec vector 1 entropy prefix
+		"cca20ccb",         // spec vector 1 derived key prefix
+	}
+
+	for _, tc := range testCases {
+		t.Run(tc.name, func(t *testing.T) {
+			err := tc.fn()
+			if err == nil {
+				return // No error to inspect.
+			}
+			errMsg := err.Error()
+			for _, pattern := range forbidden {
+				if strings.Contains(errMsg, pattern) {
+					t.Errorf("error message contains key material %q: %s", pattern, errMsg)
+				}
+			}
+		})
+	}
+}
+
+// TestAntiAI_XPRVFieldOrder verifies the BIP85-specific reversed field
+// ordering independently. The BIP85 spec reverses BIP32 convention:
+// first 32 bytes = chain code, second 32 bytes = private key.
+//
+// Attack: swap the fields back to BIP32 standard order. The output is
+// still a valid xprv. Tests that only check "it parses" won't catch it.
+// This test verifies the SPECIFIC bytes at each position.
+func TestAntiAI_XPRVFieldOrder(t *testing.T) {
+	// Use spec XPRV vector entropy.
+	key, _ := ParseKey(specMasterXprv)
+	defer key.Zero()
+
+	path := XPRVPath(0)
+	entropy, err := DeriveEntropy(key, path)
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer ZeroBytes(entropy)
+
+	xprv, err := DeriveXPRV(entropy, nil)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	// Parse back and verify field positions match BIP85's REVERSED ordering.
+	parsed, err := hdkeychain.NewKeyFromString(xprv)
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer parsed.Zero()
+
+	// Chain code must be entropy[0:32] (first 32 bytes).
+	if !bytes.Equal(parsed.ChainCode(), entropy[:32]) {
+		t.Error("chain code is not entropy[0:32] (BIP85 reversed field order violated)")
+	}
+
+	// Private key must be entropy[32:64] (second 32 bytes).
+	privKey, _ := parsed.ECPrivKey()
+	if !bytes.Equal(privKey.Serialize(), entropy[32:64]) {
+		t.Error("private key is not entropy[32:64] (BIP85 reversed field order violated)")
+	}
+
+	// Verify the OPPOSITE order would produce a DIFFERENT xprv.
+	// This proves the test actually discriminates between the two orderings.
+	wrongOrderEntropy := make([]byte, 64)
+	copy(wrongOrderEntropy[:32], entropy[32:64]) // Swap: key first
+	copy(wrongOrderEntropy[32:], entropy[:32])    // Swap: chain code second
+	defer ZeroBytes(wrongOrderEntropy)
+
+	wrongXPRV, err := DeriveXPRV(wrongOrderEntropy, nil)
+	if err != nil {
+		// If the swapped key is invalid (>= curve order), that's fine -
+		// it proves the fields are different when swapped.
+		return
+	}
+	if wrongXPRV == xprv {
+		t.Fatal("swapped field order produced identical XPRV (fields may be symmetric or test is wrong)")
+	}
 }

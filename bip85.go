@@ -1,61 +1,96 @@
 // Package bip85 implements BIP85 (Deterministic Entropy From BIP32 Keychains),
 // version 2.0.0 of the specification.
 //
-// BIP85 derives deterministic entropy from a master key using HMAC-SHA512.
-// The derived entropy can be used to generate BIP39 mnemonics, WIF keys,
-// extended private keys, passwords, dice rolls, and other cryptographic
-// material - all from a single master backup.
+// BIP85 derives deterministic entropy from a BIP32 master key using
+// HMAC-SHA512. A single master backup recovers all derived material:
+// mnemonics, private keys, passwords, symmetric keys, and dice rolls.
+// The derivation is one-way and hardened - knowledge of any derived output
+// reveals nothing about the master key or other derived outputs.
+//
+// Basic usage (BIP32 master key to BIP39 mnemonic):
+//
+//	key, _ := bip85.ParseKey("xprv9s21ZrQH143K...")
+//	defer key.Zero()
+//
+//	path := bip85.BIP39Path(bip85.LangEnglish, 12, 0)
+//	entropy, _ := bip85.DeriveEntropy(key, path)
+//	defer bip85.ZeroBytes(entropy)
+//
+//	mnemonic, _ := bip85.DeriveBIP39(entropy, bip85.LangEnglish, 12)
+//
+// # Derivation Pipeline
+//
+// The BIP85 derivation pipeline has three stages:
+//
+//  1. Key derivation: BIP32 hardened child derivation to a leaf key,
+//     or custom derivation via [WithCustomDeriver], or direct key input
+//     via [EntropyFromRawKey].
+//  2. Entropy extraction: HMAC-SHA512(key="bip-entropy-from-k", msg=leafKey)
+//     produces 64 bytes of deterministic entropy.
+//  3. Application: the 64-byte entropy is transformed into the target
+//     format (mnemonic, WIF, XPRV, hex, password, dice rolls, or
+//     unlimited DRNG stream).
 //
 // # Applications
 //
 // The following BIP85 applications are supported:
-//   - BIP39: Mnemonic derivation (all 10 languages, 12/15/18/21/24 words)
-//   - DRNG: SHAKE256-based deterministic random number generator (io.Reader)
-//   - HEX: Raw hex-encoded entropy (16-64 bytes)
-//   - WIF: Compressed private key in Wallet Import Format
-//   - XPRV: BIP32 extended private key with reversed field ordering
-//   - PWD BASE64: Base64-encoded password (20-86 characters)
-//   - PWD BASE85: RFC 1924 Base85-encoded password (10-80 characters)
-//   - DICE: Rejection-sampled dice rolls (2 to 2^32-1 sides)
+//   - BIP39: Mnemonic derivation via [DeriveBIP39] (10 languages, 12-24 words)
+//   - WIF: Compressed private key via [DeriveWIF] (secp256k1, network-aware)
+//   - XPRV: Extended private key via [DeriveXPRV] (reversed field order per spec)
+//   - HEX: Raw hex entropy via [DeriveHex] (16-64 bytes)
+//   - BASE64: Password via [DeriveBase64] (20-86 characters, RFC 4648)
+//   - BASE85: Password via [DeriveBase85] (10-80 characters, RFC 1924)
+//   - DICE: Dice rolls via [DeriveDice] (rejection sampling, 2 to 2^32-1 sides)
+//   - DRNG: Unlimited byte stream via [NewDRNG] (SHAKE256 XOF, io.Reader)
 //
-// RSA key generation (BIP85 app 828365') is intentionally not provided as a
-// high-level function. Go's crypto/rsa (since Go 1.24) mixes system entropy
-// into prime generation for FIPS 140-3 compliance, making RSA output
-// non-deterministic and non-recoverable from a seed backup. Consumers who
-// need RSA can use the DRNG (io.Reader) directly with their own key
-// generation code. See RSAPath and GPGCreationTimestamp for path building
-// and GPG key creation date constants.
+// RSA key generation is not provided because Go 1.24+ mixes system entropy
+// into crypto/rsa for FIPS 140-3, making output non-deterministic. Use the
+// DRNG directly with a deterministic RSA implementation. See [RSAPath] and
+// [GPGCreationTimestamp].
 //
 // # Two-Tier API
 //
 // The library provides two entry points for entropy derivation:
 //
-// BIP32-native (btcsuite types, Bitcoin-compatible chains):
+// BIP32-native (Bitcoin and compatible chains):
 //
 //	entropy, err := bip85.DeriveEntropy(parsedKey, path)
 //
-// Chain-agnostic (raw bytes, any derivation scheme):
+// Chain-agnostic (Solana, Cardano, Polkadot, or any key bytes):
 //
 //	entropy, err := bip85.EntropyFromRawKey(myDerivedKeyBytes)
 //
-// Application functions (DeriveBIP39, DeriveHex, DeriveWIF, DeriveXPRV,
-// DeriveBase64, DeriveBase85) accept raw entropy bytes and are independent
-// of the derivation method used. Network parameters are configurable via
-// chaincfg.Params for non-Bitcoin chains.
+// Application functions ([DeriveBIP39], [DeriveHex], [DeriveWIF], [DeriveXPRV],
+// [DeriveBase64], [DeriveBase85], [DeriveDice]) accept raw entropy bytes and
+// are independent of the derivation method. Network parameters for WIF and
+// XPRV are configurable via chaincfg.Params; pass nil for Bitcoin mainnet.
+//
+// # Concurrency
+//
+// [ParseKey] returns an [*hdkeychain.ExtendedKey] that is safe for concurrent
+// use from multiple goroutines. Each derivation allocates fresh child keys
+// internally. [DeriveEntropy], [DeriveKeyAndEntropy], and [EntropyFromRawKey]
+// are safe for concurrent use with the same parsed key.
+//
+// [DRNG] instances are NOT safe for concurrent use. Each goroutine must
+// create its own instance via [NewDRNG].
 //
 // # Security
 //
-// Memory zeroing: This library makes a best-effort attempt to zero secret
-// key material after use via ZeroBytes and defer. However, the Go garbage
-// collector may copy data before zeroing occurs. For hardware-grade
+// All returned byte slices (entropy, derived keys) are fresh allocations
+// owned by the caller. Call [ZeroBytes] on them when no longer needed.
+// Internally, all intermediate key material is zeroed via defer. The Go
+// garbage collector may copy data before zeroing occurs; for hardware-grade
 // security, use a hardware wallet.
 //
-// Master key security: All derived outputs are only as secure as the master
-// key. A weak or compromised master key compromises all derived entropy.
+// All functions that return secret strings ([DeriveBIP39], [DeriveWIF],
+// [DeriveXPRV], [DeriveHex], [DeriveBase64], [DeriveBase85]) document the
+// output as secret material. Do not log, trace, or serialize these values.
+// [*hdkeychain.ExtendedKey].String() outputs the full xprv in base58 -
+// do not pass parsed keys to loggers or fmt.Print.
 //
-// Logging: Do not pass ExtendedKey values or entropy byte slices to loggers
-// or tracing frameworks. ExtendedKey.String() outputs the full xprv.
-// Entropy printed via fmt produces the raw secret bytes.
+// All derived outputs are only as secure as the master key. A weak or
+// compromised master key compromises all derived entropy.
 //
 // # Specification
 //
@@ -137,8 +172,12 @@ func EntropyFromRawKey(privateKey []byte, opts ...Option) ([]byte, error) {
 	}
 
 	mac := hmac.New(sha512.New, cfg.hmacKey)
-	if _, wErr := mac.Write(privateKey); wErr != nil {
+	nw, wErr := mac.Write(privateKey)
+	if wErr != nil {
 		return nil, fmt.Errorf("bip85: HMAC write failed: %w", wErr)
+	}
+	if nw != len(privateKey) {
+		return nil, fmt.Errorf("bip85: HMAC write accepted %d of %d bytes", nw, len(privateKey))
 	}
 	entropy := mac.Sum(nil)
 
@@ -207,9 +246,14 @@ func deriveCustom(key *hdkeychain.ExtendedKey, path Path, cfg derivationConfig) 
 	copy(dk, rawKey)
 
 	mac := hmac.New(sha512.New, cfg.hmacKey)
-	if _, wErr := mac.Write(rawKey); wErr != nil {
+	nw, wErr := mac.Write(rawKey)
+	if wErr != nil {
 		ZeroBytes(dk)
 		return nil, nil, fmt.Errorf("bip85: HMAC write failed: %w", wErr)
+	}
+	if nw != len(rawKey) {
+		ZeroBytes(dk)
+		return nil, nil, fmt.Errorf("bip85: HMAC write accepted %d of %d bytes", nw, len(rawKey))
 	}
 	ent := mac.Sum(nil)
 

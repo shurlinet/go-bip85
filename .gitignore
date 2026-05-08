@@ -1,0 +1,11 @@
+# Compiled example binaries
+examples/basic/basic
+examples/dice/dice
+examples/drng/drng
+examples/multichain/multichain
+examples/password/password
+
+# Go build artifacts
+*.exe
+*.test
+*.out

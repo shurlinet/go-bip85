@@ -43,7 +43,14 @@ func ValidateSecp256k1Key(key []byte) error {
 	}
 	k := new(big.Int).SetBytes(key)
 	valid := k.Sign() != 0 && k.Cmp(secp256k1Order) < 0
-	k.SetUint64(0) // clear secret from big.Int internal limbs
+	// Zero the internal limb array. Bits() returns the backing []Word
+	// (not a copy), so zeroing it clears the actual secret data.
+	// SetUint64(0) alone only updates the length, leaving old limbs in memory.
+	limbs := k.Bits()
+	for i := range limbs {
+		limbs[i] = 0
+	}
+	k.SetUint64(0)
 	if !valid {
 		return ErrInvalidKeyRange
 	}

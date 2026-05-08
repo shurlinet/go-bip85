@@ -114,8 +114,12 @@ func (p Path) Components() []uint32 {
 }
 
 // String returns the canonical string form of the path using the '
-// hardened marker (e.g. "m/83696968'/0'/0'").
+// hardened marker (e.g. "m/83696968'/0'/0'"). Returns an empty string
+// for the zero-value Path (no components).
 func (p Path) String() string {
+	if len(p.components) == 0 {
+		return ""
+	}
 	var b strings.Builder
 	b.WriteString("m")
 	for _, c := range p.components {
@@ -203,6 +207,26 @@ func RSAPath(keyBits, keyIndex uint32) Path {
 func DicePath(sides, rolls, index uint32) Path {
 	return buildPath(AppDice, sides, rolls, index)
 }
+
+const (
+	// RSAMinBits is the minimum RSA key size for the RSA application (1024).
+	RSAMinBits = 1024
+	// RSAMaxBits is the maximum RSA key size for the RSA application (16384).
+	RSAMaxBits = 16384
+
+	// GPGCreationTimestamp is the UNIX epoch timestamp that MUST be used as
+	// the creation date for GPG keys derived from BIP85 RSA output. This is
+	// the Bitcoin genesis block timestamp (2009-01-03 18:15:05 UTC).
+	//
+	// BIP85 spec: "the creation date MUST be fixed to UNIX Epoch timestamp
+	// 1231006505 [...] because the key fingerprint is affected by the
+	// creation date."
+	//
+	// This library does not generate GPG or RSA keys directly. Consumers
+	// building GPG keys from BIP85 RSA output via the DRNG must use this
+	// constant as the key creation timestamp.
+	GPGCreationTimestamp int64 = 1231006505
+)
 
 // hardenedMax is the maximum allowed value for a hardened path component.
 // Values above this would overflow when added to HardenedKeyStart (0x80000000).

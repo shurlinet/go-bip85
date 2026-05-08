@@ -24,6 +24,10 @@ func encodeBase85RFC1924(src []byte) string {
 			out[off+j] = rfc1924Alphabet[v%85]
 			v /= 85
 		}
+		// 85^5 > 2^32, so v must be 0 after extracting 5 digits.
+		if v != 0 {
+			panic("bip85: base85 encoding error: residual value after 5 divisions")
+		}
 	}
 	result := string(out)
 	ZeroBytes(out) // out holds encoded secret-derived data

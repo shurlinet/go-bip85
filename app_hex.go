@@ -17,6 +17,10 @@ const (
 // before hex encoding. Per the spec, "truncate trailing (least significant)
 // bytes" means keeping the first numBytes.
 //
+// The returned string is secret material (raw key entropy in hex form).
+// Do not log it, include it in error messages, or pass it to tracing
+// frameworks. Go strings cannot be zeroed after use.
+//
 // The entropy slice must be at least numBytes long.
 //
 // Path: m/83696968'/128169'/{numBytes}'/{index}'.

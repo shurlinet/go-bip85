@@ -12,6 +12,9 @@ const (
 // DeriveBase85 derives an RFC 1924 Base85-encoded password from BIP85 entropy.
 // pwdLen (10-80) controls the length of the output password string.
 //
+// The returned string is a secret password derived from key material.
+// Do not log it or pass it to tracing frameworks.
+//
 // All 64 bytes of entropy are encoded using the RFC 1924 Base85 alphabet
 // (NOT Adobe Ascii85, NOT Go's encoding/ascii85), then the result is
 // truncated to pwdLen characters. 64 bytes -> 80 Base85 characters,

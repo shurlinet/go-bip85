@@ -11,6 +11,9 @@ import (
 // DeriveWIF derives a compressed WIF-encoded private key from BIP85 entropy.
 // The first 32 bytes of entropy are used as the private key.
 //
+// The returned string is a secret private key. Do not log it or pass it
+// to tracing frameworks.
+//
 // The net parameter controls the version byte in the WIF encoding.
 // Pass &chaincfg.MainNetParams for Bitcoin mainnet (prefix K/L),
 // &chaincfg.TestNet3Params for testnet (prefix c), or custom
@@ -40,6 +43,9 @@ func DeriveWIF(entropy []byte, net *chaincfg.Params) (string, error) {
 
 	// Parse as secp256k1 private key via btcec.
 	privKey, _ := btcec.PrivKeyFromBytes(keyBytes)
+	if privKey == nil {
+		return "", fmt.Errorf("%w: btcec rejected validated key", ErrInvalidKeyRange)
+	}
 	defer privKey.Zero()
 
 	// btcutil handles version byte, compression flag, base58check encoding.

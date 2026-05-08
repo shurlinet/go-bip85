@@ -15,6 +15,9 @@ const (
 // DeriveBase64 derives a Base64-encoded password from BIP85 entropy.
 // pwdLen (20-86) controls the length of the output password string.
 //
+// The returned string is a secret password derived from key material.
+// Do not log it or pass it to tracing frameworks.
+//
 // All 64 bytes of entropy are Base64-encoded using standard RFC 4648
 // encoding (NOT URL-safe), then the result is truncated to pwdLen
 // characters. Passwords up to 86 characters never contain padding

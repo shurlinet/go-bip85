@@ -10,6 +10,9 @@ import (
 // DeriveXPRV derives a BIP32 extended private key from the given
 // 64-byte BIP85 entropy.
 //
+// The returned string is a secret extended private key. Do not log it
+// or pass it to tracing frameworks.
+//
 // The net parameter controls the version bytes in the serialized key.
 // Pass &chaincfg.MainNetParams for Bitcoin mainnet (xprv prefix),
 // &chaincfg.TestNet3Params for testnet (tprv prefix), or custom
