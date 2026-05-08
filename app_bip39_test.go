@@ -770,6 +770,60 @@ func TestWordlistSHA256_CorruptionDetection(t *testing.T) {
 	}
 }
 
+func TestBIP39_WordCountTable(t *testing.T) {
+	// Verify the wordCountToBytes lookup table is internally consistent
+	// with BIP39 math: entropy_bits % 32 == 0, checksum = entropy_bits / 32,
+	// total_bits / 11 == word_count. (bipsea: test_meta)
+	for words, entropyBytes := range wordCountToBytes {
+		entropyBits := entropyBytes * 8
+		if entropyBits%32 != 0 {
+			t.Errorf("words=%d: entropy_bits %d not divisible by 32", words, entropyBits)
+		}
+		checksumBits := entropyBits / 32
+		totalBits := entropyBits + checksumBits
+		if totalBits%11 != 0 {
+			t.Errorf("words=%d: total_bits %d not divisible by 11", words, totalBits)
+		}
+		if totalBits/11 != words {
+			t.Errorf("words=%d: total_bits/11 = %d, mismatch", words, totalBits/11)
+		}
+	}
+}
+
+func TestBIP39_LongEntropyTruncates(t *testing.T) {
+	// Verify that 64-byte entropy (more than any word count needs) works
+	// correctly for all word counts. DeriveBIP39 must truncate to the
+	// right length before computing the checksum. (bipsea: test_entropy_to_words_long_entropy)
+	key, _ := ParseKey(specMasterXprv)
+	defer key.Zero()
+
+	for _, words := range []int{12, 15, 18, 21, 24} {
+		t.Run(fmt.Sprintf("%d_words", words), func(t *testing.T) {
+			path := BIP39Path(0, uint32(words), 0)
+			entropy, err := DeriveEntropy(key, path)
+			if err != nil {
+				t.Fatal(err)
+			}
+			defer ZeroBytes(entropy)
+
+			if len(entropy) != 64 {
+				t.Fatalf("entropy length: got %d, want 64", len(entropy))
+			}
+
+			// 64 bytes is MORE than any word count needs (max is 32 for 24 words).
+			// DeriveBIP39 must handle this correctly.
+			mnemonic, err := DeriveBIP39(entropy, 0, words)
+			if err != nil {
+				t.Fatalf("DeriveBIP39 with 64-byte entropy for %d words: %v", words, err)
+			}
+			mnemonicWords := strings.Split(mnemonic, " ")
+			if len(mnemonicWords) != words {
+				t.Errorf("word count: got %d, want %d", len(mnemonicWords), words)
+			}
+		})
+	}
+}
+
 func TestWordlistSHA256_AlphabetCheck(t *testing.T) {
 	// Verify the RFC 1924 alphabet constant is exactly 85 characters.
 	if len(rfc1924Alphabet) != 85 {
