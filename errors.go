@@ -52,4 +52,18 @@ var (
 	// ErrInvalidLength indicates a length parameter is out of the allowed
 	// range for the target application.
 	ErrInvalidLength = errors.New("bip85: invalid length parameter")
+
+	// BIP39 application errors
+
+	// ErrCorruptedWordlist indicates an embedded BIP39 wordlist failed
+	// SHA256 integrity verification. This likely indicates a tampered binary.
+	ErrCorruptedWordlist = errors.New("bip85: corrupted BIP39 wordlist (SHA256 mismatch)")
+
+	// ErrInvalidWordCount indicates the requested word count is not valid
+	// for BIP39. Valid counts: 12, 15, 18, 21, 24.
+	ErrInvalidWordCount = errors.New("bip85: invalid word count")
+
+	// ErrInvalidLanguage indicates an unsupported BIP39 language code.
+	// Valid codes: 0 (English) through 9 (Portuguese).
+	ErrInvalidLanguage = errors.New("bip85: invalid language code")
 )

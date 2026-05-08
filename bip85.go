@@ -9,13 +9,15 @@
 // # Applications
 //
 // The following BIP85 applications are supported:
+//   - BIP39: Mnemonic derivation (all 10 languages, 12/15/18/21/24 words)
 //   - DRNG: SHAKE256-based deterministic random number generator (io.Reader)
 //   - HEX: Raw hex-encoded entropy (16-64 bytes)
 //   - WIF: Compressed private key in Wallet Import Format
 //   - XPRV: BIP32 extended private key with reversed field ordering
+//   - PWD BASE64: Base64-encoded password (20-86 characters)
+//   - PWD BASE85: RFC 1924 Base85-encoded password (10-80 characters)
 //
-// BIP39 mnemonics, Base64/Base85 passwords, RSA keys, and dice rolls are
-// planned for future releases.
+// RSA keys and dice rolls are planned for future releases.
 //
 // # Two-Tier API
 //
@@ -29,10 +31,10 @@
 //
 //	entropy, err := bip85.EntropyFromRawKey(myDerivedKeyBytes)
 //
-// Application functions (DeriveHex, DeriveWIF, DeriveXPRV) accept raw
-// entropy bytes and are independent of the derivation method used.
-// Network parameters are configurable via chaincfg.Params for non-Bitcoin
-// chains.
+// Application functions (DeriveBIP39, DeriveHex, DeriveWIF, DeriveXPRV,
+// DeriveBase64, DeriveBase85) accept raw entropy bytes and are independent
+// of the derivation method used. Network parameters are configurable via
+// chaincfg.Params for non-Bitcoin chains.
 //
 // # Security
 //
