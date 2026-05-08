@@ -12,9 +12,20 @@ import (
 // hmacKeyBIP85 is the HMAC key specified by BIP85: "bip-entropy-from-k".
 var hmacKeyBIP85 = []byte("bip-entropy-from-k")
 
+// hmacKeyBIP85Expected is the byte-level expected value for tamper detection.
+var hmacKeyBIP85Expected = []byte{
+	0x62, 0x69, 0x70, 0x2d, 0x65, 0x6e, 0x74, 0x72, 0x6f,
+	0x70, 0x79, 0x2d, 0x66, 0x72, 0x6f, 0x6d, 0x2d, 0x6b,
+}
+
 func init() {
 	if len(hmacKeyBIP85) != 18 {
 		panic("bip85: HMAC key length mismatch")
+	}
+	for i := range hmacKeyBIP85 {
+		if hmacKeyBIP85[i] != hmacKeyBIP85Expected[i] {
+			panic("bip85: HMAC key content mismatch (possible tampering)")
+		}
 	}
 }
 
@@ -64,6 +75,9 @@ func deriveChild(root *hdkeychain.ExtendedKey, path Path, hmacKey []byte) (deriv
 	// Derive through each hardened level, zeroing intermediates.
 	current := root
 	for i, idx := range components {
+		if idx > hardenedMax {
+			return nil, nil, fmt.Errorf("%w: component %d (%d) exceeds maximum %d", ErrInvalidPath, i, idx, hardenedMax)
+		}
 		hardenedIdx := hdkeychain.HardenedKeyStart + idx
 		child, dErr := current.Derive(hardenedIdx)
 		if dErr != nil {
@@ -86,7 +100,12 @@ func deriveChild(root *hdkeychain.ExtendedKey, path Path, hmacKey []byte) (deriv
 	if err != nil {
 		return nil, nil, fmt.Errorf("%w: %v", ErrInvalidKeyRange, err)
 	}
-	keyBytes := privKey.Serialize() // Always 32 bytes.
+	defer privKey.Zero() // Zero the EC private key's internal ModNScalar.
+	keyBytes := privKey.Serialize()
+	defer ZeroBytes(keyBytes) // Zero on ALL exit paths, including early error returns.
+	if len(keyBytes) != 32 {
+		return nil, nil, fmt.Errorf("%w: expected 32-byte private key, got %d bytes", ErrInvalidKeyRange, len(keyBytes))
+	}
 
 	// Keep a copy of the derived key for callers that need it
 	// (spec vectors include the intermediate derived key).
@@ -95,11 +114,17 @@ func deriveChild(root *hdkeychain.ExtendedKey, path Path, hmacKey []byte) (deriv
 
 	// HMAC-SHA512(key="bip-entropy-from-k", msg=k) -> 64 bytes of entropy.
 	mac := hmac.New(sha512.New, hmacKey)
-	mac.Write(keyBytes)
-	entropyOut := mac.Sum(nil) // 64 bytes.
+	if _, err := mac.Write(keyBytes); err != nil {
+		ZeroBytes(derivedKeyCopy)
+		return nil, nil, fmt.Errorf("bip85: HMAC write failed: %w", err)
+	}
+	entropyOut := mac.Sum(nil)
 
-	// Zero the private key bytes.
-	ZeroBytes(keyBytes)
+	if len(entropyOut) != 64 {
+		ZeroBytes(derivedKeyCopy)
+		ZeroBytes(entropyOut)
+		return nil, nil, fmt.Errorf("%w: HMAC-SHA512 produced %d bytes, expected 64", ErrInvalidKeyRange, len(entropyOut))
+	}
 
 	return derivedKeyCopy, entropyOut, nil
 }

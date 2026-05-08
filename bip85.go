@@ -1,14 +1,18 @@
 // Package bip85 implements BIP85 (Deterministic Entropy From BIP32 Keychains),
 // version 2.0.0 of the specification.
 //
-// BIP85 derives deterministic entropy from a BIP32 HD keychain master key.
+// BIP85 derives deterministic entropy from a master key using HMAC-SHA512.
 // The derived entropy can be used to generate BIP39 mnemonics, WIF keys,
 // extended private keys, passwords, dice rolls, and other cryptographic
 // material - all from a single master backup.
 //
+// The default path uses BIP32 hardened derivation with btcsuite, but the
+// library is chain-agnostic: EntropyFromRawKey accepts raw private key
+// bytes from any derivation scheme (SLIP-10, Ed25519, Sr25519, or custom).
+// Network parameters are configurable via chaincfg.Params for non-Bitcoin
+// chains.
+//
 // This is a pure library with no CLI, no file I/O, and no network access.
-// It takes an extended private key (xprv/tprv) as input and produces
-// deterministic entropy as output.
 //
 // # Security
 //
@@ -76,6 +80,50 @@ func DeriveKeyAndEntropy(key *hdkeychain.ExtendedKey, path Path, opts ...Option)
 	return derive(key, path, opts)
 }
 
+// EntropyFromRawKey applies the BIP85 HMAC-SHA512 entropy extraction to a raw
+// private key of any length. This is the chain-agnostic foundation of BIP85:
+// HMAC-SHA512(key="bip-entropy-from-k", msg=privateKey) -> 64 bytes.
+//
+// Use this when you have your own key derivation (SLIP-10, Ed25519, Sr25519,
+// or any non-BIP32 scheme) and want to apply the BIP85 entropy extraction step.
+// The privateKey can be any length - the HMAC accepts arbitrary input.
+//
+// For standard BIP32 derivation, use DeriveEntropy instead.
+//
+// The caller is responsible for zeroing the input privateKey after use.
+// The returned entropy is a fresh allocation owned by the caller.
+func EntropyFromRawKey(privateKey []byte, opts ...Option) ([]byte, error) {
+	if len(privateKey) == 0 {
+		return nil, ErrEmptyKeyMaterial
+	}
+
+	cfg := applyOptions(opts)
+	if len(cfg.hmacKey) == 0 {
+		return nil, ErrInvalidHMACKey
+	}
+	if cfg.customDeriver != nil {
+		return nil, fmt.Errorf("bip85: WithCustomDeriver is not compatible with EntropyFromRawKey (key material is already derived)")
+	}
+
+	mac := hmac.New(sha512.New, cfg.hmacKey)
+	if _, wErr := mac.Write(privateKey); wErr != nil {
+		return nil, fmt.Errorf("bip85: HMAC write failed: %w", wErr)
+	}
+	entropy := mac.Sum(nil)
+
+	if len(entropy) != 64 {
+		ZeroBytes(entropy)
+		return nil, fmt.Errorf("%w: HMAC-SHA512 produced %d bytes, expected 64", ErrInvalidKeyRange, len(entropy))
+	}
+
+	entropy, err := applyPostProcessor(entropy, cfg)
+	if err != nil {
+		return nil, err
+	}
+
+	return entropy, nil
+}
+
 // derive is the shared implementation for DeriveEntropy and DeriveKeyAndEntropy.
 func derive(key *hdkeychain.ExtendedKey, path Path, opts []Option) (derivedKey, entropy []byte, err error) {
 	if key == nil {
@@ -120,16 +168,25 @@ func deriveCustom(key *hdkeychain.ExtendedKey, path Path, cfg derivationConfig) 
 		return nil, nil, fmt.Errorf("bip85: custom deriver: %w", err)
 	}
 	if len(rawKey) == 0 {
-		return nil, nil, ErrCustomDeriverEmpty
+		return nil, nil, ErrEmptyKeyMaterial
 	}
+	defer ZeroBytes(rawKey) // Zero on ALL exit paths.
 
 	dk := make([]byte, len(rawKey))
 	copy(dk, rawKey)
 
 	mac := hmac.New(sha512.New, cfg.hmacKey)
-	mac.Write(rawKey)
+	if _, wErr := mac.Write(rawKey); wErr != nil {
+		ZeroBytes(dk)
+		return nil, nil, fmt.Errorf("bip85: HMAC write failed: %w", wErr)
+	}
 	ent := mac.Sum(nil)
-	ZeroBytes(rawKey)
+
+	if len(ent) != 64 {
+		ZeroBytes(dk)
+		ZeroBytes(ent)
+		return nil, nil, fmt.Errorf("%w: HMAC-SHA512 produced %d bytes, expected 64", ErrInvalidKeyRange, len(ent))
+	}
 
 	ent, err = applyPostProcessor(ent, cfg)
 	if err != nil {
@@ -144,41 +201,32 @@ func deriveCustom(key *hdkeychain.ExtendedKey, path Path, cfg derivationConfig) 
 // On success it zeros the original entropy and returns the new one.
 // On failure it zeros both and returns an error.
 //
-// Handles the case where the post-processor returns a slice aliasing the
-// input: the original is copied to a safe buffer before zeroing.
+// The post-processor may return a slice aliasing the input (same backing
+// array at any offset). To handle this safely, the result is always
+// copied to a fresh allocation before the original entropy is zeroed.
 func applyPostProcessor(entropy []byte, cfg derivationConfig) ([]byte, error) {
 	if cfg.postProcessor == nil {
 		return entropy, nil
 	}
 
-	// Snapshot the original entropy before handing it to the post-processor,
-	// in case the processor returns a slice backed by the same array.
-	original := make([]byte, len(entropy))
-	copy(original, entropy)
-
 	processed, err := cfg.postProcessor(entropy)
 	if err != nil {
-		ZeroBytes(original)
 		ZeroBytes(entropy)
 		return nil, fmt.Errorf("bip85: post-processor: %w", err)
 	}
 	if len(processed) < 64 {
-		ZeroBytes(original)
 		ZeroBytes(entropy)
 		ZeroBytes(processed)
 		return nil, ErrPostProcessorShort
 	}
 
-	// If processed aliases entropy, rebuild from our safe snapshot.
-	if &processed[0] == &entropy[0] {
-		result := make([]byte, len(original))
-		copy(result, original)
-		ZeroBytes(original)
-		ZeroBytes(entropy)
-		return result, nil
-	}
+	// Always copy to a fresh allocation. If processed aliases entropy
+	// (at any offset, not just the start), zeroing entropy would corrupt
+	// processed. A fresh copy eliminates all aliasing concerns.
+	result := make([]byte, len(processed))
+	copy(result, processed)
 
-	ZeroBytes(original)
 	ZeroBytes(entropy)
-	return processed, nil
+	ZeroBytes(processed)
+	return result, nil
 }

@@ -33,15 +33,15 @@ var (
 	// ErrInvalidHMACKey indicates the custom HMAC key option is nil or empty.
 	ErrInvalidHMACKey = errors.New("bip85: HMAC key must not be nil or empty")
 
-	// ErrCustomDeriverEmpty indicates a custom deriver returned nil or
-	// empty key material.
-	ErrCustomDeriverEmpty = errors.New("bip85: custom deriver returned empty key")
+	// ErrEmptyKeyMaterial indicates nil or empty key material was provided,
+	// either from a custom deriver or directly to EntropyFromRawKey.
+	ErrEmptyKeyMaterial = errors.New("bip85: empty key material")
 
 	// ErrPostProcessorShort indicates a post-processor returned fewer than
 	// 64 bytes, which is insufficient for BIP85 applications.
 	ErrPostProcessorShort = errors.New("bip85: post-processor must return at least 64 bytes")
 
-	// ErrInvalidApplication indicates an unrecognized application code
-	// in the derivation path.
-	ErrInvalidApplication = errors.New("bip85: unknown application code")
+	// ErrInvalidLength indicates a length parameter is out of the allowed
+	// range for the target application.
+	ErrInvalidLength = errors.New("bip85: invalid length parameter")
 )

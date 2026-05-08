@@ -415,27 +415,27 @@ func TestDeriveEntropy_AppIndependence(t *testing.T) {
 
 // --- secp256k1 validation tests ---
 
-func TestValidatePrivateKey(t *testing.T) {
+func TestValidateSecp256k1Key(t *testing.T) {
 	// Valid key (from spec vector 1).
 	validKey, _ := hex.DecodeString("cca20ccb0e9a90feb0912870c3323b24874b0ca3d8018c4b96d0b97c0e82ded0")
-	if err := ValidatePrivateKey(validKey); err != nil {
+	if err := ValidateSecp256k1Key(validKey); err != nil {
 		t.Errorf("valid key rejected: %v", err)
 	}
 
 	// Zero key.
 	zeroKey := make([]byte, 32)
-	if err := ValidatePrivateKey(zeroKey); !errors.Is(err, ErrInvalidKeyRange) {
+	if err := ValidateSecp256k1Key(zeroKey); !errors.Is(err, ErrInvalidKeyRange) {
 		t.Errorf("zero key: got %v, want ErrInvalidKeyRange", err)
 	}
 
 	// Key >= curve order.
 	orderKey, _ := hex.DecodeString("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141")
-	if err := ValidatePrivateKey(orderKey); !errors.Is(err, ErrInvalidKeyRange) {
+	if err := ValidateSecp256k1Key(orderKey); !errors.Is(err, ErrInvalidKeyRange) {
 		t.Errorf("order key: got %v, want ErrInvalidKeyRange", err)
 	}
 
 	// Wrong length.
-	if err := ValidatePrivateKey([]byte{0x01}); !errors.Is(err, ErrInvalidKeyRange) {
+	if err := ValidateSecp256k1Key([]byte{0x01}); !errors.Is(err, ErrInvalidKeyRange) {
 		t.Errorf("short key: got %v, want ErrInvalidKeyRange", err)
 	}
 }
@@ -576,8 +576,8 @@ func TestWithCustomDeriver_EmptyReturn(t *testing.T) {
 	}
 
 	_, err := DeriveEntropy(key, path, WithCustomDeriver(deriver))
-	if !errors.Is(err, ErrCustomDeriverEmpty) {
-		t.Errorf("got: %v, want: %v", err, ErrCustomDeriverEmpty)
+	if !errors.Is(err, ErrEmptyKeyMaterial) {
+		t.Errorf("got: %v, want: %v", err, ErrEmptyKeyMaterial)
 	}
 }
 
@@ -596,21 +596,21 @@ func TestWithCustomDeriver_Error(t *testing.T) {
 	}
 }
 
-// --- ValidatePrivateKey edge cases ---
+// --- ValidateSecp256k1Key edge cases ---
 
-func TestValidatePrivateKey_MaxValid(t *testing.T) {
+func TestValidateSecp256k1Key_MaxValid(t *testing.T) {
 	// order - 1 is the maximum valid private key.
 	orderMinus1, _ := hex.DecodeString("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364140")
-	if err := ValidatePrivateKey(orderMinus1); err != nil {
+	if err := ValidateSecp256k1Key(orderMinus1); err != nil {
 		t.Errorf("order-1 should be valid: %v", err)
 	}
 }
 
-func TestValidatePrivateKey_One(t *testing.T) {
+func TestValidateSecp256k1Key_One(t *testing.T) {
 	// 1 is the minimum valid private key.
 	one := make([]byte, 32)
 	one[31] = 0x01
-	if err := ValidatePrivateKey(one); err != nil {
+	if err := ValidateSecp256k1Key(one); err != nil {
 		t.Errorf("key=1 should be valid: %v", err)
 	}
 }

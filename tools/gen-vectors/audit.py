@@ -86,9 +86,9 @@ for g in data["master_keys"]:
                 if int(r) < 0 or int(r) >= v["params"]["sides"]:
                     issues.append(f"{tag}: roll value {r} out of [0,{v['params']['sides']-1}]")
 
-        # BIP39: word count
+        # BIP39: word count (split() handles both ASCII and ideographic space)
         if v["app"] == "bip39":
-            words = v["output"].split(" ")
+            words = v["output"].split()
             if len(words) != v["params"]["words"]:
                 issues.append(f"{tag}: word count={len(words)} expected={v['params']['words']}")
 

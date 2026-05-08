@@ -28,13 +28,13 @@ func ZeroBytes(buf []byte) {
 	}
 }
 
-// ValidatePrivateKey checks whether a 32-byte value is a valid secp256k1
+// ValidateSecp256k1Key checks whether a 32-byte value is a valid secp256k1
 // private key (non-zero and less than the curve order). Returns nil if valid.
 //
 // BIP85 applications that use raw entropy as an EC private key (WIF, XPRV)
 // must call this before encoding. If the key is invalid, the caller should
 // try the next BIP85 index.
-func ValidatePrivateKey(key []byte) error {
+func ValidateSecp256k1Key(key []byte) error {
 	if len(key) != 32 {
 		return ErrInvalidKeyRange
 	}
