@@ -71,18 +71,24 @@ If you already have an xprv string (e.g., from a wallet export):
 entropy, err := bip85.DeriveEntropyFromString("xprv9s21ZrQH143K...", path)
 ```
 
-## Applications
+## Spec Compliance ([BIP85 v2.0.0](https://github.com/bitcoin/bips/blob/master/bip-0085.mediawiki))
 
-| Application | Function | Path | Output |
+| Application | Status | Function | Path |
 |---|---|---|---|
-| BIP39 | `DeriveBIP39` | `m/83696968'/39'/{lang}'/{words}'/{idx}'` | Mnemonic string |
-| WIF | `DeriveWIF` | `m/83696968'/2'/{idx}'` | Compressed WIF string |
-| XPRV | `DeriveXPRV` | `m/83696968'/32'/{idx}'` | Extended private key string |
-| HEX | `DeriveHex` | `m/83696968'/128169'/{bytes}'/{idx}'` | Hex-encoded bytes |
-| BASE64 | `DeriveBase64` | `m/83696968'/707764'/{len}'/{idx}'` | Base64 password |
-| BASE85 | `DeriveBase85` | `m/83696968'/707785'/{len}'/{idx}'` | RFC 1924 Base85 password |
-| DICE | `DeriveDice` | `m/83696968'/89101'/{sides}'/{rolls}'/{idx}'` | Dice roll values |
-| DRNG | `NewDRNG` | (from entropy) | io.Reader (unlimited bytes) |
+| BIP39 Mnemonic | Supported | `DeriveBIP39` | `m/83696968'/39'/{lang}'/{words}'/{idx}'` |
+| HD-Seed WIF | Supported | `DeriveWIF` | `m/83696968'/2'/{idx}'` |
+| XPRV | Supported | `DeriveXPRV` | `m/83696968'/32'/{idx}'` |
+| HEX | Supported | `DeriveHex` | `m/83696968'/128169'/{bytes}'/{idx}'` |
+| PWD BASE64 | Supported | `DeriveBase64` | `m/83696968'/707764'/{len}'/{idx}'` |
+| PWD BASE85 | Supported | `DeriveBase85` | `m/83696968'/707785'/{len}'/{idx}'` |
+| DICE | Supported | `DeriveDice` | `m/83696968'/89101'/{sides}'/{rolls}'/{idx}'` |
+| DRNG | Supported | `NewDRNG` | (from 64-byte entropy) |
+| RSA | Via DRNG | `RSAPath` | `m/83696968'/828365'/{bits}'/{idx}'` |
+| RSA GPG sub-keys | Not implemented | - | - |
+
+All 12 BIP85 spec test vectors pass byte-for-byte. COLDCARD compatible.
+
+RSA uses the DRNG workaround because Go 1.24+ mixes system entropy into `crypto/rsa` for FIPS 140-3, making direct RSA output non-deterministic. See [RSA](#rsa) for details.
 
 All application functions accept raw entropy bytes. They are independent of how the entropy was derived.
 
@@ -91,7 +97,7 @@ All application functions accept raw entropy bytes. They are independent of how 
 Type-safe path constructors prevent typos:
 
 ```go
-bip85.BIP39Path(0, 12, 0)     // m/83696968'/39'/0'/12'/0'
+bip85.BIP39Path(bip85.LangEnglish, 12, 0)  // m/83696968'/39'/0'/12'/0'
 bip85.WIFPath(0)               // m/83696968'/2'/0'
 bip85.XPRVPath(0)              // m/83696968'/32'/0'
 bip85.HexPath(32, 0)           // m/83696968'/128169'/32'/0'
