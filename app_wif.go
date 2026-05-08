@@ -51,8 +51,11 @@ func DeriveWIF(entropy []byte, net *chaincfg.Params) (string, error) {
 	return wif.String(), nil
 }
 
-// DecodeWIF decodes a WIF string and returns the 32-byte raw private key,
-// whether it was compressed, and whether it matches the given network.
+// DecodeWIF decodes a WIF string and returns the 32-byte raw private key
+// and whether it was compressed. The returned key is a fresh allocation;
+// call ZeroBytes on it when done.
+//
+// If net is non-nil, the WIF is verified to match the given network.
 // If net is nil, the network check is skipped.
 func DecodeWIF(wif string, net *chaincfg.Params) (key []byte, compressed bool, err error) {
 	decoded, err := btcutil.DecodeWIF(wif)

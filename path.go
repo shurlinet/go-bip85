@@ -26,6 +26,10 @@ const (
 // Path represents a validated BIP85 derivation path. All components are
 // hardened. The purpose code (83696968') is always the first component.
 //
+// The zero value is an empty path. Passing it to DeriveEntropy returns
+// ErrIncompletePath. Construct paths with ParsePath or the builder
+// functions (BIP39Path, WIFPath, HexPath, etc.).
+//
 // A Path is immutable after construction. It is safe for concurrent use.
 type Path struct {
 	// components stores the raw (un-hardened) values.
@@ -134,42 +138,68 @@ func CorePath(appCode, index uint32) Path {
 	return buildPath(appCode, index)
 }
 
-// BIP39Path returns: m/83696968'/39'/{language}'/{words}'/{index}'.
+// BIP39Path returns a path for BIP39 mnemonic derivation.
+// Language codes: 0=English, 1=Japanese, 2=Korean, 3=Spanish, 4=Chinese
+// (Simplified), 5=Chinese (Traditional), 6=French, 7=Italian, 8=Czech,
+// 9=Portuguese. Valid word counts: 12, 15, 18, 21, 24.
+//
+// Path: m/83696968'/39'/{language}'/{words}'/{index}'.
 func BIP39Path(language, words, index uint32) Path {
 	return buildPath(AppBIP39, language, words, index)
 }
 
-// WIFPath returns: m/83696968'/2'/{index}'.
+// WIFPath returns a path for HD-Seed WIF (compressed private key) derivation.
+//
+// Path: m/83696968'/2'/{index}'.
 func WIFPath(index uint32) Path {
 	return buildPath(AppWIF, index)
 }
 
-// XPRVPath returns: m/83696968'/32'/{index}'.
+// XPRVPath returns a path for BIP32 extended private key derivation.
+// The derived entropy uses reversed field ordering per the BIP85 spec:
+// first 32 bytes = chain code, second 32 bytes = private key.
+//
+// Path: m/83696968'/32'/{index}'.
 func XPRVPath(index uint32) Path {
 	return buildPath(AppXPRV, index)
 }
 
-// HexPath returns: m/83696968'/128169'/{numBytes}'/{index}'.
+// HexPath returns a path for raw hex entropy derivation.
+// numBytes must be in [16, 64].
+//
+// Path: m/83696968'/128169'/{numBytes}'/{index}'.
 func HexPath(numBytes, index uint32) Path {
 	return buildPath(AppHex, numBytes, index)
 }
 
-// Base64Path returns: m/83696968'/707764'/{pwdLen}'/{index}'.
+// Base64Path returns a path for Base64-encoded password derivation.
+// pwdLen must be in [20, 86].
+//
+// Path: m/83696968'/707764'/{pwdLen}'/{index}'.
 func Base64Path(pwdLen, index uint32) Path {
 	return buildPath(AppBase64, pwdLen, index)
 }
 
-// Base85Path returns: m/83696968'/707785'/{pwdLen}'/{index}'.
+// Base85Path returns a path for RFC 1924 Base85-encoded password derivation.
+// pwdLen must be in [10, 80].
+//
+// Path: m/83696968'/707785'/{pwdLen}'/{index}'.
 func Base85Path(pwdLen, index uint32) Path {
 	return buildPath(AppBase85, pwdLen, index)
 }
 
-// RSAPath returns: m/83696968'/828365'/{keyBits}'/{keyIndex}'.
+// RSAPath returns a path for RSA key generation via BIP85-DRNG.
+// keyBits is the RSA key size (e.g., 2048, 4096).
+//
+// Path: m/83696968'/828365'/{keyBits}'/{keyIndex}'.
 func RSAPath(keyBits, keyIndex uint32) Path {
 	return buildPath(AppRSA, keyBits, keyIndex)
 }
 
-// DicePath returns: m/83696968'/89101'/{sides}'/{rolls}'/{index}'.
+// DicePath returns a path for dice roll generation via rejection sampling.
+// sides must be >= 2. rolls is the number of dice to roll.
+//
+// Path: m/83696968'/89101'/{sides}'/{rolls}'/{index}'.
 func DicePath(sides, rolls, index uint32) Path {
 	return buildPath(AppDice, sides, rolls, index)
 }

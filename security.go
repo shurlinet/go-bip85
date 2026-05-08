@@ -15,7 +15,10 @@ func mustParseBigInt(hex string) *big.Int {
 }
 
 // ZeroBytes overwrites buf with zeros. Use this to clear secret material
-// (entropy, derived keys) returned by DeriveEntropy and DeriveKeyAndEntropy.
+// (entropy, derived keys) returned by DeriveEntropy, DeriveKeyAndEntropy,
+// and EntropyFromRawKey.
+//
+// ZeroBytes is safe to call with nil or empty slices (no-op).
 //
 // This is a best-effort measure. The Go garbage collector may have already
 // copied the data to another location, so this is not a guarantee against

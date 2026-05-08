@@ -6,19 +6,40 @@
 // extended private keys, passwords, dice rolls, and other cryptographic
 // material - all from a single master backup.
 //
-// The default path uses BIP32 hardened derivation with btcsuite, but the
-// library is chain-agnostic: EntropyFromRawKey accepts raw private key
-// bytes from any derivation scheme (SLIP-10, Ed25519, Sr25519, or custom).
+// # Applications
+//
+// The following BIP85 applications are supported:
+//   - DRNG: SHAKE256-based deterministic random number generator (io.Reader)
+//   - HEX: Raw hex-encoded entropy (16-64 bytes)
+//   - WIF: Compressed private key in Wallet Import Format
+//   - XPRV: BIP32 extended private key with reversed field ordering
+//
+// BIP39 mnemonics, Base64/Base85 passwords, RSA keys, and dice rolls are
+// planned for future releases.
+//
+// # Two-Tier API
+//
+// The library provides two entry points for entropy derivation:
+//
+// BIP32-native (btcsuite types, Bitcoin-compatible chains):
+//
+//	entropy, err := bip85.DeriveEntropy(parsedKey, path)
+//
+// Chain-agnostic (raw bytes, any derivation scheme):
+//
+//	entropy, err := bip85.EntropyFromRawKey(myDerivedKeyBytes)
+//
+// Application functions (DeriveHex, DeriveWIF, DeriveXPRV) accept raw
+// entropy bytes and are independent of the derivation method used.
 // Network parameters are configurable via chaincfg.Params for non-Bitcoin
 // chains.
-//
-// This is a pure library with no CLI, no file I/O, and no network access.
 //
 // # Security
 //
 // Memory zeroing: This library makes a best-effort attempt to zero secret
-// key material after use. However, the Go garbage collector may copy data
-// before zeroing occurs. For hardware-grade security, use a hardware wallet.
+// key material after use via ZeroBytes and defer. However, the Go garbage
+// collector may copy data before zeroing occurs. For hardware-grade
+// security, use a hardware wallet.
 //
 // Master key security: All derived outputs are only as secure as the master
 // key. A weak or compromised master key compromises all derived entropy.
@@ -60,8 +81,9 @@ func DeriveEntropy(key *hdkeychain.ExtendedKey, path Path, opts ...Option) ([]by
 }
 
 // DeriveEntropyFromString is a convenience wrapper that parses the xprv string
-// and calls DeriveEntropy. For batch derivation, prefer ParseKey + DeriveEntropy
-// to avoid repeated parsing.
+// and calls DeriveEntropy. The parsed key is zeroed automatically on return.
+// For batch derivation, prefer ParseKey + DeriveEntropy to avoid repeated
+// parsing.
 func DeriveEntropyFromString(xprv string, path Path, opts ...Option) ([]byte, error) {
 	key, err := ParseKey(xprv)
 	if err != nil {

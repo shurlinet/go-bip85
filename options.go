@@ -9,7 +9,10 @@ type derivationConfig struct {
 	postProcessor func(entropy []byte) ([]byte, error)
 }
 
-// Option configures the BIP85 derivation pipeline.
+// Option configures the BIP85 derivation pipeline. Options are applied in
+// order. Nil options are silently skipped. All options that modify
+// cryptographic behavior produce non-standard output that will not match
+// any reference BIP85 implementation.
 type Option func(*derivationConfig)
 
 // WithHMACKey overrides the default HMAC key ("bip-entropy-from-k").
@@ -25,14 +28,16 @@ func WithHMACKey(key []byte) Option {
 
 // WithCustomDeriver replaces the default BIP32 derivation with a custom
 // function. The function receives the parsed root key and path, and must
-// return a freshly allocated slice of raw private key material.
+// return a freshly allocated slice of raw private key material. The returned
+// slice will be zeroed by the library after the HMAC step.
+//
+// This option is only compatible with DeriveEntropy and DeriveKeyAndEntropy.
+// It is rejected by EntropyFromRawKey, which accepts pre-derived key material
+// directly.
 //
 // Security: the deriver receives the full master key. Only use derivers
 // from your own trust domain. A malicious deriver can read or copy the
 // master key. Do not accept Options from untrusted sources.
-//
-// Setting a custom deriver produces non-standard output that will not
-// match any reference BIP85 implementation.
 func WithCustomDeriver(fn func(root *hdkeychain.ExtendedKey, path Path) ([]byte, error)) Option {
 	return func(c *derivationConfig) {
 		c.customDeriver = fn
@@ -41,10 +46,9 @@ func WithCustomDeriver(fn func(root *hdkeychain.ExtendedKey, path Path) ([]byte,
 
 // WithEntropyPostProcessor adds a post-processing step after the HMAC-SHA512
 // entropy extraction. The function receives the 64-byte entropy and must
-// return at least 64 bytes.
-//
-// Setting a post-processor produces non-standard output that will not
-// match any reference BIP85 implementation.
+// return at least 64 bytes. The result is copied to a fresh allocation
+// before the original entropy is zeroed, so the post-processor may safely
+// return a sub-slice of its input.
 func WithEntropyPostProcessor(fn func(entropy []byte) ([]byte, error)) Option {
 	return func(c *derivationConfig) {
 		c.postProcessor = fn

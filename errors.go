@@ -3,8 +3,10 @@ package bip85
 import "errors"
 
 // Sentinel errors returned by the BIP85 derivation pipeline.
-// Callers can use errors.Is to match these.
+// Callers can use errors.Is to match these. Grouped by subsystem.
 var (
+	// Path errors
+
 	// ErrInvalidPath indicates a malformed or non-BIP85 derivation path.
 	ErrInvalidPath = errors.New("bip85: invalid derivation path")
 
@@ -15,6 +17,8 @@ var (
 	// ErrNonHardenedComponent indicates a path component that is not hardened.
 	// BIP85 requires ALL path components to be hardened.
 	ErrNonHardenedComponent = errors.New("bip85: all path components must be hardened")
+
+	// Key errors
 
 	// ErrPublicKeyNotAllowed indicates the caller passed a public extended key
 	// (xpub/tpub). BIP85 requires a private extended key (xprv/tprv).
@@ -30,16 +34,20 @@ var (
 	// ErrNilKey indicates a nil key was passed to a function.
 	ErrNilKey = errors.New("bip85: nil key")
 
-	// ErrInvalidHMACKey indicates the custom HMAC key option is nil or empty.
-	ErrInvalidHMACKey = errors.New("bip85: HMAC key must not be nil or empty")
-
 	// ErrEmptyKeyMaterial indicates nil or empty key material was provided,
 	// either from a custom deriver or directly to EntropyFromRawKey.
 	ErrEmptyKeyMaterial = errors.New("bip85: empty key material")
 
+	// Pipeline option errors
+
+	// ErrInvalidHMACKey indicates the custom HMAC key option is nil or empty.
+	ErrInvalidHMACKey = errors.New("bip85: HMAC key must not be nil or empty")
+
 	// ErrPostProcessorShort indicates a post-processor returned fewer than
 	// 64 bytes, which is insufficient for BIP85 applications.
 	ErrPostProcessorShort = errors.New("bip85: post-processor must return at least 64 bytes")
+
+	// Application errors
 
 	// ErrInvalidLength indicates a length parameter is out of the allowed
 	// range for the target application.
